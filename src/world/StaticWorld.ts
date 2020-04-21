@@ -39,7 +39,8 @@ export class StaticWorld implements IWorld
     constructor (scene: StaticScene)
     {
         this.scene = scene;
-        this.camera = new StaticCamera(scene) as ICamera; // TODO: Remove this as ICamera onnce StaticCamera is finished
+        // TODO: Remove as unknown when camera system has proper types
+        this.camera = new StaticCamera(scene) as unknown as ICamera;
     }
 
     private scanChildren (root: IContainer | StaticWorld, gameFrame: number)

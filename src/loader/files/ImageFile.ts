@@ -1,13 +1,14 @@
-import { File } from '../File';
-import { ImageTagLoader } from '../ImageTagLoader';
 import { GameInstance } from '../../GameInstance';
+import { File } from '../File';
 import { GetURL } from '../GetURL';
+import { ImageLoder } from '../ImageLoader';
 
-export function ImageFile (key: string, url?: string): File
+export function ImageFile (key: string, url?: string): File<HTMLImageElement>
 {
     const file = new File(key, url);
+    const fileCast = file as unknown as File<HTMLImageElement>;
 
-    file.load = () => {
+    fileCast.load = () => {
 
         file.url = GetURL(file.key, file.url, '.png', file.loader);
 
@@ -22,25 +23,25 @@ export function ImageFile (key: string, url?: string): File
 
             if (game.textures.has(file.key))
             {
-                resolve(file);
+                resolve(fileCast);
             }
             else
             {
-                ImageTagLoader(file).then(file => {
+                ImageLoder(file).then(file => {
 
                     game.textures.add(file.key, file.data);
-    
-                    resolve(file);
-        
-                }).catch(file => {
-    
-                    reject(file);
-    
+
+                    resolve(fileCast);
+
+                }).catch(() => {
+
+                    reject(fileCast);
+
                 });
             }
 
         });
     };
 
-    return file;
+    return fileCast;
 }

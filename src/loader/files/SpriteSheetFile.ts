@@ -1,15 +1,16 @@
-import { File } from '../File';
-import { ImageTagLoader } from '../ImageTagLoader';
-import { IFrameConfig } from '../../textures/IFrameConfig';
 import { GameInstance } from '../../GameInstance';
-import { GetURL } from '../GetURL';
+import { IFrameConfig } from '../../textures/IFrameConfig';
 import { SpriteSheetParser } from '../../textures/parsers/SpriteSheetParser';
+import { File } from '../File';
+import { GetURL } from '../GetURL';
+import { ImageLoder } from '../ImageLoader';
 
-export function SpriteSheetFile (key: string, url: string, frameConfig: IFrameConfig): File
+export function SpriteSheetFile (key: string, url: string, frameConfig: IFrameConfig): File<HTMLImageElement>
 {
     const file = new File(key, url);
+    const fileCast = file as unknown as File<HTMLImageElement>;
 
-    file.load = () => {
+    fileCast.load = () => {
 
         file.url = GetURL(file.key, file.url, '.png', file.loader);
 
@@ -24,11 +25,11 @@ export function SpriteSheetFile (key: string, url: string, frameConfig: IFrameCo
 
             if (game.textures.has(file.key))
             {
-                resolve(file);
+                resolve(fileCast);
             }
             else
             {
-                ImageTagLoader(file).then(file => {
+                ImageLoder(file).then(file => {
 
                     const texture = game.textures.add(file.key, file.data);
 
@@ -42,15 +43,15 @@ export function SpriteSheetFile (key: string, url: string, frameConfig: IFrameCo
                     {
                         reject(file);
                     }
-        
-                }).catch(file => {
 
-                    reject(file);
-        
+                }).catch(() => {
+
+                    reject(fileCast);
+
                 });
             }
         });
     };
 
-    return file;
+    return fileCast;
 }

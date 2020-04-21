@@ -1,9 +1,9 @@
-import { File } from '../File';
-import { XMLFile } from './XMLFile';
-import { ImageFile } from './ImageFile';
 import { GameInstance } from '../../GameInstance';
 import { BitmapTextParser } from '../../textures/parsers/BitmapTextParser';
+import { File } from '../File';
 import { GetURL } from '../GetURL';
+import { ImageFile } from './ImageFile';
+import { XMLFile } from './XMLFile';
 
 export function BitmapTextFile (key: string, textureURL?: string, fontDataURL?: string): File
 {

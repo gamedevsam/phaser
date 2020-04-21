@@ -1,3 +1,4 @@
+import { IParent } from '../gameobjects/container/IParent';
 import { Rectangle } from '../geom/rectangle/Rectangle';
 import { WebGLRenderer } from '../renderer/webgl1/WebGLRenderer';
 import { IScene } from '../scenes/IScene';
@@ -9,8 +10,6 @@ export interface IStaticCamera
     renderer: WebGLRenderer;
     bounds: Rectangle;
     reset (): void;
-    update (delta: number, time: number): void;
-    updateTransform (): this;
     render (gameFrame: number): void;
-    destroy (): void;
+    destroy (reparentChildren?: IParent): void;
 }

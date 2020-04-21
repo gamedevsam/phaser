@@ -1,6 +1,6 @@
 import { File } from './File';
 
-export function XHRLoader (file: File): Promise<File>
+export function XHRLoader (file: File<string>): Promise<File<string>>
 {
     const xhr = new XMLHttpRequest();
 
@@ -20,7 +20,7 @@ export function XHRLoader (file: File): Promise<File>
             };
 
             xhr.onerror = () => {
-                
+
                 file.hasLoaded = true;
 
                 reject(file);

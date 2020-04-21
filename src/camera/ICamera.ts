@@ -2,8 +2,9 @@ import { ITransformGameObject } from '../gameobjects/transformgameobject/ITransf
 import { Rectangle } from '../geom/rectangle/Rectangle';
 import { WebGLRenderer } from '../renderer/webgl1/WebGLRenderer';
 import { IScene } from '../scenes/IScene';
+import { IStaticCamera } from './IStaticCamera';
 
-export interface ICamera extends ITransformGameObject
+export interface ICamera extends ITransformGameObject, IStaticCamera
 {
     scene: IScene;
     matrix: Float32Array;

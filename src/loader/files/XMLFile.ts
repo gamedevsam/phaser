@@ -1,24 +1,25 @@
-import { File } from '../File';
-import { XHRLoader } from '../XHRLoader';
-import { GetURL } from '../GetURL';
 import { ParseXML } from '../../dom/ParseXML';
 import { GameInstance } from '../../GameInstance';
+import { File } from '../File';
+import { GetURL } from '../GetURL';
+import { XHRLoader } from '../XHRLoader';
 
-export function XMLFile (key: string, url?: string): File
+export function XMLFile (key: string, url?: string): File<XMLDocument>
 {
-    const file = new File(key, url);
+    const file = new File<string>(key, url);
+    const fileCast = (file as unknown) as File<XMLDocument>;
 
-    file.load = () => {
+    fileCast.load = () => {
 
-        file.url = GetURL(file.key, file.url, '.xml', file.loader);
+        fileCast.url = GetURL(fileCast.key, file.url, '.xml', fileCast.loader);
 
         return new Promise((resolve, reject) => {
 
             const game = GameInstance.get();
 
-            if (!file.skipCache && game.cache.xml.has(file.key))
+            if (!fileCast.skipCache && game.cache.xml.has(fileCast.key))
             {
-                resolve(file);
+                resolve(fileCast);
             }
             else
             {
@@ -28,28 +29,28 @@ export function XMLFile (key: string, url?: string): File
 
                     if (xml !== null)
                     {
-                        file.data = xml;
+                        fileCast.data = xml;
 
-                        if (!file.skipCache)
+                        if (!fileCast.skipCache)
                         {
-                            game.cache.xml.set(file.key, xml);
+                            game.cache.xml.set(fileCast.key, xml);
                         }
 
-                        resolve(file);
+                        resolve(fileCast);
                     }
                     else
                     {
-                        reject(file);
+                        reject(fileCast);
                     }
-        
-                }).catch(file => {
 
-                    reject(file);
-        
+                }).catch(() => {
+
+                    reject(fileCast);
+
                 });
             }
         });
     };
 
-    return file;
+    return fileCast;
 }

@@ -1,11 +1,11 @@
-import { File } from '../File';
-import { XHRLoader } from '../XHRLoader';
 import { GameInstance } from '../../GameInstance';
+import { File } from '../File';
 import { GetURL } from '../GetURL';
+import { XHRLoader } from '../XHRLoader';
 
-export function CSVFile (key: string, url?: string): File
+export function CSVFile (key: string, url?: string): File<string>
 {
-    const file = new File(key, url);
+    const file = new File<string>(key, url);
 
     file.load = () => {
 
@@ -27,13 +27,13 @@ export function CSVFile (key: string, url?: string): File
                     {
                         game.cache.csv.set(file.key, file.data);
                     }
-    
+
                     resolve(file);
-        
+
                 }).catch(file => {
-    
+
                     reject(file);
-        
+
                 });
             }
 
