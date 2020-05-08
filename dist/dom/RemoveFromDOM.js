@@ -1,6 +1,7 @@
-export default function RemoveFromDOM(element) {
+function RemoveFromDOM(element) {
     if (element.parentNode) {
         element.parentNode.removeChild(element);
     }
 }
-//# sourceMappingURL=RemoveFromDOM.js.map
+
+export { RemoveFromDOM };

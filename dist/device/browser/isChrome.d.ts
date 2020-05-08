@@ -1,5 +1,5 @@
-export declare function isChrome(): {
+export declare function IsChrome(): {
     chrome: boolean;
     chromeVersion: number;
 };
-//# sourceMappingURL=isChrome.d.ts.map
+//# sourceMappingURL=IsChrome.d.ts.map

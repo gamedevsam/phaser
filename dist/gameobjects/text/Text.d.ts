@@ -1,7 +1,7 @@
-import Sprite from '../sprite/Sprite';
-import IContainer from '../container/IContainer';
+import { IContainer } from '../container/IContainer';
+import { Sprite } from '../sprite/Sprite';
 export declare type VerticalTextAlignment = 'ascent' | 'lineheight';
-export default class Text extends Sprite {
+export declare class Text extends Sprite {
     private _text;
     preRenderCallback: (canvas: HTMLCanvasElement, context: CanvasRenderingContext2D) => void;
     wordWrapCallback: (text: string) => string;

@@ -1,16 +1,47 @@
-//  @namespace Phaser.Device
-import * as Audio from './audio';
-import * as Browser from './browser';
-import * as OS from './os';
-import * as Video from './video';
-export default {
-    Audio,
-    Browser,
-    OS,
-    Video
-};
-export * from './audio';
-export * from './browser';
-export * from './os';
-export * from './video';
-//# sourceMappingURL=index.js.map
+export { CanPlayAudioType } from './audio/CanPlayAudioType.js';
+export { CanPlayM4A } from './audio/CanPlayM4A.js';
+export { CanPlayMP3 } from './audio/CanPlayMP3.js';
+export { CanPlayOGG } from './audio/CanPlayOGG.js';
+export { CanPlayOpus } from './audio/CanPlayOpus.js';
+export { CanPlayWAV } from './audio/CanPlayWAV.js';
+export { CanPlayWebM } from './audio/CanPlayWebM.js';
+export { HasAudio } from './audio/HasAudio.js';
+export { HasWebAudio } from './audio/HasWebAudio.js';
+export { GetAudio } from './audio/GetAudio.js';
+export { i as Audio } from '../index-9cd45848.js';
+export { IsChrome } from './browser/IsChrome.js';
+export { IsEdge } from './browser/IsEdge.js';
+export { IsFirefox } from './browser/IsFirefox.js';
+export { IsMSIE } from './browser/IsMSIE.js';
+export { IsiOS } from './os/IsiOS.js';
+export { IsMobileSafari } from './browser/IsMobileSafari.js';
+export { IsOpera } from './browser/IsOpera.js';
+export { IsWindowsPhone } from './os/IsWindowsPhone.js';
+export { IsSafari } from './browser/IsSafari.js';
+export { IsSilk } from './browser/IsSilk.js';
+export { IsTrident } from './browser/IsTrident.js';
+export { GetBrowser } from './browser/GetBrowser.js';
+export { i as Browser } from '../index-9e021782.js';
+export { IsAndroid } from './os/IsAndroid.js';
+export { IsChromeOS } from './os/IsChromeOS.js';
+export { IsCordova } from './os/IsCordova.js';
+export { IsCrosswalk } from './os/IsCrosswalk.js';
+export { IsEjecta } from './os/IsEjecta.js';
+export { IsKindle } from './os/IsKindle.js';
+export { IsLinux } from './os/IsLinux.js';
+export { IsMacOS } from './os/IsMacOS.js';
+export { IsNode } from './os/IsNode.js';
+export { IsNodeWebkit } from './os/IsNodeWebkit.js';
+export { IsWebApp } from './os/IsWebApp.js';
+export { IsWindows } from './os/IsWindows.js';
+export { GetOS } from './os/GetOS.js';
+export { i as OS } from '../index-29b9f851.js';
+export { CanPlayVideoType } from './video/CanPlayVideoType.js';
+export { CanPlayH264Video } from './video/CanPlayH264Video.js';
+export { CanPlayHLSVideo } from './video/CanPlayHLSVideo.js';
+export { CanPlayOGGVideo } from './video/CanPlayOGGVideo.js';
+export { CanPlayVP9Video } from './video/CanPlayVP9Video.js';
+export { CanPlayWebMVideo } from './video/CanPlayWebMVideo.js';
+export { GetVideo } from './video/GetVideo.js';
+export { i as Video } from '../index-ee6bd33e.js';
+import '../index-3e47a560.js';

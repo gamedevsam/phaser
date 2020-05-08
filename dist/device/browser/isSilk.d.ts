@@ -1,4 +1,4 @@
-export declare function isSilk(): {
+export declare function IsSilk(): {
     silk: boolean;
 };
-//# sourceMappingURL=isSilk.d.ts.map
+//# sourceMappingURL=IsSilk.d.ts.map

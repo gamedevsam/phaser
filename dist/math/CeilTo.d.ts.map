@@ -1,1 +1,1 @@
-{"version":3,"file":"CeilTo.d.ts","sourceRoot":"","sources":["../../src/math/CeilTo.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,KAAK,EAAE,MAAM,EAAE,KAAK,GAAE,MAAU,EAAE,IAAI,GAAE,MAAW,GAAG,MAAM,CAK3F"}
+{"version":3,"file":"CeilTo.d.ts","sourceRoot":"","sources":["../src/math/CeilTo.ts"],"names":[],"mappings":"AAoBA,wBAAgB,MAAM,CAAE,KAAK,EAAE,MAAM,EAAE,KAAK,GAAE,MAAU,EAAE,IAAI,GAAE,MAAW,GAAG,MAAM,CAKnF"}

@@ -1,5 +1,4 @@
-//  Inverts the target Matrix and then returns it
-export default function Invert(target) {
+function Invert(target) {
     const { a, b, c, d, tx, ty } = target;
     let determinant = a * d - b * c;
     if (determinant) {
@@ -8,4 +7,5 @@ export default function Invert(target) {
     }
     return target;
 }
-//# sourceMappingURL=Invert.js.map
+
+export { Invert };

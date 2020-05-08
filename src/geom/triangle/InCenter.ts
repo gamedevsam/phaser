@@ -7,7 +7,6 @@
 import { ITriangle } from './ITriangle';
 import { Vec2 } from '../../math/vec2/Vec2';
 
-
 function GetLength (x1: number, y1: number, x2: number, y2: number): number
 {
     const x = x1 - x2;

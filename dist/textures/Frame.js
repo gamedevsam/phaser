@@ -1,4 +1,4 @@
-export default class Frame {
+class Frame {
     constructor(texture, key, x, y, width, height) {
         this.trimmed = false;
         this.texture = texture;
@@ -44,4 +44,5 @@ export default class Frame {
         this.v1 = (y + height) / baseTextureHeight;
     }
 }
-//# sourceMappingURL=Frame.js.map
+
+export { Frame };

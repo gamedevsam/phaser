@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { RotateAroundXY } from './RotateAroundXY';
 import { ITriangle } from './ITriangle';
 import { IVec2 } from '../../math/vec2/IVec2';
+import { RotateAroundXY } from './RotateAroundXY';
 
 /**
  * Rotates a Triangle at a certain angle about a given Point or object with public `x` and `y` properties.

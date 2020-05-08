@@ -1,30 +1,8 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Contains from './Contains';
-/**
- * @classdesc
- * A triangle is a plane created by connecting three points.
- * The first two arguments specify the first point, the middle two arguments
- * specify the second point, and the last two arguments specify the third point.
- *
- * @class Triangle
- * @memberof Phaser.Geom
- * @constructor
- * @since 3.0.0
- *
- * @param {number} [x1=0] - `x` coordinate of the first point.
- * @param {number} [y1=0] - `y` coordinate of the first point.
- * @param {number} [x2=0] - `x` coordinate of the second point.
- * @param {number} [y2=0] - `y` coordinate of the second point.
- * @param {number} [x3=0] - `x` coordinate of the third point.
- * @param {number} [y3=0] - `y` coordinate of the third point.
- */
-export default class Triangle {
+import { Contains } from './Contains.js';
+
+class Triangle {
     constructor(x1 = 0, y1 = 0, x2 = 0, y2 = 0, x3 = 0, y3 = 0) {
-        this.set(x1, y1, x2, y2, x2, y3);
+        this.set(x1, y1, x2, y2, x3, y3);
     }
     set(x1 = 0, y1 = 0, x2 = 0, y2 = 0, x3 = 0, y3 = 0) {
         this.x1 = x1;
@@ -111,4 +89,5 @@ export default class Triangle {
         this.y3 -= diff;
     }
 }
-//# sourceMappingURL=Triangle.js.map
+
+export { Triangle };

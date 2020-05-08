@@ -1,9 +1,11 @@
-import { IGameObject } from '../gameobjects/gameobject/IGameObject';
-import { IInteractiveArea } from './IInteractiveArea';
+import { IGameObject } from '../gameobjects/IGameObject';
 
-export function SetInteractive (child: IGameObject, hitArea?: IInteractiveArea)
+export function SetInteractive <T extends IGameObject> (...children: T[]): T[]
 {
-    child.inputEnabled = true;
-    child.inputHitArea = hitArea;
-    child.inputEnabledChildren = true;
+    children.forEach(child =>
+    {
+        child.input.enabled = true;
+    });
+
+    return children;
 }

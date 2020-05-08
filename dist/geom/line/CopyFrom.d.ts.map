@@ -1,1 +1,1 @@
-{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../../src/geom/line/CopyFrom.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;;;;GAYG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,MAAM,EAAE,KAAK,EAAE,IAAI,EAAE,KAAK,GAAG,KAAK,CAGnE"}
+{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../src/geom/line/CopyFrom.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAehC,wBAAgB,QAAQ,CAAE,MAAM,EAAE,KAAK,EAAE,IAAI,EAAE,KAAK,GAAG,KAAK,CAG3D"}

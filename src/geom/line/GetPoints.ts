@@ -4,8 +4,8 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { Length } from './Length';
 import { ILine } from './ILine';
+import { Length } from './Length';
 import { Vec2 } from '../../math/vec2/Vec2';
 
 /**

@@ -1,5 +1,6 @@
-import GL from './GL';
-export default function UpdateGLTexture(source, dstTexture, flipY = false) {
+import { GL } from './GL.js';
+
+function UpdateGLTexture(source, dstTexture, flipY = false) {
     const gl = GL.get();
     const width = source.width;
     const height = source.height;
@@ -10,4 +11,5 @@ export default function UpdateGLTexture(source, dstTexture, flipY = false) {
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, source);
     }
 }
-//# sourceMappingURL=UpdateGLTexture.js.map
+
+export { UpdateGLTexture };

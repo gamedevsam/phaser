@@ -1,11 +1,9 @@
+import { BindingQueue } from '../renderer/BindingQueue';
 import { Frame } from './Frame';
-import { SetGLTextureFilterMode } from '../renderer/webgl1/SetGLTextureFilterMode';
-import { DeleteGLTexture } from '../renderer/webgl1/DeleteGLTexture';
-import { DeleteFramebuffer } from '../renderer/webgl1/DeleteFramebuffer';
-import { CreateGLTexture } from '../renderer/webgl1/CreateGLTexture';
-import { UpdateGLTexture } from '../renderer/webgl1/UpdateGLTexture';
+import { IGLTextureBinding } from './IGLTextureBinding';
+import { ITexture } from './ITexture';
 
-export class Texture
+export class Texture implements ITexture
 {
     //  Unique identifier of this Texture, if stored in the Texture Manager
     key: string = '';
@@ -15,16 +13,13 @@ export class Texture
 
     image: TexImageSource;
 
-    glTexture: WebGLTexture;
-    glIndex: number = 0;
-    glIndexCounter: number = -1;
-    glFramebuffer: WebGLFramebuffer;
+    binding: IGLTextureBinding;
 
     firstFrame: Frame;
 
     frames: Map<string | number, Frame>;
 
-    data: any;
+    data: unknown;
 
     constructor (image?: TexImageSource, width?: number, height?: number)
     {
@@ -43,10 +38,12 @@ export class Texture
 
         this.data = {};
 
-        this.add('__BASE', 0, 0, width, height);
+        this.addFrame('__BASE', 0, 0, width, height);
+
+        BindingQueue.add(this);
     }
 
-    add (key: string | number, x: number, y: number, width: number, height: number): Frame
+    addFrame (key: string | number, x: number, y: number, width: number, height: number): Frame
     {
         if (this.frames.has(key))
         {
@@ -65,7 +62,7 @@ export class Texture
         return frame;
     }
 
-    get (key?: string | number | Frame): Frame
+    getFrame (key?: string | number | Frame): Frame
     {
         //  null, undefined, empty string, zero
         if (!key)
@@ -82,41 +79,12 @@ export class Texture
 
         if (!frame)
         {
-            console.warn('Texture.frame missing: ' + key);
+            console.warn('Frame missing: ' + key);
 
             frame = this.firstFrame;
         }
 
         return frame;
-    }
-
-    getFrames (frames: string[] | number[]): Frame[]
-    {
-        const output: Frame[] = [];
-
-        frames.forEach((key: string | number) =>
-        {
-            output.push(this.get(key));
-        });
-
-        return output;
-    }
-
-    getFramesInRange (prefix: string, start: number, end: number, zeroPad: number = 0, suffix: string = ''): Frame[]
-    {
-        const frameKeys = [];
-
-        const diff: number = (start < end) ? 1 : -1;
-
-        //  Adjust because we use i !== end in the for loop
-        end += diff;
-
-        for (let i: number = start; i !== end; i += diff)
-        {
-            frameKeys.push(prefix + i.toString().padStart(zeroPad, '0') + suffix);
-        }
-
-        return this.getFrames(frameKeys);
     }
 
     setSize (width: number, height: number): void
@@ -129,42 +97,17 @@ export class Texture
         frame.setSize(width, height);
     }
 
-    setFilter (linear: boolean): void
-    {
-        SetGLTextureFilterMode(this.glTexture, linear);
-    }
-    
-    createGL (): void
-    {
-        if (this.glTexture)
-        {
-            DeleteGLTexture(this.glTexture);
-        }
-
-        this.glTexture = CreateGLTexture(this.image);
-    }
-
-    updateGL (): void
-    {
-        if (!this.glTexture)
-        {
-            this.glTexture = CreateGLTexture(this.image);
-        }
-        else
-        {
-            UpdateGLTexture(this.image, this.glTexture);
-        }
-    }
-
     destroy (): void
     {
+        if (this.binding)
+        {
+            this.binding.destroy();
+        }
+
         this.frames.clear();
 
+        this.data = null;
         this.image = null;
         this.firstFrame = null;
-        this.data = null;
-
-        DeleteGLTexture(this.glTexture);
-        DeleteFramebuffer(this.glFramebuffer);
     }
 }

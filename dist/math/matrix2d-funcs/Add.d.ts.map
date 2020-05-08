@@ -1,1 +1,1 @@
-{"version":3,"file":"Add.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d-funcs/Add.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,uBAAuB,CAAC;AAC9C,OAAO,QAAQ,MAAM,sBAAsB,CAAC;AAI5C,MAAM,CAAC,OAAO,UAAU,GAAG,CAAE,CAAC,EAAE,SAAS,EAAE,CAAC,EAAE,SAAS,GAAG,QAAQ,CAUjE"}
+{"version":3,"file":"Add.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d-funcs/Add.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,uBAAuB,CAAC;AAClD,OAAO,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAIhD,wBAAgB,GAAG,CAAE,CAAC,EAAE,SAAS,EAAE,CAAC,EAAE,SAAS,GAAG,QAAQ,CAUzD"}

@@ -1,9 +1,8 @@
-import Game from './Game';
-declare function get(): Game;
-declare function set(game: Game | null): void;
-declare const _default: {
-    get: typeof get;
-    set: typeof set;
+import { Game } from './Game';
+export declare const GameInstance: {
+    get: () => Game;
+    set: (game: Game) => void;
+    getFrame: () => number;
+    setFrame: (current: number) => void;
 };
-export default _default;
 //# sourceMappingURL=GameInstance.d.ts.map

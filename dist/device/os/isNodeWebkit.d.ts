@@ -1,2 +1,2 @@
-export declare function isNodeWebkit(): boolean;
-//# sourceMappingURL=isNodeWebkit.d.ts.map
+export declare function IsNodeWebkit(): boolean;
+//# sourceMappingURL=IsNodeWebkit.d.ts.map

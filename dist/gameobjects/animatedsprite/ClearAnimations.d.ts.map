@@ -1,1 +1,1 @@
-{"version":3,"file":"ClearAnimations.d.ts","sourceRoot":"","sources":["../../../src/gameobjects/animatedsprite/ClearAnimations.ts"],"names":[],"mappings":"AAAA,OAAO,eAAe,MAAM,mBAAmB,CAAC;AAEhD,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,GAAG,MAAM,EAAE,eAAe,EAAE,QAOpE"}
+{"version":3,"file":"ClearAnimations.d.ts","sourceRoot":"","sources":["../../src/gameobjects/animatedsprite/ClearAnimations.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AAEpD,wBAAgB,eAAe,CAAE,GAAG,MAAM,EAAE,eAAe,EAAE,GAAG,IAAI,CAMnE"}

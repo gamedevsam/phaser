@@ -1,1 +1,1 @@
-{"version":3,"file":"AtlasParser.d.ts","sourceRoot":"","sources":["../../../src/textures/parsers/AtlasParser.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,YAAY,CAAC;AAGjC,MAAM,CAAC,OAAO,UAAU,WAAW,CAAE,OAAO,EAAE,OAAO,EAAE,IAAI,EAAE,GAAG,QAgE/D"}
+{"version":3,"file":"AtlasParser.d.ts","sourceRoot":"","sources":["../../src/textures/parsers/AtlasParser.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,OAAO,EAAE,MAAM,YAAY,CAAC;AAGrC,wBAAgB,WAAW,CAAE,OAAO,EAAE,OAAO,EAAE,IAAI,EAAE,GAAG,GAAG,IAAI,CAgE9D"}

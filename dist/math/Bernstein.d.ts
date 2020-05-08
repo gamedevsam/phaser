@@ -1,18 +1,2 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-/**
- * Calculates the Bernstein basis from the three factorial coefficients.
- *
- * @function Phaser.Math.Bernstein
- * @since 3.0.0
- *
- * @param {number} n - The first value.
- * @param {number} i - The second value.
- *
- * @return {number} The Bernstein basis of Factorial(n) / Factorial(i) / Factorial(n - i)
- */
-export default function Bernstein(n: number, i: number): number;
+export declare function Bernstein(n: number, i: number): number;
 //# sourceMappingURL=Bernstein.d.ts.map

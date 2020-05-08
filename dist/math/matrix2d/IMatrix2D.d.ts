@@ -1,4 +1,4 @@
-export default interface IMatrix2D {
+export interface IMatrix2D {
     a: number;
     b: number;
     c: number;

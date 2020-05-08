@@ -5,12 +5,12 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { GetLineToCircle } from './GetLineToCircle';
-import { TriangleToCircle } from './TriangleToCircle';
-import { ITriangle } from '../triangle/ITriangle';
-import { ICircle } from '../circle/ICircle';
-import { Vec2 } from '../../math/vec2/Vec2';
 import { GetEdges } from '../triangle/GetEdges';
+import { GetLineToCircle } from './GetLineToCircle';
+import { ICircle } from '../circle/ICircle';
+import { ITriangle } from '../triangle/ITriangle';
+import { TriangleToCircle } from './TriangleToCircle';
+import { Vec2 } from '../../math/vec2/Vec2';
 
 /**
  * Checks if a Triangle and a Circle intersect, and returns the intersection points as a Point object array.

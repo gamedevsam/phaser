@@ -5,8 +5,8 @@
  */
 
 import { Centroid } from './Centroid';
-import { Offset } from './Offset';
 import { ITriangle } from './ITriangle';
+import { Offset } from './Offset';
 import { Vec2 } from '../../math/vec2/Vec2';
 
 /**

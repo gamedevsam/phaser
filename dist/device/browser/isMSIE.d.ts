@@ -1,5 +1,5 @@
-export declare function isMSIE(): {
+export declare function IsMSIE(): {
     ie: boolean;
     ieVersion: number;
 };
-//# sourceMappingURL=isMSIE.d.ts.map
+//# sourceMappingURL=IsMSIE.d.ts.map

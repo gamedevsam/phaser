@@ -1,9 +1,10 @@
-import File from '../File';
-import ImageTagLoader from '../ImageTagLoader';
-import GameInstance from '../../GameInstance';
-import GetURL from '../GetURL';
-import SpriteSheetParser from '../../textures/parsers/SpriteSheetParser';
-export default function SpriteSheetFile(key, url, frameConfig) {
+import { TextureManagerInstance } from '../../textures/TextureManagerInstance.js';
+import { SpriteSheetParser } from '../../textures/parsers/SpriteSheetParser.js';
+import { File } from '../File.js';
+import { GetURL } from '../GetURL.js';
+import { ImageTagLoader } from '../ImageTagLoader.js';
+
+function SpriteSheetFile(key, url, frameConfig) {
     const file = new File(key, url);
     file.load = () => {
         file.url = GetURL(file.key, file.url, '.png', file.loader);
@@ -11,13 +12,13 @@ export default function SpriteSheetFile(key, url, frameConfig) {
             file.crossOrigin = file.loader.crossOrigin;
         }
         return new Promise((resolve, reject) => {
-            const game = GameInstance.get();
-            if (game.textures.has(file.key)) {
+            const textureManager = TextureManagerInstance.get();
+            if (textureManager.has(file.key)) {
                 resolve(file);
             }
             else {
                 ImageTagLoader(file).then(file => {
-                    const texture = game.textures.add(file.key, file.data);
+                    const texture = textureManager.add(file.key, file.data);
                     if (texture) {
                         SpriteSheetParser(texture, 0, 0, texture.width, texture.height, frameConfig);
                         resolve(file);
@@ -33,4 +34,5 @@ export default function SpriteSheetFile(key, url, frameConfig) {
     };
     return file;
 }
-//# sourceMappingURL=SpriteSheetFile.js.map
+
+export { SpriteSheetFile };

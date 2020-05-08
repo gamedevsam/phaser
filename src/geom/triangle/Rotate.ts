@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { RotateAroundXY } from './RotateAroundXY';
-import { InCenter } from './InCenter';
 import { ITriangle } from './ITriangle';
+import { InCenter } from './InCenter';
+import { RotateAroundXY } from './RotateAroundXY';
 
 /**
  * Rotates a Triangle about its incenter, which is the point at which its three angle bisectors meet.

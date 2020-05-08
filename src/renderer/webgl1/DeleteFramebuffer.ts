@@ -1,10 +1,10 @@
 import { GL } from './GL';
 
-export function DeleteFramebuffer (framebuffer: WebGLFramebuffer)
+export function DeleteFramebuffer (framebuffer: WebGLFramebuffer): void
 {
     const gl = GL.get();
 
-    if (gl.isFramebuffer(framebuffer))
+    if (gl && gl.isFramebuffer(framebuffer))
     {
         gl.deleteFramebuffer(framebuffer);
     }

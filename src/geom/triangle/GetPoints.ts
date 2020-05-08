@@ -4,10 +4,10 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { Length } from '../line/Length';
-import { ITriangle } from './ITriangle';
-import { Vec2 } from '../../math/vec2/Vec2';
 import { GetEdges } from './GetEdges';
+import { ITriangle } from './ITriangle';
+import { Length } from '../line/Length';
+import { Vec2 } from '../../math/vec2/Vec2';
 
 /**
  * Returns an array of evenly spaced points on the perimeter of a Triangle.
@@ -50,9 +50,9 @@ export function GetPoints (triangle: ITriangle, quantity: number, stepRate: numb
         {
             //  Line 1
             localPosition = p / length1;
-    
+
             const { x1, y1, x2, y2 } = line1;
-    
+
             point = new Vec2(
                 x1 + (x2 - x1) * localPosition,
                 y1 + (y2 - y1) * localPosition
@@ -63,9 +63,9 @@ export function GetPoints (triangle: ITriangle, quantity: number, stepRate: numb
             //  Line 3
             p -= length1 + length2;
             localPosition = p / length3;
-    
+
             const { x1, y1, x2, y2 } = line3;
-    
+
             point = new Vec2(
                 x1 + (x2 - x1) * localPosition,
                 y1 + (y2 - y1) * localPosition
@@ -76,9 +76,9 @@ export function GetPoints (triangle: ITriangle, quantity: number, stepRate: numb
             //  Line 2
             p -= length1;
             localPosition = p / length2;
-    
+
             const { x1, y1, x2, y2 } = line2;
-    
+
             point = new Vec2(
                 x1 + (x2 - x1) * localPosition,
                 y1 + (y2 - y1) * localPosition

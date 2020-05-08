@@ -1,11 +1,11 @@
-export interface IDeviceOSResult {
+export interface IDeviceOSResult
+{
     android: boolean;
     chromeOS: boolean;
     cordova: boolean;
     crosswalk: boolean;
     desktop: boolean;
     ejecta: boolean;
-    electron: boolean;
     iOS: boolean;
     iOSVersion: number;
     iPad: boolean;

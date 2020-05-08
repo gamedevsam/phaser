@@ -1,1 +1,1 @@
-{"version":3,"file":"Subtract.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d/Subtract.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AAIpC,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,MAAM,EAAE,SAAS,EAAE,GAAG,EAAE,SAAS,GAAG,SAAS,CAY9E"}
+{"version":3,"file":"Subtract.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d/Subtract.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAIxC,wBAAgB,QAAQ,CAAE,MAAM,EAAE,SAAS,EAAE,GAAG,EAAE,SAAS,GAAG,SAAS,CAYtE"}

@@ -1,1 +1,1 @@
-{"version":3,"file":"Area.d.ts","sourceRoot":"","sources":["../../../src/geom/ellipse/Area.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,QAAQ,MAAM,YAAY,CAAC;AAElC;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,IAAI,CAAE,OAAO,EAAE,QAAQ,GAAG,MAAM,CASvD"}
+{"version":3,"file":"Area.d.ts","sourceRoot":"","sources":["../../src/geom/ellipse/Area.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAYtC,wBAAgB,IAAI,CAAE,OAAO,EAAE,QAAQ,GAAG,MAAM,CAS/C"}

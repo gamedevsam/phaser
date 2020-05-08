@@ -1,1 +1,1 @@
-{"version":3,"file":"Identity.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d-funcs/Identity.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,MAAM,sBAAsB,CAAC;AAE5C,MAAM,CAAC,OAAO,UAAU,QAAQ,IAAK,QAAQ,CAG5C"}
+{"version":3,"file":"Identity.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d-funcs/Identity.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAEhD,wBAAgB,QAAQ,IAAK,QAAQ,CAGpC"}

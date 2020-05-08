@@ -1,1 +1,1 @@
-{"version":3,"file":"Zero.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d-funcs/Zero.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,MAAM,sBAAsB,CAAC;AAE5C,MAAM,CAAC,OAAO,UAAU,IAAI,IAAK,QAAQ,CAGxC"}
+{"version":3,"file":"Zero.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d-funcs/Zero.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAEhD,wBAAgB,IAAI,IAAK,QAAQ,CAGhC"}

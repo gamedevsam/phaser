@@ -4,11 +4,11 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { LineToCircle } from './LineToCircle';
 import { Contains } from '../triangle/Contains';
-import { ITriangle } from '../triangle/ITriangle';
-import { ICircle } from '../circle/ICircle';
 import { GetEdges } from '../triangle/GetEdges';
+import { ICircle } from '../circle/ICircle';
+import { ITriangle } from '../triangle/ITriangle';
+import { LineToCircle } from './LineToCircle';
 
 /**
  * Checks if a Triangle and a Circle intersect.

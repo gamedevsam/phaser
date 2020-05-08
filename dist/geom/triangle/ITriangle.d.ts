@@ -1,4 +1,4 @@
-export default interface ITriangle {
+export interface ITriangle {
     x1: number;
     y1: number;
     x2: number;

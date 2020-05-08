@@ -5,10 +5,10 @@
  */
 
 import { Contains } from '../circle/Contains';
-import { Vec2 } from '../../math/vec2/Vec2';
+import { ICircle } from '../circle/ICircle';
 import { ILine } from '../line/ILine';
 import { IVec2 } from '../../math/vec2/IVec2';
-import { ICircle } from '../circle/ICircle';
+import { Vec2 } from '../../math/vec2/Vec2';
 
 const tmp: Vec2 = new Vec2();
 
@@ -69,10 +69,10 @@ export function LineToCircle (line: ILine, circle: ICircle, nearest?: IVec2): bo
     }
 
     nearest.set(x1 + px, y1 + py);
-    
+
     //  len2 of p
     const pLen2 = (px * px) + (py * py);
-    
+
     return (
         pLen2 <= dLen2 &&
         ((px * dx) + (py * dy)) >= 0 &&

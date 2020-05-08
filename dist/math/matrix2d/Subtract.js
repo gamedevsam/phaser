@@ -1,5 +1,4 @@
-//  Subtracts the src Matrix from the target Matrix and returns the target.
-export default function Subtract(target, src) {
+function Subtract(target, src) {
     const { a, b, c, d, tx, ty } = src;
     target.a -= a;
     target.b -= b;
@@ -9,4 +8,5 @@ export default function Subtract(target, src) {
     target.ty -= ty;
     return target;
 }
-//# sourceMappingURL=Subtract.js.map
+
+export { Subtract };

@@ -1,1 +1,1 @@
-{"version":3,"file":"BackgroundColor.d.ts","sourceRoot":"","sources":["../../src/config/BackgroundColor.ts"],"names":[],"mappings":"AAEA,iBAAS,eAAe,CAAE,KAAK,GAAE,MAAU,cAO1C;AAED,iBAAS,kBAAkB,IAAK,MAAM,CAGrC;AAED,OAAO,EACH,eAAe,EACf,kBAAkB,EACrB,CAAA"}
+{"version":3,"file":"BackgroundColor.d.ts","sourceRoot":"","sources":["../src/config/BackgroundColor.ts"],"names":[],"mappings":"AAEA,iBAAS,eAAe,CAAE,KAAK,GAAE,MAAU,GAAG,MAAM,IAAI,CAMvD;AAED,iBAAS,kBAAkB,IAAK,MAAM,CAGrC;AAED,OAAO,EACH,eAAe,EACf,kBAAkB,EACrB,CAAC"}

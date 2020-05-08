@@ -4,17 +4,17 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { ITriangle } from './ITriangle';
-import { Vec2 } from '../../math/vec2/Vec2';
-import { IVec2 } from '../../math/vec2/IVec2';
 import { Contains } from './Contains';
+import { ITriangle } from './ITriangle';
+import { IVec2 } from '../../math/vec2/IVec2';
+import { Vec2 } from '../../math/vec2/Vec2';
 
 /**
  * Filters an array of point-like objects to only those contained within a triangle.
  * If `returnFirst` is true, will return an array containing only the first point in the provided array that is within the triangle (or an empty array if there are no such points).
- * 
+ *
  * http://www.blackpawn.com/texts/pointinpoly/
- * 
+ *
  * points is an array of Point-like objects with public x/y properties
  * returns an array containing all points that are within the triangle, or an empty array if none
  * if 'returnFirst' is true it will return after the first point within the triangle is found

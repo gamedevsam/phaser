@@ -1,1 +1,1 @@
-{"version":3,"file":"Offset.d.ts","sourceRoot":"","sources":["../../../src/geom/line/Offset.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,IAAI,EAAE,KAAK,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,KAAK,CASxE"}
+{"version":3,"file":"Offset.d.ts","sourceRoot":"","sources":["../../src/geom/line/Offset.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAgBhC,wBAAgB,MAAM,CAAE,IAAI,EAAE,KAAK,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,KAAK,CAShE"}

@@ -1,1 +1,1 @@
-{"version":3,"file":"MergeRect.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/MergeRect.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,MAAM,EAAE,UAAU,EAAE,MAAM,EAAE,UAAU,GAAG,UAAU,CAarF"}
+{"version":3,"file":"MergeRect.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/MergeRect.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAgB1C,wBAAgB,SAAS,CAAE,MAAM,EAAE,UAAU,EAAE,MAAM,EAAE,UAAU,GAAG,UAAU,CAa7E"}

@@ -13,7 +13,7 @@ import { Texture } from '../Texture';
  *
  * @return {integer} The parsed value.
  */
-function getValue (node: any, attribute: string): number
+function GetValue (node: any, attribute: string): number
 {
     return parseInt(node.getAttribute(attribute), 10);
 }
@@ -39,7 +39,7 @@ type BitmapData = {
     chars: Record<number, BitmapCharacter>;
 };
 
-export function BitmapTextParser (texture: Texture, xml: XMLDocument, frame?: Frame)
+export function BitmapTextParser (texture: Texture, xml: XMLDocument, frame?: Frame): BitmapData
 {
     const xSpacing = 0;
     const ySpacing = 0;
@@ -49,8 +49,8 @@ export function BitmapTextParser (texture: Texture, xml: XMLDocument, frame?: Fr
 
     const data: BitmapData = {
         font: info.getAttribute('face'),
-        size: getValue(info, 'size'),
-        lineHeight: getValue(common, 'lineHeight') + ySpacing,
+        size: GetValue(info, 'size'),
+        lineHeight: GetValue(common, 'lineHeight') + ySpacing,
         chars: {}
     };
 
@@ -66,13 +66,13 @@ export function BitmapTextParser (texture: Texture, xml: XMLDocument, frame?: Fr
 
     for (let i: number = 0; i < letters.length; i++)
     {
-        let node = letters[i];
+        const node = letters[i];
 
-        let charCode = getValue(node, 'id');
-        let x = getValue(node, 'x');
-        let y = getValue(node, 'y');
-        let width = getValue(node, 'width');
-        let height = getValue(node, 'height');
+        const charCode = GetValue(node, 'id');
+        const x = GetValue(node, 'x');
+        const y = GetValue(node, 'y');
+        const width = GetValue(node, 'width');
+        const height = GetValue(node, 'height');
 
         //  Handle frame trim issues
 
@@ -97,14 +97,14 @@ export function BitmapTextParser (texture: Texture, xml: XMLDocument, frame?: Fr
             height,
             // centerX: Math.floor(width / 2),
             // centerY: Math.floor(height / 2),
-            xOffset: getValue(node, 'xoffset'),
-            yOffset: getValue(node, 'yoffset'),
-            xAdvance: getValue(node, 'xadvance') + xSpacing,
+            xOffset: GetValue(node, 'xoffset'),
+            yOffset: GetValue(node, 'yoffset'),
+            xAdvance: GetValue(node, 'xadvance') + xSpacing,
             // data: {},
             kerning: {}
         };
 
-        texture.add(charCode, x, y, width, height);
+        texture.addFrame(charCode, x, y, width, height);
     }
 
     /*
@@ -127,11 +127,11 @@ export function BitmapTextParser (texture: Texture, xml: XMLDocument, frame?: Fr
 
     for (let i: number = 0; i < kernings.length; i++)
     {
-        let kern = kernings[i];
+        const kern = kernings[i];
 
-        let first = getValue(kern, 'first');
-        let second = getValue(kern, 'second');
-        let amount = getValue(kern, 'amount');
+        const first = GetValue(kern, 'first');
+        const second = GetValue(kern, 'second');
+        const amount = GetValue(kern, 'amount');
 
         data.chars[second].kerning[first] = amount;
     }

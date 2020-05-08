@@ -1,1 +1,1 @@
-{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../../src/geom/circle/CopyFrom.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,OAAO,MAAM,WAAW,CAAC;AAEhC;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,MAAM,EAAE,OAAO,EAAE,IAAI,EAAE,OAAO,GAAG,OAAO,CAGzE"}
+{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../src/geom/circle/CopyFrom.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AAgBpC,wBAAgB,QAAQ,CAAE,MAAM,EAAE,OAAO,EAAE,IAAI,EAAE,OAAO,GAAG,OAAO,CAGjE"}

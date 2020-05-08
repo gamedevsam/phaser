@@ -1,4 +1,4 @@
-export default function DOMContentLoaded(callback) {
+function DOMContentLoaded(callback) {
     const readyState = document.readyState;
     if (readyState === 'complete' || readyState === 'interactive') {
         callback();
@@ -21,4 +21,5 @@ export default function DOMContentLoaded(callback) {
         window.addEventListener('load', check, true);
     }
 }
-//# sourceMappingURL=DOMContentLoaded.js.map
+
+export { DOMContentLoaded };

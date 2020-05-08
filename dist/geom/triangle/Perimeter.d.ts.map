@@ -1,1 +1,1 @@
-{"version":3,"file":"Perimeter.d.ts","sourceRoot":"","sources":["../../../src/geom/triangle/Perimeter.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAGH,OAAO,SAAS,MAAM,aAAa,CAAC;AAGpC;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,QAAQ,EAAE,SAAS,GAAG,MAAM,CAK9D"}
+{"version":3,"file":"Perimeter.d.ts","sourceRoot":"","sources":["../../src/geom/triangle/Perimeter.ts"],"names":[],"mappings":"AAOA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAcxC,wBAAgB,SAAS,CAAE,QAAQ,EAAE,SAAS,GAAG,MAAM,CAKtD"}

@@ -1,1 +1,1 @@
-{"version":3,"file":"canPlayHLSVideo.d.ts","sourceRoot":"","sources":["../../../src/device/video/canPlayHLSVideo.ts"],"names":[],"mappings":"AAAA,wBAAgB,eAAe,CAAE,YAAY,GAAE,gBAAkD,GAAG,OAAO,CAG1G"}
+{"version":3,"file":"CanPlayHLSVideo.d.ts","sourceRoot":"","sources":["../../src/device/video/CanPlayHLSVideo.ts"],"names":[],"mappings":"AAEA,wBAAgB,eAAe,CAAE,YAAY,CAAC,EAAE,gBAAgB,GAAG,OAAO,CAGzE"}

@@ -1,5 +1,5 @@
-import Texture from './Texture';
-export default class TextureManager {
+import { Texture } from './Texture';
+export declare class TextureManager {
     textures: Map<string, Texture>;
     constructor();
     private createDefaultTextures;

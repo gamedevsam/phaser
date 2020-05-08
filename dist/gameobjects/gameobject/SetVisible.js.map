@@ -1,1 +1,0 @@
-{"version":3,"file":"SetVisible.js","sourceRoot":"","sources":["../../../src/gameobjects/gameobject/SetVisible.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,UAAU,CAAE,OAAgB,EAAE,GAAG,KAAoB;IAEzE,KAAK,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAEnB,MAAM,CAAC,OAAO,GAAG,OAAO,CAAC;IAE7B,CAAC,CAAC,CAAC;AACP,CAAC"}

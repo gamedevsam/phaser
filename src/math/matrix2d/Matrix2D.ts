@@ -19,7 +19,7 @@ export class Matrix2D
 
     /**
      * Creates an instance of Matrix2D.
-     * 
+     *
      * @param {number} [a=1] - X scale.
      * @param {number} [b=0] - X skew.
      * @param {number} [c=0] - Y skew.
@@ -33,7 +33,7 @@ export class Matrix2D
         this.set(a, b, c, d, tx, ty);
     }
 
-    set (a: number = 1, b: number = 0, c: number = 0, d: number = 1, tx: number = 0, ty: number = 0): Matrix2D
+    set (a: number = 1, b: number = 0, c: number = 0, d: number = 1, tx: number = 0, ty: number = 0): this
     {
         this.a = a;
         this.b = b;
@@ -45,7 +45,7 @@ export class Matrix2D
         return this;
     }
 
-    identity (): Matrix2D
+    identity (): this
     {
         return this.set();
     }
@@ -60,10 +60,10 @@ export class Matrix2D
         return this.set(src[0], src[1], src[2], src[3], src[4], src[5]);
     }
 
-    [Symbol.iterator] ()
-    {
-        const data = this.toArray();
+    // [Symbol.iterator] ()
+    // {
+    //     const data = this.toArray();
 
-        return data[Symbol.iterator]();
-    }
+    //     return data[Symbol.iterator]();
+    // }
 }

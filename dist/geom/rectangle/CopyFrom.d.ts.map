@@ -1,1 +1,1 @@
-{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/CopyFrom.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;;;GAYG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,MAAM,EAAE,UAAU,EAAE,IAAI,EAAE,UAAU,GAAG,UAAU,CAGlF"}
+{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/CopyFrom.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAe1C,wBAAgB,QAAQ,CAAE,MAAM,EAAE,UAAU,EAAE,IAAI,EAAE,UAAU,GAAG,UAAU,CAG1E"}

@@ -1,11 +1,15 @@
-import CheckShaderMaxIfStatements from './shaders/CheckShaderMaxIfStatements';
-import MultiTextureQuadShader from './shaders/MultiTextureQuadShader';
-import Matrix2dEqual from '../../math/matrix2d-funcs/ExactEquals';
-import Ortho from './Ortho';
-import GL from './GL';
-import SpriteRenderWebGL from '../../gameobjects/sprite/RenderWebGL';
-import { GetWidth, GetHeight, GetResolution, GetBackgroundColor, GetWebGLContext } from '../../config';
-export default class WebGLRenderer {
+import { GetBackgroundColor } from '../../config/BackgroundColor.js';
+import { GetWidth, GetHeight, GetResolution } from '../../config/Size.js';
+import { GetWebGLContext } from '../../config/WebGLContext.js';
+import { CheckShaderMaxIfStatements } from './shaders/CheckShaderMaxIfStatements.js';
+import { GL } from './GL.js';
+import { ExactEquals } from '../../math/matrix2d-funcs/ExactEquals.js';
+import { MultiTextureQuadShader } from './shaders/MultiTextureQuadShader.js';
+import { Ortho } from './Ortho.js';
+import '../../gameobjects/sprite/UploadBuffers.js';
+import { RenderWebGL } from '../../gameobjects/sprite/RenderWebGL.js';
+
+class WebGLRenderer {
     constructor() {
         this.clearColor = [0, 0, 0, 1];
         this.flushTotal = 0;
@@ -77,20 +81,19 @@ export default class WebGLRenderer {
     }
     getMaxTextures() {
         const gl = this.gl;
-        let maxTextures = CheckShaderMaxIfStatements(gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS), gl);
+        const maxTextures = CheckShaderMaxIfStatements(gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS), gl);
         const tempTextures = this.tempTextures;
         if (tempTextures.length) {
             tempTextures.forEach(texture => {
                 gl.deleteTexture(texture);
             });
         }
-        //  Create temp textures to stop WebGL errors on mac os
-        for (let i = 0; i < maxTextures; i++) {
-            let tempTexture = gl.createTexture();
-            gl.activeTexture(gl.TEXTURE0 + i);
+        for (let texturesIndex = 0; texturesIndex < maxTextures; texturesIndex++) {
+            const tempTexture = gl.createTexture();
+            gl.activeTexture(gl.TEXTURE0 + texturesIndex);
             gl.bindTexture(gl.TEXTURE_2D, tempTexture);
             gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 255, 255]));
-            tempTextures[i] = tempTexture;
+            tempTextures[texturesIndex] = tempTexture;
         }
         this.maxTextures = maxTextures;
         this.textureIndex = Array.from(Array(maxTextures).keys());
@@ -107,17 +110,13 @@ export default class WebGLRenderer {
         this.startActiveTexture++;
         this.flushTotal = 0;
     }
-    render(sceneList, dirtyFrame, dirtyCameras) {
+    render(renderData) {
         if (this.contextLost) {
             return;
         }
         const gl = this.gl;
-        const flushTotal = this.flushTotal;
-        //  This is only here because if we don't do _something_ with the context, GL Spector can't see it.
-        //  Technically, we could move it below the dirty bail-out below.
         this.reset();
-        //  Cache 1 - Nothing dirty? Display the previous frame
-        if (this.optimizeRedraw && dirtyFrame === 0 && dirtyCameras === 0) {
+        if (this.optimizeRedraw && renderData.numDirtyFrames === 0 && renderData.numDirtyCameras === 0) {
             return;
         }
         const shader = this.shader;
@@ -127,40 +126,19 @@ export default class WebGLRenderer {
             gl.clear(gl.COLOR_BUFFER_BIT);
         }
         const projectionMatrix = this.projectionMatrix;
-        //  Cache 2 - Only one dirty camera and one flush? We can re-use the buffers
-        /*
-        if (dirtyCameras === 1 && dirtyFrame === 0 && flushTotal === 1)
-        {
-            //  Total items rendered in the previous frame
-            const count = shader.prevCount;
-
-            shader.bind(projectionMatrix, sceneList[0].matrix);
-
-            shader.draw(count);
-
-            shader.prevCount = count;
-
-            this.flushTotal = 1;
-
-            return;
-        }
-        */
         let prevCamera;
-        for (let c = 0; c < sceneList.length; c += 2) {
-            let camera = sceneList[c];
-            let list = sceneList[c + 1];
-            //  This only needs rebinding if the camera matrix is different to before
-            if (!prevCamera || !Matrix2dEqual(camera.worldTransform, prevCamera.worldTransform)) {
+        const worlds = renderData.worldData;
+        for (let i = 0; i < worlds.length; i++) {
+            const { camera, renderList, numRendered } = worlds[i];
+            if (!prevCamera || !ExactEquals(camera.worldTransform, prevCamera.worldTransform)) {
                 shader.flush();
                 shader.bind(projectionMatrix, camera.matrix);
                 prevCamera = camera;
             }
-            //  Process the render list
-            for (let i = 0; i < list.length; i++) {
-                SpriteRenderWebGL(list[i], this, shader, this.startActiveTexture);
+            for (let s = 0; s < numRendered; s++) {
+                RenderWebGL(renderList[s], this, shader, this.startActiveTexture);
             }
         }
-        //  One final sweep
         shader.flush();
     }
     resetTextures(texture) {
@@ -170,7 +148,6 @@ export default class WebGLRenderer {
         this.currentActiveTexture = 0;
         this.startActiveTexture++;
         if (texture) {
-            //  Set this texture as texture0
             active[0] = texture;
             gl.activeTexture(gl.TEXTURE0);
             gl.bindTexture(gl.TEXTURE_2D, texture.glTexture);
@@ -181,7 +158,6 @@ export default class WebGLRenderer {
         const gl = this.gl;
         texture.glIndexCounter = this.startActiveTexture;
         if (this.currentActiveTexture < this.maxTextures) {
-            //  Make this texture active
             this.activeTextures[this.currentActiveTexture] = texture;
             texture.glIndex = this.currentActiveTexture;
             gl.activeTexture(gl.TEXTURE0 + this.currentActiveTexture);
@@ -189,10 +165,10 @@ export default class WebGLRenderer {
             this.currentActiveTexture++;
         }
         else {
-            //  We're out of textures, so flush the batch and reset them all
             this.shader.flush();
             this.resetTextures(texture);
         }
     }
 }
-//# sourceMappingURL=WebGLRenderer.js.map
+
+export { WebGLRenderer };

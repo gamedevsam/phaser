@@ -4,8 +4,8 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { RotateAroundXY } from './RotateAroundXY';
 import { ILine } from './ILine';
+import { RotateAroundXY } from './RotateAroundXY';
 
 /**
  * Rotate a line around its midpoint by the given angle in radians.

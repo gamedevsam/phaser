@@ -1,6 +1,8 @@
-import World from '../world/World';
-import IBaseScene from './IBaseScene';
-export default interface IScene extends IBaseScene {
-    world: World;
+import { Game } from '..';
+import { IEventInstance } from '../events/IEventInstance';
+export interface IScene {
+    key?: string;
+    game: Game;
+    events: Map<string, Set<IEventInstance>>;
 }
 //# sourceMappingURL=IScene.d.ts.map

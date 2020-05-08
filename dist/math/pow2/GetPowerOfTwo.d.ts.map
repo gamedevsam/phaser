@@ -1,1 +1,1 @@
-{"version":3,"file":"GetPowerOfTwo.d.ts","sourceRoot":"","sources":["../../../src/math/pow2/GetPowerOfTwo.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,aAAa,CAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAK5D"}
+{"version":3,"file":"GetPowerOfTwo.d.ts","sourceRoot":"","sources":["../../src/math/pow2/GetPowerOfTwo.ts"],"names":[],"mappings":"AAgBA,wBAAgB,aAAa,CAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAKpD"}

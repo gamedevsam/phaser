@@ -1,12 +1,11 @@
 let gl;
-function get() {
-    return gl;
-}
-function set(context) {
-    gl = context;
-}
-export default {
-    get,
-    set
+const GL = {
+    get: () => {
+        return gl;
+    },
+    set: (context) => {
+        gl = context;
+    }
 };
-//# sourceMappingURL=GL.js.map
+
+export { GL };

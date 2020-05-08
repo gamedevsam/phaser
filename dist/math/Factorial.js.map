@@ -1,1 +1,0 @@
-{"version":3,"file":"Factorial.js","sourceRoot":"","sources":["../../src/math/Factorial.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,KAAa;IAE5C,IAAI,KAAK,KAAK,CAAC,EACf;QACI,OAAO,CAAC,CAAC;KACZ;IAED,IAAI,GAAG,GAAG,KAAK,CAAC;IAEhB,OAAO,EAAE,KAAK,EACd;QACI,GAAG,IAAI,KAAK,CAAC;KAChB;IAED,OAAO,GAAG,CAAC;AACf,CAAC"}

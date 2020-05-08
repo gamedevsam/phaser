@@ -1,7 +1,11 @@
-import GL from './GL';
-import IsSizePowerOfTwo from '../../math/pow2/IsSizePowerOfTwo';
-export default function CreateGLTexture(source, width, height, potClamp = true, linear = true) {
+import { GL } from './GL.js';
+import { IsSizePowerOfTwo } from '../../math/pow2/IsSizePowerOfTwo.js';
+
+function CreateGLTexture(source, width, height, potClamp = true, linear = true) {
     const gl = GL.get();
+    if (!gl) {
+        return;
+    }
     const glTexture = gl.createTexture();
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, glTexture);
@@ -26,4 +30,5 @@ export default function CreateGLTexture(source, width, height, potClamp = true, 
     }
     return glTexture;
 }
-//# sourceMappingURL=CreateGLTexture.js.map
+
+export { CreateGLTexture };

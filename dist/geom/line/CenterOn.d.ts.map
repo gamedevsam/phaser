@@ -1,1 +1,1 @@
-{"version":3,"file":"CenterOn.d.ts","sourceRoot":"","sources":["../../../src/geom/line/CenterOn.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;;;GAWG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,IAAI,EAAE,KAAK,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,KAAK,CAY1E"}
+{"version":3,"file":"CenterOn.d.ts","sourceRoot":"","sources":["../../src/geom/line/CenterOn.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAchC,wBAAgB,QAAQ,CAAE,IAAI,EAAE,KAAK,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,KAAK,CAYlE"}

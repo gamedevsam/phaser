@@ -1,4 +1,4 @@
-export declare function isEdge(): {
+export declare function IsEdge(): {
     edge: boolean;
 };
-//# sourceMappingURL=isEdge.d.ts.map
+//# sourceMappingURL=IsEdge.d.ts.map

@@ -1,1 +1,0 @@
-{"version":3,"file":"BackgroundColor.js","sourceRoot":"","sources":["../../src/config/BackgroundColor.ts"],"names":[],"mappings":"AAAA,IAAI,QAAQ,GAAW,CAAC,CAAC;AAEzB,SAAS,eAAe,CAAE,QAAgB,CAAC;IAEvC,OAAO,GAAG,EAAE;QAER,QAAQ,GAAG,KAAK,CAAC;IAErB,CAAC,CAAC;AACN,CAAC;AAED,SAAS,kBAAkB;IAEvB,OAAO,QAAQ,CAAC;AACpB,CAAC;AAED,OAAO,EACH,eAAe,EACf,kBAAkB,EACrB,CAAA"}

@@ -1,17 +1,9 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Bezier from './BezierInterpolation';
-import CatmullRom from './CatmullRomInterpolation';
-import CubicBezier from './CubicBezierInterpolation';
-import Linear from './LinearInterpolation';
-import QuadraticBezier from './QuadraticBezierInterpolation';
-import SmoothStep from './SmoothStepInterpolation';
-import SmootherStep from './SmootherStepInterpolation';
-/**
- * @namespace Phaser.Math.Interpolation
- */
-export { Bezier, CatmullRom, CubicBezier, Linear, QuadraticBezier, SmoothStep, SmootherStep };
+import { BezierInterpolation } from './BezierInterpolation';
+import { CatmullRomInterpolation } from './CatmullRomInterpolation';
+import { CubicBezierInterpolation } from './CubicBezierInterpolation';
+import { LinearInterpolation } from './LinearInterpolation';
+import { QuadraticBezierInterpolation } from './QuadraticBezierInterpolation';
+import { SmoothStepInterpolation } from './SmoothStepInterpolation';
+import { SmootherStepInterpolation } from './SmootherStepInterpolation';
+export { BezierInterpolation, CatmullRomInterpolation, CubicBezierInterpolation, LinearInterpolation, QuadraticBezierInterpolation, SmoothStepInterpolation, SmootherStepInterpolation };
 //# sourceMappingURL=index.d.ts.map

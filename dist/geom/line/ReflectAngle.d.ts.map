@@ -1,1 +1,1 @@
-{"version":3,"file":"ReflectAngle.d.ts","sourceRoot":"","sources":["../../../src/geom/line/ReflectAngle.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;;;;GAYG;AACH,MAAM,CAAC,OAAO,UAAU,YAAY,CAAE,KAAK,EAAE,KAAK,EAAE,KAAK,EAAE,KAAK,GAAG,MAAM,CAGxE"}
+{"version":3,"file":"ReflectAngle.d.ts","sourceRoot":"","sources":["../../src/geom/line/ReflectAngle.ts"],"names":[],"mappings":"AAOA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAgBhC,wBAAgB,YAAY,CAAE,KAAK,EAAE,KAAK,EAAE,KAAK,EAAE,KAAK,GAAG,MAAM,CAGhE"}

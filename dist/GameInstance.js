@@ -1,12 +1,18 @@
-let gameInstance;
-function get() {
-    return gameInstance;
-}
-function set(game) {
-    gameInstance = game;
-}
-export default {
-    get,
-    set
+let instance;
+let frame = 0;
+const GameInstance = {
+    get: () => {
+        return instance;
+    },
+    set: (game) => {
+        instance = game;
+    },
+    getFrame: () => {
+        return frame;
+    },
+    setFrame: (current) => {
+        frame = current;
+    }
 };
-//# sourceMappingURL=GameInstance.js.map
+
+export { GameInstance };

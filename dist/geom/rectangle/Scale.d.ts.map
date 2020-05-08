@@ -1,1 +1,1 @@
-{"version":3,"file":"Scale.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/Scale.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,KAAK,CAAE,IAAI,EAAE,UAAU,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,GAAE,MAAU,GAAG,UAAU,CAMrF"}
+{"version":3,"file":"Scale.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/Scale.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAgB1C,wBAAgB,KAAK,CAAE,IAAI,EAAE,UAAU,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,GAAE,MAAU,GAAG,UAAU,CAM7E"}

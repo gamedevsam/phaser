@@ -1,1 +1,1 @@
-{"version":3,"file":"IsSizePowerOfTwo.d.ts","sourceRoot":"","sources":["../../../src/math/pow2/IsSizePowerOfTwo.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;;GAWG;AACH,MAAM,CAAC,OAAO,UAAU,gBAAgB,CAAE,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,GAAG,OAAO,CAQhF"}
+{"version":3,"file":"IsSizePowerOfTwo.d.ts","sourceRoot":"","sources":["../../src/math/pow2/IsSizePowerOfTwo.ts"],"names":[],"mappings":"AAkBA,wBAAgB,gBAAgB,CAAE,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,GAAG,OAAO,CAQxE"}

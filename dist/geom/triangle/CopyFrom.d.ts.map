@@ -1,1 +1,1 @@
-{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../../src/geom/triangle/CopyFrom.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,SAAS,MAAM,aAAa,CAAC;AAEpC;;;;;;;;;;;;GAYG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,MAAM,EAAE,SAAS,EAAE,IAAI,EAAE,SAAS,GAAG,SAAS,CAK/E"}
+{"version":3,"file":"CopyFrom.d.ts","sourceRoot":"","sources":["../../src/geom/triangle/CopyFrom.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAexC,wBAAgB,QAAQ,CAAE,MAAM,EAAE,SAAS,EAAE,IAAI,EAAE,SAAS,GAAG,SAAS,CAKvE"}

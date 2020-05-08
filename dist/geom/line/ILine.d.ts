@@ -1,4 +1,4 @@
-export default interface ILine {
+export interface ILine {
     x1: number;
     y1: number;
     x2: number;

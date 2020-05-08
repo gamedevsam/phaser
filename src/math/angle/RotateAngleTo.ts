@@ -18,7 +18,7 @@ import { MATH_CONST } from '../const';
  *
  * @return {number} The adjusted angle.
  */
-export function RotateToAngle (currentAngle: number, targetAngle: number, lerp: number = 0.05): number
+export function RotateAngleTo (currentAngle: number, targetAngle: number, lerp: number = 0.05): number
 {
     if (currentAngle === targetAngle)
     {

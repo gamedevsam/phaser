@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { PointToLine } from './PointToLine';
-import { IVec2 } from '../../math/vec2/IVec2';
 import { ILine } from '../line/ILine';
+import { IVec2 } from '../../math/vec2/IVec2';
+import { PointToLine } from './PointToLine';
 
 /**
  * Checks if a Point is located on the given line segment.

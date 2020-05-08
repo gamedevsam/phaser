@@ -1,1 +1,1 @@
-{"version":3,"file":"Circumference.d.ts","sourceRoot":"","sources":["../../../src/geom/ellipse/Circumference.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,QAAQ,MAAM,YAAY,CAAC;AAElC;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,aAAa,CAAE,OAAO,EAAE,QAAQ,GAAG,MAAM,CAOhE"}
+{"version":3,"file":"Circumference.d.ts","sourceRoot":"","sources":["../../src/geom/ellipse/Circumference.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAYtC,wBAAgB,aAAa,CAAE,OAAO,EAAE,QAAQ,GAAG,MAAM,CAOxD"}

@@ -1,8 +1,18 @@
-import Texture from '../Texture';
-import SpriteRenderWebGL from '../../gameobjects/sprite/RenderWebGL';
-import Ortho from '../../renderer/webgl1/Ortho';
-import CreateFramebuffer from '../../renderer/webgl1/CreateFramebuffer';
-export default class RenderTexture extends Texture {
+import '../../renderer/webgl1/GL.js';
+import { Ortho } from '../../renderer/webgl1/Ortho.js';
+import '../../gameobjects/sprite/UploadBuffers.js';
+import { RenderWebGL } from '../../gameobjects/sprite/RenderWebGL.js';
+import '../../math/pow2/IsSizePowerOfTwo.js';
+import '../../renderer/webgl1/CreateGLTexture.js';
+import '../../renderer/webgl1/DeleteFramebuffer.js';
+import '../../renderer/webgl1/DeleteGLTexture.js';
+import '../Frame.js';
+import '../../renderer/webgl1/SetGLTextureFilterMode.js';
+import '../../renderer/webgl1/UpdateGLTexture.js';
+import { Texture } from '../Texture.js';
+import { CreateFramebuffer } from '../../renderer/webgl1/CreateFramebuffer.js';
+
+class RenderTexture extends Texture {
     constructor(renderer, width = 256, height = width) {
         super(null, width, height);
         this.renderer = renderer;
@@ -27,11 +37,11 @@ export default class RenderTexture extends Texture {
         renderer.shader.bind(this.projectionMatrix, this.cameraMatrix);
         return this;
     }
-    batchDraw(...sprites) {
+    batchDraw(sprites) {
         const renderer = this.renderer;
         const shader = renderer.shader;
-        for (let i = 0; i < sprites.length; i++) {
-            SpriteRenderWebGL(sprites[i], renderer, shader, renderer.startActiveTexture);
+        for (let i = 0, len = sprites.length; i < len; i++) {
+            RenderWebGL(sprites[i], renderer, shader, renderer.startActiveTexture);
         }
         return this;
     }
@@ -44,9 +54,10 @@ export default class RenderTexture extends Texture {
     }
     draw(...sprites) {
         this.batchStart();
-        this.batchDraw(...sprites);
+        this.batchDraw(sprites);
         this.batchEnd();
         return this;
     }
 }
-//# sourceMappingURL=RenderTexture.js.map
+
+export { RenderTexture };

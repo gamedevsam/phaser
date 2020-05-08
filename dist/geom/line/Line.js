@@ -1,23 +1,4 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-/**
- * @classdesc
- * Defines a Line segment, a part of a line between two endpoints.
- *
- * @class Line
- * @memberof Phaser.Geom
- * @constructor
- * @since 3.0.0
- *
- * @param {number} [x1=0] - The x coordinate of the lines starting point.
- * @param {number} [y1=0] - The y coordinate of the lines starting point.
- * @param {number} [x2=0] - The x coordinate of the lines ending point.
- * @param {number} [y2=0] - The y coordinate of the lines ending point.
- */
-export default class Line {
+class Line {
     constructor(x1 = 0, y1 = 0, x2 = 0, y2 = 0) {
         this.set(x1, y1, x2, y2);
     }
@@ -73,4 +54,5 @@ export default class Line {
         }
     }
 }
-//# sourceMappingURL=Line.js.map
+
+export { Line };

@@ -1,2 +1,2 @@
-export declare function isKindle(): boolean;
-//# sourceMappingURL=isKindle.d.ts.map
+export declare function IsKindle(): boolean;
+//# sourceMappingURL=IsKindle.d.ts.map

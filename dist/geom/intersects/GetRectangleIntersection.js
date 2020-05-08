@@ -1,33 +1,13 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Rectangle from '../rectangle/Rectangle';
-import RectangleToRectangle from './RectangleToRectangle';
-/**
- * Checks if two Rectangle shapes intersect and returns the area of this intersection as Rectangle object.
- *
- * If optional `output` parameter is omitted, new Rectangle object is created and returned. If there is intersection, it will contain intersection area. If there is no intersection, it wil be empty Rectangle (all values set to zero).
- *
- * If Rectangle object is passed as `output` and there is intersection, then intersection area data will be loaded into it and it will be returned. If there is no intersection, it will be returned without any change.
- *
- * @function Phaser.Geom.Intersects.GetRectangleIntersection
- * @since 3.0.0
- *
- * @generic {Phaser.Geom.Rectangle} O - [output,$return]
- *
- * @param {Phaser.Geom.Rectangle} rectA - The first Rectangle object.
- * @param {Phaser.Geom.Rectangle} rectB - The second Rectangle object.
- * @param {Phaser.Geom.Rectangle} [output] - Optional Rectangle object. If given, the intersection data will be loaded into it (in case of no intersection, it will be left unchanged). Otherwise, new Rectangle object will be created and returned with either intersection data or empty (all values set to zero), if there is no intersection.
- *
- * @return {Phaser.Geom.Rectangle} A rectangle object with intersection data.
- */
-export default function GetRectangleIntersection(rectA, rectB, out = new Rectangle()) {
+import '../rectangle/Contains.js';
+import { Rectangle } from '../rectangle/Rectangle.js';
+import { RectangleToRectangle } from './RectangleToRectangle.js';
+
+function GetRectangleIntersection(rectA, rectB, out = new Rectangle()) {
     if (RectangleToRectangle(rectA, rectB)) {
         const x = Math.max(rectA.x, rectB.x);
         const y = Math.max(rectA.y, rectB.y);
         return out.set(x, y, Math.min(rectA.right, rectB.right) - x, Math.min(rectA.bottom, rectB.bottom) - y);
     }
 }
-//# sourceMappingURL=GetRectangleIntersection.js.map
+
+export { GetRectangleIntersection };

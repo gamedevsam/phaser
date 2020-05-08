@@ -5,12 +5,12 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { IVec2 } from '../../math/vec2/IVec2';
 import { ILine } from '../line/ILine';
+import { IVec2 } from '../../math/vec2/IVec2';
 
 /**
  * Checks if the a Point falls between the two end-points of a Line, based on the given line thickness.
- * 
+ *
  * Assumes that the line end points are circular, not square.
  *
  * @function Phaser.Geom.Intersects.PointToLine

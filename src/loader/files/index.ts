@@ -1,7 +1,17 @@
-export * as AtlasFile from './AtlasFile';
-export * as BitmapTextFile from './BitmapTextFile';
-export * as CSVFile from './CSVFile';
-export * as ImageFile from './ImageFile';
-export * as JSONFile from './JSONFile';
-export * as SpriteSheetFile from './SpriteSheetFile';
-export * as XMLFile from './XMLFile';
+import { AtlasFile } from './AtlasFile';
+import { BitmapTextFile } from './BitmapTextFile';
+import { CSVFile } from './CSVFile';
+import { ImageFile } from './ImageFile';
+import { JSONFile } from './JSONFile';
+import { SpriteSheetFile } from './SpriteSheetFile';
+import { XMLFile } from './XMLFile';
+
+export {
+    AtlasFile,
+    BitmapTextFile,
+    CSVFile,
+    ImageFile,
+    JSONFile,
+    SpriteSheetFile,
+    XMLFile
+};

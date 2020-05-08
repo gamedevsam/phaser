@@ -1,5 +1,5 @@
-export declare function isFirefox(): {
+export declare function IsFirefox(): {
     firefox: boolean;
     firefoxVersion: number;
 };
-//# sourceMappingURL=isFirefox.d.ts.map
+//# sourceMappingURL=IsFirefox.d.ts.map

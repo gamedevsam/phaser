@@ -1,1 +1,1 @@
-{"version":3,"file":"CeilAll.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/CeilAll.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;;GAWG;AACH,MAAM,CAAC,OAAO,UAAU,OAAO,CAAE,IAAI,EAAE,UAAU,GAAG,UAAU,CAQ7D"}
+{"version":3,"file":"CeilAll.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/CeilAll.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAc1C,wBAAgB,OAAO,CAAE,IAAI,EAAE,UAAU,GAAG,UAAU,CAQrD"}

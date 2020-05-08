@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { MATH_CONST } from '../../math/const';
 import { Angle } from './Angle';
 import { ILine } from './ILine';
+import { MATH_CONST } from '../../math/const';
 import { Vec2 } from '../../math/vec2/Vec2';
 
 /**

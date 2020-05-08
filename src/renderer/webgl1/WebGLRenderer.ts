@@ -1,14 +1,21 @@
-import { ICamera } from '../../camera/ICamera';
-import { GetBackgroundColor, GetHeight, GetResolution, GetWebGLContext, GetWidth } from '../../config';
-import { RenderWebGL as SpriteRenderWebGL } from '../../gameobjects/sprite/RenderWebGL';
-import { ExactEquals as Matrix2dEqual } from '../../math/matrix2d-funcs/ExactEquals';
-import { ISceneRenderData } from '../../scenes/ISceneRenderData';
-import { Texture } from '../../textures/Texture';
-import { GL } from './GL';
-import { Ortho } from './Ortho';
+import { GetHeight, GetResolution, GetWidth } from '../../config/Size';
+import { GetMaxTextures, MaxTextures, SetMaxTextures } from '../../config/MaxTextures';
+
+import { BindingQueue } from '../BindingQueue';
 import { CheckShaderMaxIfStatements } from './shaders/CheckShaderMaxIfStatements';
+import { GL } from './GL';
+import { GLTextureBinding } from '../../textures';
+import { GetBackgroundColor } from '../../config/BackgroundColor';
+import { GetWebGLContext } from '../../config/WebGLContext';
+import { IBaseCamera } from '../../camera/IBaseCamera';
+import { ISceneRenderData } from '../../scenes/ISceneRenderData';
 import { IShader } from './shaders/IShader';
+import { ISprite } from '../../gameobjects/sprite/ISprite';
+import { ISpriteBatch } from '../../gameobjects/spritebatch/ISpriteBatch';
+import { ExactEquals as Matrix2dEqual } from '../../math/matrix2d-funcs/ExactEquals';
 import { MultiTextureQuadShader } from './shaders/MultiTextureQuadShader';
+import { Ortho } from './Ortho';
+import { Texture } from '../../textures/Texture';
 
 export class WebGLRenderer
 {
@@ -38,6 +45,9 @@ export class WebGLRenderer
     autoResize: boolean = true;
 
     contextLost: boolean = false;
+
+    prevCamera: IBaseCamera = null;
+
     elementIndexExtension: OES_element_index_uint;
 
     constructor ()
@@ -57,10 +67,11 @@ export class WebGLRenderer
 
         this.initContext();
 
-        this.shader = new MultiTextureQuadShader(this);
+        //  TODO - If maxTexture = 1 then use single quad shader
+        this.shader = new MultiTextureQuadShader();
     }
 
-    initContext ()
+    initContext (): void
     {
         const gl = this.canvas.getContext('webgl', GetWebGLContext());
 
@@ -72,54 +83,49 @@ export class WebGLRenderer
 
         this.getMaxTextures();
 
-        if (this.shader)
-        {
-            this.shader.gl = gl;
-        }
-
         gl.disable(gl.DEPTH_TEST);
         gl.disable(gl.CULL_FACE);
 
         this.resize(this.width, this.height, this.resolution);
     }
 
-    resize (width: number, height: number, resolution: number = 1)
+    resize (width: number, height: number, resolution: number = 1): void
     {
         this.width = width * resolution;
         this.height = height * resolution;
         this.resolution = resolution;
-    
+
         const canvas = this.canvas;
 
         canvas.width = this.width;
         canvas.height = this.height;
-    
+
         if (this.autoResize)
         {
             canvas.style.width = this.width / resolution + 'px';
             canvas.style.height = this.height / resolution + 'px';
         }
-    
+
         this.gl.viewport(0, 0, this.width, this.height);
 
         this.projectionMatrix = Ortho(width, height);
     }
 
-    onContextLost (event: Event)
+    onContextLost (event: Event): void
     {
         event.preventDefault();
 
         this.contextLost = true;
     }
 
-    onContextRestored ()
+    onContextRestored (): void
     {
         this.contextLost = false;
 
         this.initContext();
     }
 
-    setBackgroundColor (color: number)
+    setBackgroundColor (color: number): this
     {
         const clearColor = this.clearColor;
 
@@ -127,7 +133,7 @@ export class WebGLRenderer
         const g: number = color >> 8 & 0xFF;
         const b: number = color & 0xFF;
         const a: number = (color > 16777215) ? color >>> 24 : 255;
-    
+
         clearColor[0] = r / 255;
         clearColor[1] = g / 255;
         clearColor[2] = b / 255;
@@ -136,27 +142,39 @@ export class WebGLRenderer
         return this;
     }
 
-    private getMaxTextures ()
+    private getMaxTextures (): void
     {
         const gl = this.gl;
 
-        let maxTextures: number = CheckShaderMaxIfStatements(gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS), gl);
+        let maxGPUTextures: number = CheckShaderMaxIfStatements(gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS), gl);
+
+        const maxConfigTextures = GetMaxTextures();
+
+        if (maxConfigTextures === 0 || (maxConfigTextures > 0 && maxConfigTextures > maxGPUTextures))
+        {
+            //  Insert gpu limit into config value
+            SetMaxTextures(maxGPUTextures);
+        }
+        else if (maxConfigTextures > 0 && maxConfigTextures < maxGPUTextures)
+        {
+            //  Limit to config setting
+            maxGPUTextures = maxConfigTextures;
+        }
 
         const tempTextures = this.tempTextures;
 
         if (tempTextures.length)
         {
-            tempTextures.forEach(texture => {
-
+            tempTextures.forEach(texture =>
+            {
                 gl.deleteTexture(texture);
-
             });
         }
 
         //  Create temp textures to stop WebGL errors on mac os
-        for (let texturesIndex: number = 0; texturesIndex < maxTextures; texturesIndex++)
+        for (let texturesIndex: number = 0; texturesIndex < maxGPUTextures; texturesIndex++)
         {
-            let tempTexture = gl.createTexture();
+            const tempTexture = gl.createTexture();
 
             gl.activeTexture(gl.TEXTURE0 + texturesIndex);
 
@@ -167,15 +185,15 @@ export class WebGLRenderer
             tempTextures[texturesIndex] = tempTexture;
         }
 
-        this.maxTextures = maxTextures;
-        
-        this.textureIndex = Array.from(Array(maxTextures).keys());
-        this.activeTextures = Array(maxTextures);
+        this.maxTextures = maxGPUTextures;
+
+        this.textureIndex = Array.from(Array(maxGPUTextures).keys());
+        this.activeTextures = Array(maxGPUTextures);
 
         this.currentActiveTexture = 0;
     }
 
-    reset (framebuffer: WebGLFramebuffer = null, width: number = this.width, height: number = this.height)
+    reset (framebuffer: WebGLFramebuffer = null, width: number = this.width, height: number = this.height): void
     {
         const gl = this.gl;
 
@@ -190,7 +208,7 @@ export class WebGLRenderer
         this.flushTotal = 0;
     }
 
-    render (renderData: ISceneRenderData)
+    render (renderData: ISceneRenderData): void
     {
         if (this.contextLost)
         {
@@ -198,6 +216,20 @@ export class WebGLRenderer
         }
 
         const gl = this.gl;
+
+        const queue = BindingQueue.get();
+
+        for (let i = 0; i < queue.length; i++)
+        {
+            const texture = queue[i];
+
+            if (!texture.binding)
+            {
+                texture.binding = new GLTextureBinding(texture);
+            }
+        }
+
+        BindingQueue.clear();
 
         //  This is only here because if we don't do _something_ with the context, GL Spector can't see it.
         //  Technically, we could move it below the dirty bail-out below.
@@ -240,35 +272,48 @@ export class WebGLRenderer
         }
         */
 
-        let prevCamera: ICamera;
-        const { renderedWorlds, numRenderedWorlds } = renderData;
+        this.prevCamera = null;
 
-        for (let renderedWorldsIndex: number = 0; renderedWorldsIndex < numRenderedWorlds; renderedWorldsIndex++)
+        const worlds = renderData.worldData;
+
+        for (let i: number = 0; i < worlds.length; i++)
         {
-            const { camera, rendered, numRendered } = renderedWorlds[renderedWorldsIndex];
+            const { camera, renderList, numRendered } = worlds[i];
 
             //  This only needs rebinding if the camera matrix is different to before
-            if (!prevCamera || !Matrix2dEqual(camera.worldTransform, prevCamera.worldTransform))
+            if (!this.prevCamera || !Matrix2dEqual(camera.worldTransform, this.prevCamera.worldTransform))
             {
-                shader.flush();
+                shader.flush(this);
 
-                shader.bind(projectionMatrix, camera.matrix);
+                shader.bind(this, projectionMatrix, camera.matrix);
 
-                prevCamera = camera;
+                this.prevCamera = camera;
             }
 
             //  Process the render list
-            for (let renderedIndex: number = 0; renderedIndex < numRendered; renderedIndex++)
+            for (let s: number = 0; s < numRendered; s++)
             {
-                SpriteRenderWebGL(rendered[renderedIndex], this, shader, this.startActiveTexture);
+                renderList[s].render(this);
             }
         }
 
         //  One final sweep
-        shader.flush();
+        shader.flush(this);
     }
 
-    resetTextures (texture?: Texture)
+    setShader (newShader: IShader): void
+    {
+        this.shader.flush(this);
+
+        newShader.bind(this, this.projectionMatrix, this.prevCamera.matrix);
+    }
+
+    resetShader (): void
+    {
+        this.shader.bind(this, this.projectionMatrix, this.prevCamera.matrix);
+    }
+
+    resetTextures (texture?: Texture): void
     {
         const gl = this.gl;
         const active = this.activeTextures;
@@ -283,37 +328,113 @@ export class WebGLRenderer
             //  Set this texture as texture0
             active[0] = texture;
 
+            texture.binding.setIndex(0);
+
             gl.activeTexture(gl.TEXTURE0);
-            gl.bindTexture(gl.TEXTURE_2D, texture.glTexture);
+            gl.bindTexture(gl.TEXTURE_2D, texture.binding.texture);
 
             this.currentActiveTexture = 1;
         }
     }
 
-    requestTexture (texture: Texture)
+    requestTexture (texture: Texture): void
     {
         const gl = this.gl;
+        const binding = texture.binding;
 
-        texture.glIndexCounter = this.startActiveTexture;
+        binding.indexCounter = this.startActiveTexture;
 
         if (this.currentActiveTexture < this.maxTextures)
         {
             //  Make this texture active
             this.activeTextures[this.currentActiveTexture] = texture;
 
-            texture.glIndex = this.currentActiveTexture;
+            binding.setIndex(this.currentActiveTexture);
 
             gl.activeTexture(gl.TEXTURE0 + this.currentActiveTexture);
-            gl.bindTexture(gl.TEXTURE_2D, texture.glTexture);
+            gl.bindTexture(gl.TEXTURE_2D, binding.texture);
 
             this.currentActiveTexture++;
         }
         else
         {
             //  We're out of textures, so flush the batch and reset them all
-            this.shader.flush();
+            this.shader.flush(this);
 
             this.resetTextures(texture);
         }
+    }
+
+    batchSprite <T extends ISprite> (sprite: T): void
+    {
+        const texture = sprite.texture;
+        const shader = this.shader;
+        const binding = texture.binding;
+
+        if (binding.indexCounter < this.startActiveTexture)
+        {
+            this.requestTexture(texture);
+        }
+
+        if (shader.count === shader.batchSize)
+        {
+            shader.flush(this);
+        }
+
+        const data = sprite.vertexData;
+        const textureIndex = binding.index;
+
+        //  Inject the texture ID
+        data[4] = textureIndex;
+        data[10] = textureIndex;
+        data[16] = textureIndex;
+        data[22] = textureIndex;
+
+        const offset = shader.count * shader.quadElementSize;
+
+        //  Copy the data to the array buffer
+        shader.vertexViewF32.set(data, offset);
+
+        const color = sprite.vertexColor;
+        const U32 = shader.vertexViewU32;
+
+        //  Copy the vertex colors to the Uint32 view (as the data copy above overwrites them)
+        U32[offset + 5] = color[0];
+        U32[offset + 11] = color[2];
+        U32[offset + 17] = color[3];
+        U32[offset + 23] = color[1];
+
+        shader.count++;
+    }
+
+    batchSpriteBuffer <T extends ISpriteBatch> (batch: T): void
+    {
+        const texture = batch.texture;
+        const shader = this.shader;
+        const binding = texture.binding;
+
+        shader.flush(this);
+
+        if (binding.indexCounter < this.startActiveTexture)
+        {
+            this.requestTexture(texture);
+        }
+
+        batch.updateTextureIndex();
+
+        const gl = this.gl;
+
+        shader.bindBuffers(batch.indexBuffer, batch.vertexBuffer);
+
+        gl.bufferData(gl.ARRAY_BUFFER, batch.data, gl.STATIC_DRAW);
+
+        gl.drawElements(gl.TRIANGLES, batch.count * shader.quadIndexSize, gl.UNSIGNED_SHORT, 0);
+
+        shader.prevCount = batch.count;
+
+        this.flushTotal++;
+
+        //  Restore
+        shader.bindBuffers(shader.indexBuffer, shader.vertexBuffer);
     }
 }

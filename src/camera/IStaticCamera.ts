@@ -1,15 +1,19 @@
-import { IParent } from '../gameobjects/container/IParent';
-import { Rectangle } from '../geom/rectangle/Rectangle';
-import { WebGLRenderer } from '../renderer/webgl1/WebGLRenderer';
-import { IScene } from '../scenes/IScene';
+import { IMatrix2D } from '../math/matrix2d/IMatrix2D';
+import { IRectangle } from '../geom/rectangle/IRectangle';
+import { IRenderer } from '../renderer/IRenderer';
+import { IStaticWorld } from '../world/IStaticWorld';
 
 export interface IStaticCamera
 {
-    scene: IScene;
+    world: IStaticWorld;
     matrix: Float32Array;
-    renderer: WebGLRenderer;
-    bounds: Rectangle;
+    renderer: IRenderer;
+    type: string;
+    width: number;
+    height: number;
+    bounds: IRectangle;
+    dirtyRender: boolean;
+    worldTransform: IMatrix2D;
     reset (): void;
-    render (gameFrame: number): void;
-    destroy (reparentChildren?: IParent): void;
+    destroy (): void;
 }

@@ -1,10 +1,13 @@
-import { GetScenes } from '../config';
+import { Emit, Once } from '../events';
+
+import { CreateSceneRenderData } from './CreateSceneRenderData';
 import { Game } from '../Game';
 import { GameInstance } from '../GameInstance';
-import { GetConfigValue } from './GetConfigValue';
+import { GetScenes } from '../config';
 import { IScene } from './IScene';
-import { ISceneConfig } from './ISceneConfig';
 import { ISceneRenderData } from './ISceneRenderData';
+import { ResetSceneRenderData } from './ResetSceneRenderData';
+import { SceneManagerInstance } from './SceneManagerInstance';
 
 export class SceneManager
 {
@@ -12,72 +15,33 @@ export class SceneManager
 
     scenes: Map<string, IScene>  = new Map();
 
+    //  Used by Install to assign default scene keys when not specified
     sceneIndex: number = 0;
 
     //  Flush the cache
     flush: boolean = false;
 
-    renderResult: ISceneRenderData = {
-        numDirtyCameras: 0,
-        numDirtyFrames: 0,
-        numTotalFrames: 0,
-        renderedWorlds: [],
-        numRenderedWorlds: 0
-    };
+    renderResult: ISceneRenderData = CreateSceneRenderData();
 
     constructor ()
     {
         this.game = GameInstance.get();
 
-        this.game.once('boot', this.boot);
+        SceneManagerInstance.set(this);
+
+        Once(this.game, 'boot', () => this.boot());
     }
 
-    boot = (): void =>
+    boot (): void
     {
         GetScenes().forEach(scene => new scene());
-    };
-
-    init (scene: IScene, config: string | ISceneConfig = {}): void
-    {
-        const size = this.scenes.size;
-        const sceneIndex = this.sceneIndex;
-        const firstScene = (size === 0);
-
-        if (typeof config === 'string')
-        {
-            scene.key = config;
-        }
-        else if (config || (!config && firstScene))
-        {
-            scene.key = GetConfigValue(config, 'key', 'scene' + sceneIndex);
-            scene.willUpdate = GetConfigValue(config, 'willUpdate', firstScene);
-            scene.willRender = GetConfigValue(config, 'willRender', firstScene);
-        }
-
-        if (this.scenes.has(scene.key))
-        {
-            console.warn('Scene key already in use: ' + scene.key);
-        }
-        else
-        {
-            this.scenes.set(scene.key, scene);
-
-            this.flush = true;
-
-            this.sceneIndex++;
-        }
     }
 
-    update (delta: number, now: number): void
+    update (delta: number, time: number): void
     {
         for (const scene of this.scenes.values())
         {
-            if (scene.willUpdate)
-            {
-                scene.update.call(scene, delta, now);
-
-                scene.world.update(delta, now);
-            }
+            Emit(scene, 'update', delta, time);
         }
     }
 
@@ -85,55 +49,11 @@ export class SceneManager
     {
         const results = this.renderResult;
 
-        results.numTotalFrames = 0;
-        results.numDirtyFrames = 0;
-        results.numDirtyCameras = 0;
-        results.numRenderedWorlds = 0;
+        ResetSceneRenderData(results, gameFrame);
 
         for (const scene of this.scenes.values())
         {
-            if (scene.willRender)
-            {
-                const world = scene.world;
-
-                results.numDirtyFrames += world.render(gameFrame);
-                results.numTotalFrames += world.numRendered;
-
-                if (world.rendered.length === 0)
-                {
-                    continue;
-                }
-
-                if (world.camera.dirtyRender)
-                {
-                    results.numDirtyCameras++;
-
-                    world.camera.dirtyRender = false;
-                }
-
-                let renderListSize = results.renderedWorlds.length;
-
-                if (renderListSize <= results.numRenderedWorlds)
-                {
-                    renderListSize++;
-
-                    results.renderedWorlds.push({
-                        camera: world.camera,
-                        rendered: world.rendered,
-                        numRendered: world.numRendered
-                    });
-                }
-                else
-                {
-                    const renderData = results.renderedWorlds[results.numRenderedWorlds];
-
-                    renderData.camera = world.camera;
-                    renderData.rendered = world.rendered;
-                    renderData.numRendered = world.numRendered;
-                }
-
-                results.numRenderedWorlds++;
-            }
+            Emit(scene, 'render', results);
         }
 
         if (this.flush)

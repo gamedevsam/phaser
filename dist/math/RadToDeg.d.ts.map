@@ -1,1 +1,1 @@
-{"version":3,"file":"RadToDeg.d.ts","sourceRoot":"","sources":["../../src/math/RadToDeg.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,OAAO,EAAE,MAAM,GAAG,MAAM,CAGzD"}
+{"version":3,"file":"RadToDeg.d.ts","sourceRoot":"","sources":["../src/math/RadToDeg.ts"],"names":[],"mappings":"AAkBA,wBAAgB,QAAQ,CAAE,OAAO,EAAE,MAAM,GAAG,MAAM,CAGjD"}

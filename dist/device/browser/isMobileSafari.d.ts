@@ -1,4 +1,4 @@
-export declare function isMobileSafari(): {
+export declare function IsMobileSafari(): {
     mobileSafari: boolean;
 };
-//# sourceMappingURL=isMobileSafari.d.ts.map
+//# sourceMappingURL=IsMobileSafari.d.ts.map

@@ -1,5 +1,4 @@
-import AtlasParser from './AtlasParser';
-import BitmapTextParser from './BitmapTextParser';
-import SpriteSheetParser from './SpriteSheetParser';
-export { AtlasParser, BitmapTextParser, SpriteSheetParser };
-//# sourceMappingURL=index.js.map
+export { AtlasParser } from './AtlasParser.js';
+export { BitmapTextParser } from './BitmapTextParser.js';
+export { SpriteSheetParser } from './SpriteSheetParser.js';
+import '../../index-e72dfd41.js';

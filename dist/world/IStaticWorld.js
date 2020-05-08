@@ -1,1 +1,0 @@
-//# sourceMappingURL=IStaticWorld.js.map

@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
+import { Contains } from './Contains';
 import { IEllipse } from './IEllipse';
 import { IVec2 } from '../../math/vec2/IVec2';
-import { Contains } from './Contains';
 
 /**
  * Check to see if the Ellipse contains the given Point object.

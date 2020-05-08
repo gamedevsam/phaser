@@ -1,1 +1,0 @@
-{"version":3,"file":"FromScaling.js","sourceRoot":"","sources":["../../../src/math/matrix2d-funcs/FromScaling.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,SAAS,CAAC;AAC5B,OAAO,QAAQ,MAAM,sBAAsB,CAAC;AAE5C,MAAM,CAAC,OAAO,UAAU,WAAW,CAAE,MAAc,EAAE,SAAiB,MAAM;IAExE,OAAO,KAAK,CAAC,IAAI,QAAQ,EAAE,EAAE,MAAM,EAAE,MAAM,CAAC,CAAC;AACjD,CAAC"}

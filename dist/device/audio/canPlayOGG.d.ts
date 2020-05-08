@@ -1,2 +1,2 @@
-export declare function canPlayOGG(audioElement?: HTMLAudioElement): boolean;
-//# sourceMappingURL=canPlayOGG.d.ts.map
+export declare function CanPlayOGG(audioElement?: HTMLAudioElement): boolean;
+//# sourceMappingURL=CanPlayOGG.d.ts.map

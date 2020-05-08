@@ -1,1 +1,1 @@
-{"version":3,"file":"MaxAdd.d.ts","sourceRoot":"","sources":["../../src/math/MaxAdd.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;;GAWG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,GAAG,MAAM,CAGlF"}
+{"version":3,"file":"MaxAdd.d.ts","sourceRoot":"","sources":["../src/math/MaxAdd.ts"],"names":[],"mappings":"AAkBA,wBAAgB,MAAM,CAAE,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,GAAG,MAAM,CAG1E"}

@@ -4,8 +4,8 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { Rectangle } from './Rectangle';
 import { IRectangle } from './IRectangle';
+import { Rectangle } from './Rectangle';
 
 /**
  * Creates a new Rectangle or repositions and/or resizes an existing Rectangle so that it encompasses the two given Rectangles, i.e. calculates their union.

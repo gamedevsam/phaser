@@ -5,12 +5,12 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { TriangleToLine } from './TriangleToLine';
-import { LineToLine } from './LineToLine';
-import { ITriangle } from '../triangle/ITriangle';
-import { ILine } from '../line/ILine';
-import { Vec2 } from '../../math/vec2/Vec2';
 import { GetEdges } from '../triangle/GetEdges';
+import { ILine } from '../line/ILine';
+import { ITriangle } from '../triangle/ITriangle';
+import { LineToLine } from './LineToLine';
+import { TriangleToLine } from './TriangleToLine';
+import { Vec2 } from '../../math/vec2/Vec2';
 
 /**
  * Checks if a Triangle and a Line intersect, and returns the intersection points as a Point object array.
@@ -31,7 +31,7 @@ export function GetTriangleToLine (triangle: ITriangle, line: ILine, out: Vec2[]
     if (TriangleToLine(triangle, line))
     {
         const [ lineA, lineB, lineC ] = GetEdges(triangle);
-        
+
         const points = [ new Vec2(), new Vec2(), new Vec2() ];
 
         const results = [

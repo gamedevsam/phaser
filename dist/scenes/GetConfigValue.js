@@ -1,9 +1,10 @@
-export default function GetConfigValue(config, property, defaultValue) {
-    if (config.hasOwnProperty(property)) {
+function GetConfigValue(config, property, defaultValue) {
+    if (Object.prototype.hasOwnProperty.call(config, property)) {
         return config[property];
     }
     else {
         return defaultValue;
     }
 }
-//# sourceMappingURL=GetConfigValue.js.map
+
+export { GetConfigValue };

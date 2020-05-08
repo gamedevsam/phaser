@@ -1,1 +1,1 @@
-{"version":3,"file":"UpdateGLTexture.d.ts","sourceRoot":"","sources":["../../../src/renderer/webgl1/UpdateGLTexture.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,MAAM,EAAE,cAAc,EAAE,UAAU,EAAE,YAAY,EAAE,KAAK,GAAE,OAAe,QAchH"}
+{"version":3,"file":"UpdateGLTexture.d.ts","sourceRoot":"","sources":["../../src/renderer/webgl1/UpdateGLTexture.ts"],"names":[],"mappings":"AAEA,wBAAgB,eAAe,CAAE,MAAM,EAAE,cAAc,EAAE,UAAU,EAAE,YAAY,EAAE,KAAK,GAAE,OAAe,GAAG,IAAI,CAc/G"}

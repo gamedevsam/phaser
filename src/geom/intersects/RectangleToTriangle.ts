@@ -4,14 +4,14 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { LineToLine } from './LineToLine';
 import { Contains } from '../rectangle/Contains';
 import { ContainsArray } from '../triangle/ContainsArray';
 import { Decompose } from '../rectangle/Decompose';
+import { GetEdges as GetRectangleEdges } from '../rectangle/GetEdges';
+import { GetEdges as GetTriangleEdges } from '../triangle/GetEdges';
 import { IRectangle } from '../rectangle/IRectangle';
 import { ITriangle } from '../triangle/ITriangle';
-import { GetEdges as GetTriangleEdges } from '../triangle/GetEdges';
-import { GetEdges as GetRectangleEdges } from '../Rectangle/GetEdges';
+import { LineToLine } from './LineToLine';
 
 /**
  * Checks for intersection between Rectangle shape and Triangle shape.
@@ -59,7 +59,7 @@ export function RectangleToTriangle (rect: IRectangle, triangle: ITriangle): boo
     //  Cheap tests over, now to see if any of the lines intersect ...
 
     const [ rectA, rectB, rectC, rectD ] = GetRectangleEdges(rect);
-    
+
     if (LineToLine(triA, rectA) || LineToLine(triA, rectB) || LineToLine(triA, rectC) || LineToLine(triA, rectD))
     {
         return true;

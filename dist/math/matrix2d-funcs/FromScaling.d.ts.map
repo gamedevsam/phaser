@@ -1,1 +1,1 @@
-{"version":3,"file":"FromScaling.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d-funcs/FromScaling.ts"],"names":[],"mappings":"AACA,OAAO,QAAQ,MAAM,sBAAsB,CAAC;AAE5C,MAAM,CAAC,OAAO,UAAU,WAAW,CAAE,MAAM,EAAE,MAAM,EAAE,MAAM,GAAE,MAAe,GAAG,QAAQ,CAGtF"}
+{"version":3,"file":"FromScaling.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d-funcs/FromScaling.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAGhD,wBAAgB,WAAW,CAAE,MAAM,EAAE,MAAM,EAAE,MAAM,GAAE,MAAe,GAAG,QAAQ,CAG9E"}

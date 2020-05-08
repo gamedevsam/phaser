@@ -1,2 +1,2 @@
-export declare function isNode(): boolean;
-//# sourceMappingURL=isNode.d.ts.map
+export declare function IsNode(): boolean;
+//# sourceMappingURL=IsNode.d.ts.map

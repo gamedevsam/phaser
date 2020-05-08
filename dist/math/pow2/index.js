@@ -1,13 +1,4 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import GetNext from './GetPowerOfTwo';
-import IsSize from './IsSizePowerOfTwo';
-import IsValue from './IsValuePowerOfTwo';
-/**
- * @namespace Phaser.Math.Pow2
- */
-export { GetNext, IsSize, IsValue };
-//# sourceMappingURL=index.js.map
+export { IsSizePowerOfTwo } from './IsSizePowerOfTwo.js';
+export { GetPowerOfTwo } from './GetPowerOfTwo.js';
+export { IsValuePowerOfTwo } from './IsValuePowerOfTwo.js';
+import '../../index-049716b4.js';

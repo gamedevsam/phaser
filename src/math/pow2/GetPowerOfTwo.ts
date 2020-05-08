@@ -16,7 +16,7 @@
  */
 export function GetPowerOfTwo (value: number): number
 {
-    var index = Math.log(value) / 0.6931471805599453;
+    const index = Math.log(value) / 0.6931471805599453;
 
     return (1 << Math.ceil(index));
 }

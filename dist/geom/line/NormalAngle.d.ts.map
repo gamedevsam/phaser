@@ -1,1 +1,1 @@
-{"version":3,"file":"NormalAngle.d.ts","sourceRoot":"","sources":["../../../src/geom/line/NormalAngle.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAK5B;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,WAAW,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAKxD"}
+{"version":3,"file":"NormalAngle.d.ts","sourceRoot":"","sources":["../../src/geom/line/NormalAngle.ts"],"names":[],"mappings":"AAOA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAchC,wBAAgB,WAAW,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAKhD"}

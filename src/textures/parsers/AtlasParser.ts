@@ -1,7 +1,8 @@
-import { Texture } from '../Texture';
 import { Frame } from '../Frame';
+import { Texture } from '../Texture';
 
-export function AtlasParser (texture: Texture, data: any)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function AtlasParser (texture: Texture, data: any): void
 {
     let frames;
 
@@ -31,10 +32,10 @@ export function AtlasParser (texture: Texture, data: any)
 
         for (let i = 0; i < frames.length; i++)
         {
-            let src = frames[i];
+            const src = frames[i];
 
             //  The frame values are the exact coordinates to cut the frame out of the atlas from
-            newFrame = texture.add(src.filename, src.frame.x, src.frame.y, src.frame.w, src.frame.h)
+            newFrame = texture.addFrame(src.filename, src.frame.x, src.frame.y, src.frame.w, src.frame.h);
 
             //  These are the original (non-trimmed) sprite values
             if (src.trimmed)

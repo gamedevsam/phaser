@@ -1,12 +1,11 @@
-//  @namespace Phaser.Device.Audio
-import { canPlayM4A } from './canPlayM4A';
-import { canPlayMP3 } from './canPlayMP3';
-import { canPlayOGG } from './canPlayOGG';
-import { canPlayOpus } from './canPlayOpus';
-import { canPlayWAV } from './canPlayWAV';
-import { canPlayWebM } from './canPlayWebM';
-import { GetAudio } from './GetAudio';
-import { hasAudio } from './hasAudio';
-import { hasWebAudio } from './hasWebAudio';
-export { canPlayM4A, canPlayMP3, canPlayOGG, canPlayOpus, canPlayWAV, canPlayWebM, GetAudio, hasAudio, hasWebAudio };
-//# sourceMappingURL=index.js.map
+export { CanPlayAudioType } from './CanPlayAudioType.js';
+export { CanPlayM4A } from './CanPlayM4A.js';
+export { CanPlayMP3 } from './CanPlayMP3.js';
+export { CanPlayOGG } from './CanPlayOGG.js';
+export { CanPlayOpus } from './CanPlayOpus.js';
+export { CanPlayWAV } from './CanPlayWAV.js';
+export { CanPlayWebM } from './CanPlayWebM.js';
+export { HasAudio } from './HasAudio.js';
+export { HasWebAudio } from './HasWebAudio.js';
+export { GetAudio } from './GetAudio.js';
+import '../../index-9cd45848.js';

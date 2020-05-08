@@ -1,1 +1,1 @@
-{"version":3,"file":"Length.d.ts","sourceRoot":"","sources":["../../../src/geom/line/Length.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAKnD"}
+{"version":3,"file":"Length.d.ts","sourceRoot":"","sources":["../../src/geom/line/Length.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAYhC,wBAAgB,MAAM,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAK3C"}

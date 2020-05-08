@@ -1,32 +1,20 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-/**
- * A 16 color palette inspired by the Commodore 64.
- *
- * @name Phaser.Create.Palettes.C64
- * @since 3.0.0
- *
- * @type {Phaser.Types.Create.Palette}
- */
-export default {
-    0: '#000',
-    1: '#fff',
-    2: '#8b4131',
-    3: '#7bbdc5',
-    4: '#8b41ac',
-    5: '#6aac41',
-    6: '#3931a4',
-    7: '#d5de73',
-    8: '#945a20',
-    9: '#5a4100',
-    A: '#bd736a',
-    B: '#525252',
-    C: '#838383',
-    D: '#acee8b',
-    E: '#7b73de',
-    F: '#acacac'
-};
-//# sourceMappingURL=C64.js.map
+const C64 = [
+    '#000',
+    '#fff',
+    '#8b4131',
+    '#7bbdc5',
+    '#8b41ac',
+    '#6aac41',
+    '#3931a4',
+    '#d5de73',
+    '#945a20',
+    '#5a4100',
+    '#bd736a',
+    '#525252',
+    '#838383',
+    '#acee8b',
+    '#7b73de',
+    '#acacac'
+];
+
+export { C64 };

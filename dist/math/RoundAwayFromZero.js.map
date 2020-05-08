@@ -1,1 +1,0 @@
-{"version":3,"file":"RoundAwayFromZero.js","sourceRoot":"","sources":["../../src/math/RoundAwayFromZero.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,iBAAiB,CAAE,KAAa;IAEpD,0BAA0B;IAC1B,OAAO,CAAC,KAAK,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC;AAC9D,CAAC"}

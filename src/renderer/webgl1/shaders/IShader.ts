@@ -1,3 +1,5 @@
+import { IRenderer } from '../../IRenderer';
+
 export interface IShader
 {
     gl: WebGLRenderingContext;
@@ -21,8 +23,8 @@ export interface IShader
     prevCount: number;
     createBuffers (): void;
     createShaders (fragmentShaderSource: string, vertexShaderSource: string): void;
-    bind (projectionMatrix: Float32Array, cameraMatrix: Float32Array): void;
+    bind (renderer: IRenderer, projectionMatrix: Float32Array, cameraMatrix: Float32Array): void;
     bindBuffers (indexBuffer: WebGLBuffer, vertexBuffer: WebGLBuffer): void;
     draw (count: number): void;
-    flush (): boolean;
+    flush (renderer: IRenderer): boolean;
 }

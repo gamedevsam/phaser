@@ -1,1 +1,1 @@
-{"version":3,"file":"Equals.d.ts","sourceRoot":"","sources":["../../../src/geom/line/Equals.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,IAAI,EAAE,KAAK,EAAE,SAAS,EAAE,KAAK,GAAG,OAAO,CAQtE"}
+{"version":3,"file":"Equals.d.ts","sourceRoot":"","sources":["../../src/geom/line/Equals.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAahC,wBAAgB,MAAM,CAAE,IAAI,EAAE,KAAK,EAAE,SAAS,EAAE,KAAK,GAAG,OAAO,CAQ9D"}

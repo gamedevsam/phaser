@@ -1,5 +1,13 @@
-export * as CanvasTexture from './CanvasTexture';
-export * as GridTexture from './GridTexture';
-export * as PixelTexture from './PixelTexture';
-export * as RenderTexture from './RenderTexture';
-export * as SolidColorTexture from './SolidColorTexture';
+import { CanvasTexture } from './CanvasTexture';
+import { GridTexture } from './GridTexture';
+import { PixelTexture } from './PixelTexture';
+import { RenderTexture } from './RenderTexture';
+import { SolidColorTexture } from './SolidColorTexture';
+
+export {
+    CanvasTexture,
+    GridTexture,
+    PixelTexture,
+    RenderTexture,
+    SolidColorTexture
+};

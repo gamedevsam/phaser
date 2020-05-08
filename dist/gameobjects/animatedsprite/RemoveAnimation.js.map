@@ -1,1 +1,0 @@
-{"version":3,"file":"RemoveAnimation.js","sourceRoot":"","sources":["../../../src/gameobjects/animatedsprite/RemoveAnimation.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,GAAW,EAAE,GAAG,MAAyB;IAE9E,MAAM,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAEpB,MAAM,CAAC,KAAK,CAAC,MAAM,CAAC,GAAG,CAAC,CAAC;IAE7B,CAAC,CAAC,CAAC;AACP,CAAC"}

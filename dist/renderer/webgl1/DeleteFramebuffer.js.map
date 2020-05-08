@@ -1,1 +1,0 @@
-{"version":3,"file":"DeleteFramebuffer.js","sourceRoot":"","sources":["../../../src/renderer/webgl1/DeleteFramebuffer.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,MAAM,CAAC;AAEtB,MAAM,CAAC,OAAO,UAAU,iBAAiB,CAAE,WAA6B;IAEpE,MAAM,EAAE,GAAG,EAAE,CAAC,GAAG,EAAE,CAAC;IAEpB,IAAI,EAAE,CAAC,aAAa,CAAC,WAAW,CAAC,EACjC;QACI,EAAE,CAAC,iBAAiB,CAAC,WAAW,CAAC,CAAC;KACrC;AACL,CAAC"}

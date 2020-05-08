@@ -1,2 +1,2 @@
-export declare function canPlayWebM(audioElement?: HTMLAudioElement): boolean;
-//# sourceMappingURL=canPlayWebM.d.ts.map
+export declare function CanPlayWebM(audioElement?: HTMLAudioElement): boolean;
+//# sourceMappingURL=CanPlayWebM.d.ts.map

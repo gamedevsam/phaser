@@ -1,1 +1,0 @@
-{"version":3,"file":"SetTextBaseline.js","sourceRoot":"","sources":["../../../src/gameobjects/text/SetTextBaseline.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,QAA4B,EAAE,GAAG,IAAa;IAEnF,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAElB,MAAM,CAAC,YAAY,GAAG,QAAQ,CAAC;QAC/B,MAAM,CAAC,UAAU,EAAE,CAAC;IAExB,CAAC,CAAC,CAAC;AACP,CAAC"}

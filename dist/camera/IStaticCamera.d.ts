@@ -1,15 +1,18 @@
-import Scene from '../scenes/Scene';
-import WebGLRenderer from '../renderer/webgl1/WebGLRenderer';
-import Rectangle from '../geom/rectangle/Rectangle';
-export default interface IStaticCamera {
-    scene: Scene;
+import { IMatrix2D } from '../math/matrix2d/IMatrix2D';
+import { IRectangle } from '../geom/rectangle/IRectangle';
+import { IRenderer } from '../renderer/IRenderer';
+import { IWorld } from '../world/IWorld';
+export interface IStaticCamera {
+    world: IWorld;
     matrix: Float32Array;
-    renderer: WebGLRenderer;
-    bounds: Rectangle;
+    renderer: IRenderer;
+    type: string;
+    width: number;
+    height: number;
+    bounds: IRectangle;
+    dirtyRender: boolean;
+    worldTransform: IMatrix2D;
     reset(): void;
-    update(delta: number, time: number): void;
-    updateTransform(): this;
-    render(gameFrame: number): void;
     destroy(): void;
 }
 //# sourceMappingURL=IStaticCamera.d.ts.map

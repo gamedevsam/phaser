@@ -1,1 +1,1 @@
-{"version":3,"file":"isEjecta.d.ts","sourceRoot":"","sources":["../../../src/device/os/isEjecta.ts"],"names":[],"mappings":"AAAA,wBAAgB,QAAQ,IAAK,OAAO,CAGnC"}
+{"version":3,"file":"IsEjecta.d.ts","sourceRoot":"","sources":["../../src/device/os/IsEjecta.ts"],"names":[],"mappings":"AAAA,wBAAgB,QAAQ,IAAK,OAAO,CAGnC"}

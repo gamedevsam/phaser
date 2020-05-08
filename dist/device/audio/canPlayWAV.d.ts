@@ -1,2 +1,2 @@
-export declare function canPlayWAV(audioElement?: HTMLAudioElement): boolean;
-//# sourceMappingURL=canPlayWAV.d.ts.map
+export declare function CanPlayWAV(audioElement?: HTMLAudioElement): boolean;
+//# sourceMappingURL=CanPlayWAV.d.ts.map

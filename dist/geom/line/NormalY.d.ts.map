@@ -1,1 +1,1 @@
-{"version":3,"file":"NormalY.d.ts","sourceRoot":"","sources":["../../../src/geom/line/NormalY.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAI5B;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,OAAO,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAGpD"}
+{"version":3,"file":"NormalY.d.ts","sourceRoot":"","sources":["../../src/geom/line/NormalY.ts"],"names":[],"mappings":"AAOA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAchC,wBAAgB,OAAO,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAG5C"}

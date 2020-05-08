@@ -1,10 +1,9 @@
-export default function Play(key, config = {}, ...sprite) {
+function Play(key, config = {}, ...sprite) {
     const { speed = 24, repeat = 0, yoyo = false, startFrame = 0, delay = 0, repeatDelay = 0, onStart = null, onRepeat = null, onComplete = null, forceRestart = false } = config;
     sprite.forEach(entity => {
         const data = entity.animData;
         if (data.isPlaying) {
             if (data.currentAnim !== key) {
-                //  Stop
                 data.isPlaying = false;
                 data.currentAnim = '';
                 if (data.onComplete) {
@@ -12,7 +11,6 @@ export default function Play(key, config = {}, ...sprite) {
                 }
             }
             else if (!forceRestart) {
-                //  This animation is already playing? Just return then.
                 return;
             }
         }
@@ -31,7 +29,6 @@ export default function Play(key, config = {}, ...sprite) {
             data.onStart = onStart;
             data.onRepeat = onRepeat;
             data.onComplete = onComplete;
-            //  If there is no start delay, we set the first frame immediately
             if (delay === 0) {
                 entity.setFrame(data.currentFrames[data.frameIndex]);
                 if (onStart) {
@@ -44,4 +41,5 @@ export default function Play(key, config = {}, ...sprite) {
         }
     });
 }
-//# sourceMappingURL=Play.js.map
+
+export { Play };

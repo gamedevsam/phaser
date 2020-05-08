@@ -1,1 +1,0 @@
-{"version":3,"file":"RotateAroundPoint.js","sourceRoot":"","sources":["../../../src/geom/triangle/RotateAroundPoint.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,cAAc,MAAM,kBAAkB,CAAC;AAI9C;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,iBAAiB,CAAE,QAAmB,EAAE,KAAY,EAAE,KAAa;IAEvF,OAAO,cAAc,CAAC,QAAQ,EAAE,KAAK,CAAC,CAAC,EAAE,KAAK,CAAC,CAAC,EAAE,KAAK,CAAC,CAAC;AAC7D,CAAC"}

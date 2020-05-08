@@ -1,1 +1,1 @@
-{"version":3,"file":"Factorial.d.ts","sourceRoot":"","sources":["../../src/math/Factorial.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAexD"}
+{"version":3,"file":"Factorial.d.ts","sourceRoot":"","sources":["../src/math/Factorial.ts"],"names":[],"mappings":"AAgBA,wBAAgB,SAAS,CAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAehD"}

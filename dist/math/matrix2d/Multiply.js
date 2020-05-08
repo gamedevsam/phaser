@@ -1,5 +1,4 @@
-//  Multiplies the target Matrix by the src Matrix and returns the target.
-export default function Multiply(target, src) {
+function Multiply(target, src) {
     const { a: a0, b: b0, c: c0, d: d0, tx: tx0, ty: ty0 } = target;
     const { a: a1, b: b1, c: c1, d: d1, tx: tx1, ty: ty1 } = src;
     target.a = a0 * a1 + c0 * b1;
@@ -10,4 +9,5 @@ export default function Multiply(target, src) {
     target.ty = b0 * tx1 + d0 * ty1 + ty0;
     return target;
 }
-//# sourceMappingURL=Multiply.js.map
+
+export { Multiply };

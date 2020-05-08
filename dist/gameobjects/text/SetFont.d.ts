@@ -1,3 +1,3 @@
-import IText from './IText';
-export default function SetFont(font: string, ...text: IText[]): void;
+import { IText } from './IText';
+export declare function SetFont(font: string, ...text: IText[]): void;
 //# sourceMappingURL=SetFont.d.ts.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"DeleteGLTexture.d.ts","sourceRoot":"","sources":["../../../src/renderer/webgl1/DeleteGLTexture.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,OAAO,EAAE,YAAY,QAQ7D"}
+{"version":3,"file":"DeleteGLTexture.d.ts","sourceRoot":"","sources":["../../src/renderer/webgl1/DeleteGLTexture.ts"],"names":[],"mappings":"AAEA,wBAAgB,eAAe,CAAE,OAAO,EAAE,YAAY,GAAG,IAAI,CAa5D"}

@@ -1,17 +1,27 @@
 import { Game } from './Game';
 
-let gameInstance: Game;
+let instance: Game;
+let frame: number = 0;
 
-export const GameInstance = {
-
-    get: () =>
+export const GameInstance =
+{
+    get: (): Game =>
     {
-        return gameInstance;
+        return instance;
     },
-    
-    set: (game: Game | null) =>
+
+    set: (game: Game | undefined): void =>
     {
-        gameInstance = game;
+        instance = game;
+    },
+
+    getFrame: (): number =>
+    {
+        return frame;
+    },
+
+    setFrame: (current: number): void =>
+    {
+        frame = current;
     }
-    
-}
+};

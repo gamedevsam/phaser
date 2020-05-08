@@ -1,4 +1,4 @@
-export default function ImageTagLoader(file) {
+function ImageTagLoader(file) {
     file.data = new Image();
     if (file.crossOrigin) {
         file.data.crossOrigin = file.crossOrigin;
@@ -20,7 +20,6 @@ export default function ImageTagLoader(file) {
             }
         };
         file.data.src = file.url;
-        // Image is immediately-available or cached
         if (file.data.complete && file.data.width && file.data.height) {
             file.data.onload = null;
             file.data.onerror = null;
@@ -28,4 +27,5 @@ export default function ImageTagLoader(file) {
         }
     });
 }
-//# sourceMappingURL=ImageTagLoader.js.map
+
+export { ImageTagLoader };

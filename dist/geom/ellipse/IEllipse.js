@@ -1,1 +1,0 @@
-//# sourceMappingURL=IEllipse.js.map

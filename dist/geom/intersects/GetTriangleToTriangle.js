@@ -1,27 +1,15 @@
-/**
- * @author       Florian Vazelle
- * @author       Geoffrey Glaive
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import TriangleToTriangle from './TriangleToTriangle';
-import GetTriangleToLine from './GetTriangleToLine';
-import GetEdges from '../triangle/GetEdges';
-/**
- * Checks if two Triangles intersect, and returns the intersection points as a Point object array.
- *
- * A Triangle intersects another Triangle if any pair of their lines intersects or if any point of one Triangle is within the other Triangle. Thus, the Triangles are considered "solid".
- *
- * @function Phaser.Geom.Intersects.GetTriangleToTriangle
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Triangle} triangleA - The first Triangle to check for intersection.
- * @param {Phaser.Geom.Triangle} triangleB - The second Triangle to check for intersection.
- * @param {array} [out] - An optional array in which to store the points of intersection.
- *
- * @return {array} An array with the points of intersection if objects intersect, otherwise an empty array.
- */
-export default function GetTriangleToTriangle(triangleA, triangleB, out = []) {
+import '../../math/vec2/Vec2.js';
+import '../line/Line.js';
+import './LineToLine.js';
+import { GetEdges } from '../triangle/GetEdges.js';
+import '../triangle/Contains.js';
+import '../triangle/ContainsArray.js';
+import './TriangleToLine.js';
+import { GetTriangleToLine } from './GetTriangleToLine.js';
+import '../triangle/Decompose.js';
+import { TriangleToTriangle } from './TriangleToTriangle.js';
+
+function GetTriangleToTriangle(triangleA, triangleB, out = []) {
     if (TriangleToTriangle(triangleA, triangleB)) {
         const [lineA, lineB, lineC] = GetEdges(triangleB);
         GetTriangleToLine(triangleA, lineA, out);
@@ -30,4 +18,5 @@ export default function GetTriangleToTriangle(triangleA, triangleB, out = []) {
     }
     return out;
 }
-//# sourceMappingURL=GetTriangleToTriangle.js.map
+
+export { GetTriangleToTriangle };

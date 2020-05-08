@@ -1,6 +1,6 @@
-import Frame from '../../textures/Frame';
-import IAnimatedSprite from './IAnimatedSprite';
-export default interface IAnimationData {
+import { Frame } from '../../textures/Frame';
+import { IAnimatedSprite } from './IAnimatedSprite';
+export interface IAnimationData {
     currentAnim: string;
     currentFrames: Frame[];
     frameIndex: number;

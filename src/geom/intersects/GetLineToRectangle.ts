@@ -5,12 +5,12 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { LineToLine } from './LineToLine';
-import { LineToRectangle } from './LineToRectangle';
+import { GetEdges } from '../rectangle/GetEdges';
 import { ILine } from '../line/ILine';
 import { IRectangle } from '../rectangle/IRectangle';
+import { LineToLine } from './LineToLine';
+import { LineToRectangle } from './LineToRectangle';
 import { Vec2 } from '../../math/vec2/Vec2';
-import { GetEdges } from '../Rectangle/GetEdges';
 
 /**
  * Checks for intersection between the Line and a Rectangle shape,

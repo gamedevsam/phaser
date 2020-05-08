@@ -1,1 +1,1 @@
-{"version":3,"file":"GL.d.ts","sourceRoot":"","sources":["../../../src/renderer/webgl1/GL.ts"],"names":[],"mappings":"AAEA,iBAAS,GAAG,0BAGX;AAED,iBAAS,GAAG,CAAE,OAAO,EAAE,qBAAqB,QAG3C;;;;;AAED,wBAGC"}
+{"version":3,"file":"GL.d.ts","sourceRoot":"","sources":["../../src/renderer/webgl1/GL.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,EAAE;;;CAWd,CAAC"}

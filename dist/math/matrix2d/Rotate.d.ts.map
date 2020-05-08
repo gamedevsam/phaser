@@ -1,1 +1,1 @@
-{"version":3,"file":"Rotate.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d/Rotate.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AAIpC,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,MAAM,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,GAAG,SAAS,CAe3E"}
+{"version":3,"file":"Rotate.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d/Rotate.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAIxC,wBAAgB,MAAM,CAAE,MAAM,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,GAAG,SAAS,CAenE"}

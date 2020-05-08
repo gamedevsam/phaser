@@ -1,2 +1,2 @@
-export declare function hasWebAudio(): boolean;
-//# sourceMappingURL=hasWebAudio.d.ts.map
+export declare function HasWebAudio(): boolean;
+//# sourceMappingURL=HasWebAudio.d.ts.map

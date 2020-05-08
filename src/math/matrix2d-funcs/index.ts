@@ -1,18 +1,39 @@
-export * as Add from './Add';
-export * as Append from './Append';
-export * as Clone from './Clone';
-export * as Equals from './Equals';
-export * as ExactEquals from './ExactEquals';
-export * as FromRotation from './FromRotation';
-export * as FromScaling from './FromScaling';
-export * as FromTranslation from './FromTranslation';
-export * as Identity from './Identity';
-export * as Invert from './Invert';
-export * as Multiply from './Multiply';
-export * as MultiplyScalar from './MultiplyScalar';
-export * as MultiplyScalarAndAdd from './MultiplyScalarAndAdd';
-export * as Rotate from './Rotate';
-export * as Scale from './Scale';
-export * as Subtract from './Subtract';
-export * as Translate from './Translate';
-export * as Zero from './Zero';
+import { Add } from './Add';
+import { Append } from './Append';
+import { Clone } from './Clone';
+import { Equals } from './Equals';
+import { ExactEquals } from './ExactEquals';
+import { FromRotation } from './FromRotation';
+import { FromScaling } from './FromScaling';
+import { FromTranslation } from './FromTranslation';
+import { Identity } from './Identity';
+import { Invert } from './Invert';
+import { Multiply } from './Multiply';
+import { MultiplyScalar } from './MultiplyScalar';
+import { MultiplyScalarAndAdd } from './MultiplyScalarAndAdd';
+import { Rotate } from './Rotate';
+import { Scale } from './Scale';
+import { Subtract } from './Subtract';
+import { Translate } from './Translate';
+import { Zero } from './Zero';
+
+export {
+    Add,
+    Append,
+    Clone,
+    Equals,
+    ExactEquals,
+    FromRotation,
+    FromScaling,
+    FromTranslation,
+    Identity,
+    Invert,
+    Multiply,
+    MultiplyScalar,
+    MultiplyScalarAndAdd,
+    Rotate,
+    Scale,
+    Subtract,
+    Translate,
+    Zero
+};

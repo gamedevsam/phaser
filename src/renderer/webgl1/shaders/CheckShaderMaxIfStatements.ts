@@ -33,6 +33,7 @@ export function CheckShaderMaxIfStatements (maxIfs: number, gl: WebGLRenderingCo
 {
     const shader = gl.createShader(gl.FRAGMENT_SHADER);
 
+    // eslint-disable-next-line no-constant-condition
     while (true)
     {
         const fragmentSrc = fragTemplate.replace(/%forloop%/gi, GenerateSrc(maxIfs));

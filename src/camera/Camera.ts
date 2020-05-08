@@ -1,92 +1,147 @@
 import { GameInstance } from '../GameInstance';
-import { TransformGameObject } from '../gameobjects/transformgameobject/TransformGameObject';
-import { WebGLRenderer } from '../renderer/webgl1/WebGLRenderer';
 import { ICamera } from './ICamera';
+import { IRenderer } from '../renderer/IRenderer';
+import { IWorld } from '../world/IWorld';
+import { Matrix2D } from '../math/matrix2d/Matrix2D';
+import { Rectangle } from '../geom/rectangle/Rectangle';
+import { Vec2Callback } from '../math/vec2/Vec2Callback';
+import { WrapAngle } from '../math/angle';
 
-export class Camera extends TransformGameObject implements ICamera
+export class Camera implements ICamera
 {
+    world: IWorld;
     matrix: Float32Array;
-    renderer: WebGLRenderer;
+    renderer: IRenderer;
+    type: string;
 
-    constructor (x: number = 0, y: number = 0)
+    width: number;
+    height: number;
+    bounds: Rectangle;
+
+    dirtyRender: boolean;
+    worldTransform: Matrix2D;
+
+    position: Vec2Callback;
+    scale: Vec2Callback;
+    origin: Vec2Callback;
+
+    private _rotation: number = 0;
+
+    constructor ()
     {
-        super(x, y);
-
         this.type = 'Camera';
+
+        this.dirtyRender = true;
 
         const game = GameInstance.get();
 
         this.renderer = game.renderer;
 
+        this.matrix = new Float32Array([ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ]);
+
+        this.bounds = new Rectangle();
+
+        this.worldTransform = new Matrix2D();
+
+        this.position = new Vec2Callback(() => this.updateTransform(), 0, 0);
+        this.scale = new Vec2Callback(() => this.updateTransform(), 1, 1);
+        this.origin = new Vec2Callback(() => this.updateTransform(), 0.5, 0.5);
+
         this.reset();
     }
 
-    updateTransform (): this
+    updateTransform (): void
     {
-        if (!this.renderer)
-        {
-            return this;
-        }
+        const matrix = this.matrix;
 
-        this.dirtyRender = true;
+        const px = this.position.x;
+        const py = this.position.y;
 
-        const lt = this.localTransform;
-        const wt = this.worldTransform;
+        const sx = this.scale.x;
+        const sy = this.scale.y;
 
-        lt.tx = 0 - this.x;
-        lt.ty = 0 - this.y;
+        const ox = -px + (this.width * this.origin.x);
+        const oy = -py + (this.height * this.origin.y);
 
-        const mat = this.matrix;
-        const { a, b, c, d, tx, ty } = lt;
+        const z = Math.sin(this.rotation);
+        const w = Math.cos(this.rotation);
 
-        const viewportW = this.renderer.width * this.originX;
-        const viewportH = this.renderer.height * this.originY;
+        const z2 = z + z;
+        const zz = z * z2;
+        const wz = w * z2;
 
-        mat[0] = a;
-        mat[1] = b;
-        mat[4] = c;
-        mat[5] = d;
+        const out0 = (1 - zz) * sx;
+        const out1 = wz * sx;
+        const out4 = -wz * sy;
+        const out5 = (1 - zz) * sy;
 
-        //  combines viewport translation + scrollX/Y
+        matrix[0] = out0;
+        matrix[1] = out1;
+        matrix[4] = out4;
+        matrix[5] = out5;
+        matrix[12] = px + ox - (out0 * ox + out4 * oy);
+        matrix[13] = py + oy - (out1 * ox + out5 * oy);
 
-        const worldX = (a * -viewportW) + (c * -viewportH) + (viewportW + tx);
-        const worldY = (b * -viewportW) + (d * -viewportH) + (viewportH + ty);
-
-        mat[12] = worldX;
-        mat[13] = worldY;
-
-        //  Store in worldTransform
-        wt.set(
-            a, b, c, d, worldX, worldY
+        this.worldTransform.set(
+            w * sx,
+            z * sx,
+            -z * sy,
+            w * sy,
+            -px,
+            -py
         );
 
-        // mat[12] = viewportW + tx; // combines translation to center of viewport + scrollX
-        // mat[13] = viewportH + ty; // combines translation to center of viewport + scrollY
-        // this.translate(-viewportW, -viewportH);
-        // console.log(mat);
+        const bw = this.width * (1 / sx);
+        const bh = this.height * (1 / sy);
 
-        this.bounds.x = worldX * -1;
-        this.bounds.y = worldY * -1;
+        this.bounds.set(
+            ox - (bw / 2),
+            oy - (bh / 2),
+            bw,
+            bh
+        );
 
-        return this;
+        // console.log('b', this.bounds.x, this.bounds.y, this.bounds.width, this.bounds.height);
+
+        this.dirtyRender = true;
     }
 
     reset (): void
     {
-        this.matrix = new Float32Array([ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ]);
-
         const width = this.renderer.width;
         const height = this.renderer.height;
 
-        this.setSize(width, height);
-        this.setBounds(0, 0, width, height);
+        this.width = width;
+        this.height = height;
+
+        this.bounds.set(0, 0, width, height);
+    }
+
+    set rotation (value: number)
+    {
+        if (value !== this._rotation)
+        {
+            this._rotation = WrapAngle(value);
+
+            this.updateTransform();
+        }
+    }
+
+    get rotation (): number
+    {
+        return this._rotation;
     }
 
     destroy (): void
     {
-        super.destroy();
+        this.position.destroy();
+        this.scale.destroy();
+        this.origin.destroy();
 
+        this.world = null;
+        this.worldTransform = null;
         this.renderer = null;
         this.matrix = null;
+        this.bounds = null;
     }
 }

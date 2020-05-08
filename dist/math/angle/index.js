@@ -1,21 +1,14 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Between from './Between';
-import BetweenPoints from './BetweenPoints';
-import BetweenPointsY from './BetweenPointsY';
-import BetweenY from './BetweenY';
-import CounterClockwise from './CounterClockwise';
-import Normalize from './Normalize';
-import Reverse from './Reverse';
-import RotateTo from './RotateTo';
-import ShortestBetween from './ShortestBetween';
-import Wrap from './Wrap';
-import WrapDegrees from './WrapDegrees';
-/**
- * @namespace Phaser.Math.Angle
- */
-export { Between, BetweenPoints, BetweenPointsY, BetweenY, CounterClockwise, Normalize, Reverse, RotateTo, ShortestBetween, Wrap, WrapDegrees };
-//# sourceMappingURL=index.js.map
+export { AngleBetween } from './AngleBetween.js';
+export { AngleBetweenPoints } from './AngleBetweenPoints.js';
+export { AngleBetweenPointsY } from './AngleBetweenPointsY.js';
+export { AngleBetweenY } from './AngleBetweenY.js';
+import '../const.js';
+export { CounterClockwise } from './CounterClockwise.js';
+export { NormalizeAngle } from './NormalizeAngle.js';
+export { ReverseAngle } from './ReverseAngle.js';
+export { RotateAngleTo } from './RotateAngleTo.js';
+export { ShortestAngleBetween } from './ShortestAngleBetween.js';
+import '../Wrap.js';
+export { WrapAngle } from './WrapAngle.js';
+export { WrapAngleDegrees } from './WrapAngleDegrees.js';
+import '../../index-80f9ca38.js';

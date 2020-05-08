@@ -4,10 +4,10 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { DegToRad } from '../../math/DegToRad';
-import { IRectangle } from './IRectangle';
 import { CenterX } from './CenterX';
 import { CenterY } from './CenterY';
+import { DegToRad } from '../../math/DegToRad';
+import { IRectangle } from './IRectangle';
 import { Vec2 } from '../../math/vec2/Vec2';
 
 /**

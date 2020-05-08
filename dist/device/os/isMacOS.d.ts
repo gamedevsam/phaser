@@ -1,2 +1,2 @@
-export declare function isMacOS(): boolean;
-//# sourceMappingURL=isMacOS.d.ts.map
+export declare function IsMacOS(): boolean;
+//# sourceMappingURL=IsMacOS.d.ts.map

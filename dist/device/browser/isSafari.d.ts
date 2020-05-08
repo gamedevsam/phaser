@@ -1,5 +1,5 @@
-export declare function isSafari(): {
+export declare function IsSafari(): {
     safari: boolean;
     safariVersion: number;
 };
-//# sourceMappingURL=isSafari.d.ts.map
+//# sourceMappingURL=IsSafari.d.ts.map

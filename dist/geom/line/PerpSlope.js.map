@@ -1,1 +1,0 @@
-{"version":3,"file":"PerpSlope.js","sourceRoot":"","sources":["../../../src/geom/line/PerpSlope.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,IAAW;IAE1C,MAAM,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,GAAG,IAAI,CAAC;IAEhC,OAAO,CAAC,CAAC,CAAC,EAAE,GAAG,EAAE,CAAC,GAAG,CAAC,EAAE,GAAG,EAAE,CAAC,CAAC,CAAC;AACpC,CAAC"}

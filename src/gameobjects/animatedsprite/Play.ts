@@ -1,7 +1,7 @@
-import { IAnimationPlayConfig } from './IAnimationPlayConfig';
 import { IAnimatedSprite } from './IAnimatedSprite';
+import { IAnimationPlayConfig } from './IAnimationPlayConfig';
 
-export function Play (key: string, config: IAnimationPlayConfig = {}, ...sprite: IAnimatedSprite[]): void
+export function Play <T extends IAnimatedSprite> (key: string, config: IAnimationPlayConfig = {}, ...sprites: T[]): T[]
 {
     const {
         speed = 24,
@@ -16,9 +16,9 @@ export function Play (key: string, config: IAnimationPlayConfig = {}, ...sprite:
         forceRestart = false
     } = config;
 
-    sprite.forEach(entity =>
+    sprites.forEach(sprite =>
     {
-        const data = entity.animData;
+        const data = sprite.animData;
 
         if (data.isPlaying)
         {
@@ -30,7 +30,7 @@ export function Play (key: string, config: IAnimationPlayConfig = {}, ...sprite:
 
                 if (data.onComplete)
                 {
-                    data.onComplete(entity, data.currentAnim);
+                    data.onComplete(sprite, data.currentAnim);
                 }
             }
             else if (!forceRestart)
@@ -40,9 +40,9 @@ export function Play (key: string, config: IAnimationPlayConfig = {}, ...sprite:
             }
         }
 
-        if (entity.anims.has(key))
+        if (sprite.anims.has(key))
         {
-            data.currentFrames = entity.anims.get(key);
+            data.currentFrames = sprite.anims.get(key);
             data.currentAnim = key;
             data.frameIndex = startFrame;
             data.animSpeed = 1000 / speed;
@@ -60,11 +60,11 @@ export function Play (key: string, config: IAnimationPlayConfig = {}, ...sprite:
             //  If there is no start delay, we set the first frame immediately
             if (delay === 0)
             {
-                entity.setFrame(data.currentFrames[data.frameIndex]);
+                sprite.setFrame(data.currentFrames[data.frameIndex]);
 
                 if (onStart)
                 {
-                    onStart(entity, key);
+                    onStart(sprite, key);
                 }
             }
             else
@@ -74,4 +74,6 @@ export function Play (key: string, config: IAnimationPlayConfig = {}, ...sprite:
         }
 
     });
+
+    return sprites;
 }

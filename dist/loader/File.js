@@ -1,4 +1,4 @@
-export default class File {
+class File {
     constructor(key, url, config) {
         this.responseType = 'text';
         this.crossOrigin = undefined;
@@ -9,4 +9,5 @@ export default class File {
         this.config = config;
     }
 }
-//# sourceMappingURL=File.js.map
+
+export { File };

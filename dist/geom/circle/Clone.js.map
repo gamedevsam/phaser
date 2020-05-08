@@ -1,1 +1,0 @@
-{"version":3,"file":"Clone.js","sourceRoot":"","sources":["../../../src/geom/circle/Clone.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,MAAM,MAAM,UAAU,CAAC;AAG9B;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,KAAK,CAAE,MAAe;IAE1C,OAAO,IAAI,MAAM,CAAC,MAAM,CAAC,CAAC,EAAE,MAAM,CAAC,CAAC,EAAE,MAAM,CAAC,MAAM,CAAC,CAAC;AACzD,CAAC"}

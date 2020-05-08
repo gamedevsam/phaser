@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { ICircle } from './ICircle';
 import { CircumferencePoint } from './CircumferencePoint';
 import { FromPercent } from '../../math/FromPercent';
+import { ICircle } from './ICircle';
 import { MATH_CONST } from '../../math/const';
 import { Vec2 } from '../../math/vec2/Vec2';
 

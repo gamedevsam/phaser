@@ -1,16 +1,15 @@
-import GetElement from '../dom/GetElement';
-let _parent = null;
-function Parent(parent) {
+import { GetElement } from '../dom/GetElement.js';
+
+let parent;
+function Parent(parentElement) {
     return () => {
-        //  If this function was called and `null` *wasn't* given as the parent
-        //  then we try to figure it out, or fallback to the document body
-        if (parent) {
-            _parent = GetElement(parent);
+        if (parentElement) {
+            parent = GetElement(parentElement);
         }
     };
 }
 function GetParent() {
-    return _parent;
+    return parent;
 }
-export { Parent, GetParent };
-//# sourceMappingURL=Parent.js.map
+
+export { GetParent, Parent };

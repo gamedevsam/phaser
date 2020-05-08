@@ -1,1 +1,1 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/math/vec2/index.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,QAAQ,CAAC;AAE1B,OAAO,EACH,IAAI,EACP,CAAA"}
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../src/math/vec2/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAC;AAE9B,OAAO,EACH,IAAI,EACP,CAAC"}

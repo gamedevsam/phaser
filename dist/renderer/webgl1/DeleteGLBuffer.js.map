@@ -1,1 +1,0 @@
-{"version":3,"file":"DeleteGLBuffer.js","sourceRoot":"","sources":["../../../src/renderer/webgl1/DeleteGLBuffer.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,MAAM,CAAC;AAEtB,MAAM,CAAC,OAAO,UAAU,cAAc,CAAE,MAAmB;IAEvD,MAAM,EAAE,GAAG,EAAE,CAAC,GAAG,EAAE,CAAC;IAEpB,IAAI,EAAE,CAAC,QAAQ,CAAC,MAAM,CAAC,EACvB;QACI,EAAE,CAAC,YAAY,CAAC,MAAM,CAAC,CAAC;KAC3B;AACL,CAAC"}

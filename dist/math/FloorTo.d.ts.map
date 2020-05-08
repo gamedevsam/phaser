@@ -1,1 +1,1 @@
-{"version":3,"file":"FloorTo.d.ts","sourceRoot":"","sources":["../../src/math/FloorTo.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,OAAO,CAAE,KAAK,EAAE,MAAM,EAAE,KAAK,GAAE,MAAU,EAAE,IAAI,GAAE,MAAW,GAAG,MAAM,CAK5F"}
+{"version":3,"file":"FloorTo.d.ts","sourceRoot":"","sources":["../src/math/FloorTo.ts"],"names":[],"mappings":"AAoBA,wBAAgB,OAAO,CAAE,KAAK,EAAE,MAAM,EAAE,KAAK,GAAE,MAAU,EAAE,IAAI,GAAE,MAAW,GAAG,MAAM,CAKpF"}

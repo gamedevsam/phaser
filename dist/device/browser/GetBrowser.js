@@ -1,22 +1,25 @@
-import { isChrome } from './isChrome';
-import { isEdge } from './isEdge';
-import { isFirefox } from './isFirefox';
-import { isMobileSafari } from './isMobileSafari';
-import { isMSIE } from './isMSIE';
-import { isOpera } from './isOpera';
-import { isSafari } from './isSafari';
-import { isSilk } from './isSilk';
-import { isTrident } from './isTrident';
-export function GetBrowser() {
-    const { chrome, chromeVersion } = isChrome();
-    const { edge } = isEdge();
-    const { firefox, firefoxVersion } = isFirefox();
-    let { ie, ieVersion } = isMSIE();
-    const { mobileSafari } = isMobileSafari();
-    const { opera } = isOpera();
-    const { safari, safariVersion } = isSafari();
-    const { silk } = isSilk();
-    const { trident, tridentVersion, tridentIEVersion } = isTrident();
+import { IsChrome } from './IsChrome.js';
+import { IsEdge } from './IsEdge.js';
+import { IsFirefox } from './IsFirefox.js';
+import { IsMSIE } from './IsMSIE.js';
+import '../os/IsiOS.js';
+import { IsMobileSafari } from './IsMobileSafari.js';
+import { IsOpera } from './IsOpera.js';
+import '../os/IsWindowsPhone.js';
+import { IsSafari } from './IsSafari.js';
+import { IsSilk } from './IsSilk.js';
+import { IsTrident } from './IsTrident.js';
+
+function GetBrowser() {
+    const { chrome, chromeVersion } = IsChrome();
+    const { edge } = IsEdge();
+    const { firefox, firefoxVersion } = IsFirefox();
+    let { ie, ieVersion } = IsMSIE();
+    const { mobileSafari } = IsMobileSafari();
+    const { opera } = IsOpera();
+    const { safari, safariVersion } = IsSafari();
+    const { silk } = IsSilk();
+    const { trident, tridentVersion, tridentIEVersion } = IsTrident();
     if (trident) {
         ie = true;
         ieVersion = tridentIEVersion;
@@ -39,4 +42,5 @@ export function GetBrowser() {
     };
     return result;
 }
-//# sourceMappingURL=GetBrowser.js.map
+
+export { GetBrowser };

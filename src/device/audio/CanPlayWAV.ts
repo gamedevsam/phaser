@@ -1,8 +1,6 @@
-import { CanPlayType } from './CanPlayType';
+import { CanPlayAudioType } from './CanPlayAudioType';
 
 export function CanPlayWAV (audioElement?: HTMLAudioElement): boolean
 {
-    return (
-        CanPlayType('audio/wav; codecs="1"', audioElement)
-    );
+    return CanPlayAudioType('audio/wav; codecs="1"', audioElement);
 }

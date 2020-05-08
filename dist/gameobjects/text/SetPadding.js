@@ -1,4 +1,4 @@
-export default function SetPadding(left, right, top, bottom, ...text) {
+function SetPadding(left, right, top, bottom, ...text) {
     text.forEach(entity => {
         const padding = entity.padding;
         padding.left = left;
@@ -8,4 +8,5 @@ export default function SetPadding(left, right, top, bottom, ...text) {
         entity.updateText();
     });
 }
-//# sourceMappingURL=SetPadding.js.map
+
+export { SetPadding };

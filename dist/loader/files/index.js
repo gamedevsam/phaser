@@ -1,9 +1,18 @@
-import AtlasFile from './AtlasFile';
-import BitmapTextFile from './BitmapTextFile';
-import CSVFile from './CSVFile';
-import ImageFile from './ImageFile';
-import JSONFile from './JSONFile';
-import SpriteSheetFile from './SpriteSheetFile';
-import XMLFile from './XMLFile';
-export { AtlasFile, BitmapTextFile, CSVFile, ImageFile, JSONFile, SpriteSheetFile, XMLFile };
-//# sourceMappingURL=index.js.map
+import '../../dom/ParseXML.js';
+import '../../textures/TextureManagerInstance.js';
+import '../../cache/Cache.js';
+import '../../textures/parsers/AtlasParser.js';
+import '../../textures/parsers/BitmapTextParser.js';
+import '../../textures/parsers/SpriteSheetParser.js';
+import '../File.js';
+import '../GetURL.js';
+import '../ImageTagLoader.js';
+import '../XHRLoader.js';
+export { ImageFile } from './ImageFile.js';
+export { JSONFile } from './JSONFile.js';
+export { AtlasFile } from './AtlasFile.js';
+export { XMLFile } from './XMLFile.js';
+export { BitmapTextFile } from './BitmapTextFile.js';
+export { CSVFile } from './CSVFile.js';
+export { SpriteSheetFile } from './SpriteSheetFile.js';
+import '../../index-77ff01ee.js';

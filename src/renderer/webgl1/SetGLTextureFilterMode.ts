@@ -1,6 +1,6 @@
 import { GL } from './GL';
 
-export function SetGLTextureFilterMode (texture: WebGLTexture, linear: boolean = true)
+export function SetGLTextureFilterMode (texture: WebGLTexture, linear: boolean = true): void
 {
     const gl = GL.get();
 

@@ -1,17 +1,16 @@
-export default function GetURL(key, url, extension, loader) {
+function GetURL(key, url, extension, loader) {
     if (!url) {
         url = key + extension;
     }
-    if (url.match(/^(?:blob:|data:|http:\/\/|https:\/\/|\/\/)/)) {
+    if ((/^(?:blob:|data:|http:\/\/|https:\/\/|\/\/)/).exec(url)) {
         return url;
     }
+    else if (loader) {
+        return loader.baseURL + loader.path + url;
+    }
     else {
-        if (loader) {
-            return loader.baseURL + loader.path + url;
-        }
-        else {
-            return url;
-        }
+        return url;
     }
 }
-//# sourceMappingURL=GetURL.js.map
+
+export { GetURL };

@@ -1,1 +1,1 @@
-{"version":3,"file":"Ortho.d.ts","sourceRoot":"","sources":["../../../src/renderer/webgl1/Ortho.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,UAAU,KAAK,CAAE,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,EAAE,IAAI,GAAE,MAAW,EAAE,GAAG,GAAE,MAAU,GAAG,YAAY,CAO9G"}
+{"version":3,"file":"Ortho.d.ts","sourceRoot":"","sources":["../../src/renderer/webgl1/Ortho.ts"],"names":[],"mappings":"AAAA,wBAAgB,KAAK,CAAE,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,EAAE,IAAI,GAAE,MAAW,EAAE,GAAG,GAAE,MAAU,GAAG,YAAY,CAOtG"}

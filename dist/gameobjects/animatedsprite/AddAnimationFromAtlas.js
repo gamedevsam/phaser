@@ -1,4 +1,4 @@
-export default function AddAnimationFromAtlas(config, ...sprite) {
+function AddAnimationFromAtlas(config, ...sprite) {
     const { key, prefix = '', start = 0, end, zeroPad = 0, suffix = '' } = config;
     sprite.forEach(entity => {
         if (!entity.anims.has(key)) {
@@ -6,4 +6,5 @@ export default function AddAnimationFromAtlas(config, ...sprite) {
         }
     });
 }
-//# sourceMappingURL=AddAnimationFromAtlas.js.map
+
+export { AddAnimationFromAtlas };

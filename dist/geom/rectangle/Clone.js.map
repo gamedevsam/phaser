@@ -1,1 +1,0 @@
-{"version":3,"file":"Clone.js","sourceRoot":"","sources":["../../../src/geom/rectangle/Clone.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAGH,OAAO,SAAS,MAAM,aAAa,CAAC;AAEpC;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,KAAK,CAAE,MAAkB;IAE7C,OAAO,IAAI,SAAS,CAAC,MAAM,CAAC,CAAC,EAAE,MAAM,CAAC,CAAC,EAAE,MAAM,CAAC,KAAK,EAAE,MAAM,CAAC,MAAM,CAAC,CAAC;AAC1E,CAAC"}

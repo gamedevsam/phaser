@@ -1,5 +1,21 @@
-import * as Files from './files';
-import File from './File';
-import Loader from './Loader';
-export { File, Files, Loader };
-//# sourceMappingURL=index.js.map
+import '../dom/ParseXML.js';
+import '../events/Emit.js';
+import '../events/EventEmitter.js';
+import '../textures/TextureManagerInstance.js';
+import '../cache/Cache.js';
+import '../textures/parsers/AtlasParser.js';
+import '../textures/parsers/BitmapTextParser.js';
+import '../textures/parsers/SpriteSheetParser.js';
+export { Loader } from './Loader.js';
+export { File } from './File.js';
+import './GetURL.js';
+import './ImageTagLoader.js';
+import './XHRLoader.js';
+import './files/ImageFile.js';
+import './files/JSONFile.js';
+import './files/AtlasFile.js';
+import './files/XMLFile.js';
+import './files/BitmapTextFile.js';
+import './files/CSVFile.js';
+import './files/SpriteSheetFile.js';
+export { i as Files } from '../index-77ff01ee.js';

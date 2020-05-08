@@ -1,2 +1,2 @@
-export declare function isLinux(): boolean;
-//# sourceMappingURL=isLinux.d.ts.map
+export declare function IsLinux(): boolean;
+//# sourceMappingURL=IsLinux.d.ts.map

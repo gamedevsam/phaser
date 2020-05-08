@@ -1,1 +1,1 @@
-{"version":3,"file":"SnapTo.d.ts","sourceRoot":"","sources":["../../../src/math/snap/SnapTo.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;;;;;GAcG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,KAAK,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,EAAE,KAAK,GAAE,MAAU,EAAE,MAAM,GAAE,OAAe,GAAG,MAAM,CAW9G"}
+{"version":3,"file":"SnapTo.d.ts","sourceRoot":"","sources":["../../src/math/snap/SnapTo.ts"],"names":[],"mappings":"AAqBA,wBAAgB,MAAM,CAAE,KAAK,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,EAAE,KAAK,GAAE,MAAU,EAAE,MAAM,GAAE,OAAe,GAAG,MAAM,CAWtG"}

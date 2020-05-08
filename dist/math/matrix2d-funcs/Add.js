@@ -1,6 +1,7 @@
-import Matrix2D from '../matrix2d/Matrix2D';
-//  Adds a to b and returns the values in a new Matrix2D
-export default function Add(a, b) {
+import { Matrix2D } from '../matrix2d/Matrix2D.js';
+
+function Add(a, b) {
     return new Matrix2D(a.a + b.a, a.b + b.b, a.c + b.c, a.c + b.c, a.tx + b.tx, a.ty + b.ty);
 }
-//# sourceMappingURL=Add.js.map
+
+export { Add };

@@ -5,9 +5,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { LineToCircle } from './LineToCircle';
-import { ILine } from '../line/ILine';
 import { ICircle } from '../circle/ICircle';
+import { ILine } from '../line/ILine';
+import { LineToCircle } from './LineToCircle';
 import { Vec2 } from '../../math/vec2/Vec2';
 
 /**

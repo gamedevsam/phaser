@@ -1,12 +1,14 @@
-import Frame from './Frame';
-import SetGLTextureFilterMode from '../renderer/webgl1/SetGLTextureFilterMode';
-import DeleteGLTexture from '../renderer/webgl1/DeleteGLTexture';
-import DeleteFramebuffer from '../renderer/webgl1/DeleteFramebuffer';
-import CreateGLTexture from '../renderer/webgl1/CreateGLTexture';
-import UpdateGLTexture from '../renderer/webgl1/UpdateGLTexture';
-export default class Texture {
+import '../renderer/webgl1/GL.js';
+import '../math/pow2/IsSizePowerOfTwo.js';
+import { CreateGLTexture } from '../renderer/webgl1/CreateGLTexture.js';
+import { DeleteFramebuffer } from '../renderer/webgl1/DeleteFramebuffer.js';
+import { DeleteGLTexture } from '../renderer/webgl1/DeleteGLTexture.js';
+import { Frame } from './Frame.js';
+import { SetGLTextureFilterMode } from '../renderer/webgl1/SetGLTextureFilterMode.js';
+import { UpdateGLTexture } from '../renderer/webgl1/UpdateGLTexture.js';
+
+class Texture {
     constructor(image, width, height) {
-        //  Unique identifier of this Texture, if stored in the Texture Manager
         this.key = '';
         this.glIndex = 0;
         this.glIndexCounter = -1;
@@ -25,7 +27,7 @@ export default class Texture {
         if (this.frames.has(key)) {
             return null;
         }
-        let frame = new Frame(this, key, x, y, width, height);
+        const frame = new Frame(this, key, x, y, width, height);
         this.frames.set(key, frame);
         if (!this.firstFrame || this.firstFrame.key === '__BASE') {
             this.firstFrame = frame;
@@ -33,7 +35,6 @@ export default class Texture {
         return frame;
     }
     get(key) {
-        //  null, undefined, empty string, zero
         if (!key) {
             return this.firstFrame;
         }
@@ -57,7 +58,6 @@ export default class Texture {
     getFramesInRange(prefix, start, end, zeroPad = 0, suffix = '') {
         const frameKeys = [];
         const diff = (start < end) ? 1 : -1;
-        //  Adjust because we use i !== end in the for loop
         end += diff;
         for (let i = start; i !== end; i += diff) {
             frameKeys.push(prefix + i.toString().padStart(zeroPad, '0') + suffix);
@@ -96,4 +96,5 @@ export default class Texture {
         DeleteFramebuffer(this.glFramebuffer);
     }
 }
-//# sourceMappingURL=Texture.js.map
+
+export { Texture };

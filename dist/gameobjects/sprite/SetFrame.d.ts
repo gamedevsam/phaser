@@ -1,4 +1,5 @@
-import ISprite from './ISprite';
-import Frame from '../../textures/Frame';
-export default function SetFrame(key?: string | number | Frame, ...sprite: ISprite[]): void;
+import { Frame } from '../../textures/Frame';
+import { ISprite } from './ISprite';
+import { Texture } from '../../textures';
+export declare function SetFrame(texture: Texture, key?: string | number | Frame, ...sprite: ISprite[]): void;
 //# sourceMappingURL=SetFrame.d.ts.map

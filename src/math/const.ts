@@ -8,7 +8,7 @@ export const MATH_CONST = {
 
     /**
      * The value of PI * 2.
-     * 
+     *
      * @name Phaser.Math.PI2
      * @type {number}
      * @since 3.0.0
@@ -17,7 +17,7 @@ export const MATH_CONST = {
 
     /**
      * The value of PI * 2.
-     * 
+     *
      * @name Phaser.Math.HALF_PI
      * @type {number}
      * @since 3.0.0
@@ -26,7 +26,7 @@ export const MATH_CONST = {
 
     /**
      * An epsilon value (1.0e-6)
-     * 
+     *
      * @name Phaser.Math.EPSILON
      * @type {number}
      * @since 3.0.0
@@ -35,7 +35,7 @@ export const MATH_CONST = {
 
     /**
      * For converting degrees to radians (PI / 180)
-     * 
+     *
      * @name Phaser.Math.DEG_TO_RAD
      * @type {number}
      * @since 3.0.0
@@ -44,7 +44,7 @@ export const MATH_CONST = {
 
     /**
      * For converting radians to degrees (180 / PI)
-     * 
+     *
      * @name Phaser.Math.RAD_TO_DEG
      * @type {number}
      * @since 3.0.0
@@ -54,7 +54,7 @@ export const MATH_CONST = {
     /**
      * The minimum safe integer this browser supports.
      * We use a const for backward compatibility with Internet Explorer.
-     * 
+     *
      * @name Phaser.Math.MIN_SAFE_INTEGER
      * @type {number}
      * @since 3.21.0
@@ -64,7 +64,7 @@ export const MATH_CONST = {
     /**
      * The maximum safe integer this browser supports.
      * We use a const for backward compatibility with Internet Explorer.
-     * 
+     *
      * @name Phaser.Math.MAX_SAFE_INTEGER
      * @type {number}
      * @since 3.21.0

@@ -1,1 +1,1 @@
-{"version":3,"file":"Height.d.ts","sourceRoot":"","sources":["../../../src/geom/line/Height.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAGnD"}
+{"version":3,"file":"Height.d.ts","sourceRoot":"","sources":["../../src/geom/line/Height.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAYhC,wBAAgB,MAAM,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAG3C"}

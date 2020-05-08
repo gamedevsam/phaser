@@ -1,5 +1,4 @@
-//  Adds the src Matrix to the target Matrix and returns the target.
-export default function Add(target, src) {
+function Add(target, src) {
     target.a += src.a;
     target.b += src.b;
     target.c += src.c;
@@ -8,4 +7,5 @@ export default function Add(target, src) {
     target.ty += src.ty;
     return target;
 }
-//# sourceMappingURL=Add.js.map
+
+export { Add };

@@ -1,2 +1,2 @@
-export declare function canPlayH264Video(videoElement?: HTMLVideoElement): boolean;
-//# sourceMappingURL=canPlayH264Video.d.ts.map
+export declare function CanPlayH264Video(videoElement?: HTMLVideoElement): boolean;
+//# sourceMappingURL=CanPlayH264Video.d.ts.map

@@ -1,27 +1,10 @@
-/**
- * @author       Florian Vazelle
- * @author       Geoffrey Glaive
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import LineToLine from './LineToLine';
-import LineToRectangle from './LineToRectangle';
-import Vec2 from '../../math/vec2/Vec2';
-import GetEdges from '../Rectangle/GetEdges';
-/**
- * Checks for intersection between the Line and a Rectangle shape,
- * and returns the intersection points as a Point object array.
- *
- * @function Phaser.Geom.Intersects.GetLineToRectangle
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Line} line - The Line to check for intersection.
- * @param {(Phaser.Geom.Rectangle|object)} rect - The Rectangle to check for intersection.
- * @param {array} [out] - An optional array in which to store the points of intersection.
- *
- * @return {array} An array with the points of intersection if objects intersect, otherwise an empty array.
- */
-export default function GetLineToRectangle(line, rect, out = []) {
+import { Vec2 } from '../../math/vec2/Vec2.js';
+import '../line/Line.js';
+import { G as GetEdges } from '../../GetEdges-95a2b4b0.js';
+import { LineToLine } from './LineToLine.js';
+import { LineToRectangle } from './LineToRectangle.js';
+
+function GetLineToRectangle(line, rect, out = []) {
     if (LineToRectangle(line, rect)) {
         const [lineA, lineB, lineC, lineD] = GetEdges(rect);
         const points = [new Vec2(), new Vec2(), new Vec2(), new Vec2()];
@@ -39,4 +22,5 @@ export default function GetLineToRectangle(line, rect, out = []) {
     }
     return out;
 }
-//# sourceMappingURL=GetLineToRectangle.js.map
+
+export { GetLineToRectangle };

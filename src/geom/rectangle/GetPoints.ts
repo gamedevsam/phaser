@@ -4,8 +4,8 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { IRectangle } from './IRectangle';
 import { GetPoint } from './GetPoint';
+import { IRectangle } from './IRectangle';
 import { Perimeter } from './Perimeter';
 import { Vec2 } from '../../math/vec2/Vec2';
 

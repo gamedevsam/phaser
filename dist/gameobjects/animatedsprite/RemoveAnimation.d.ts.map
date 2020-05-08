@@ -1,1 +1,1 @@
-{"version":3,"file":"RemoveAnimation.d.ts","sourceRoot":"","sources":["../../../src/gameobjects/animatedsprite/RemoveAnimation.ts"],"names":[],"mappings":"AAAA,OAAO,eAAe,MAAM,mBAAmB,CAAC;AAEhD,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,GAAG,EAAE,MAAM,EAAE,GAAG,MAAM,EAAE,eAAe,EAAE,QAOjF"}
+{"version":3,"file":"RemoveAnimation.d.ts","sourceRoot":"","sources":["../../src/gameobjects/animatedsprite/RemoveAnimation.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AAEpD,wBAAgB,eAAe,CAAE,GAAG,EAAE,MAAM,EAAE,GAAG,MAAM,EAAE,eAAe,EAAE,GAAG,IAAI,CAMhF"}

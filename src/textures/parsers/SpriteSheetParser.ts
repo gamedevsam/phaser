@@ -1,15 +1,18 @@
 import { IFrameConfig } from '../IFrameConfig';
 import { Texture } from '../Texture';
 
-export function SpriteSheetParser (texture: Texture, x: number, y: number, width: number, height: number, frameConfig: IFrameConfig)
+export function SpriteSheetParser (texture: Texture, x: number, y: number, width: number, height: number, frameConfig: IFrameConfig): void
 {
-    let {
+    const {
         frameWidth = null,
-        frameHeight = null,
-        startFrame = 0,
         endFrame = -1,
         margin = 0,
         spacing = 0
+    } = frameConfig;
+
+    let {
+        frameHeight = null,
+        startFrame = 0
     } = frameConfig;
 
     if (!frameHeight)
@@ -58,8 +61,8 @@ export function SpriteSheetParser (texture: Texture, x: number, y: number, width
         ax = 0;
         ay = 0;
 
-        let w: number = fx + frameWidth;
-        let h: number = fy + frameHeight;
+        const w: number = fx + frameWidth;
+        const h: number = fy + frameHeight;
 
         if (w > width)
         {
@@ -71,7 +74,7 @@ export function SpriteSheetParser (texture: Texture, x: number, y: number, width
             ay = h - height;
         }
 
-        texture.add(i, x + fx, y + fy, frameWidth - ax, frameHeight - ay);
+        texture.addFrame(i, x + fx, y + fy, frameWidth - ax, frameHeight - ay);
 
         fx += frameWidth + spacing;
 

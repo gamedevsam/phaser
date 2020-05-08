@@ -1,26 +1,68 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Circle from '../Circle/Circle';
-/**
- * Finds the circumscribed circle (circumcircle) of a Triangle object.
- * The circumcircle is the circle which touches all of the triangle's vertices.
- *
- * Adapted from https://gist.github.com/mutoo/5617691
- *
- * @function Phaser.Geom.Triangle.CircumCircle
- * @since 3.0.0
- *
- * @generic {Phaser.Geom.Circle} O - [out,$return]
- *
- * @param {Phaser.Geom.Triangle} triangle - The Triangle to use as input.
- * @param {Phaser.Geom.Circle} [out] - An optional Circle to store the result in.
- *
- * @return {Phaser.Geom.Circle} The updated `out` Circle, or a new Circle if none was provided.
- */
-export default function CircumCircle(triangle, out = new Circle()) {
+function Contains(circle, x, y) {
+    if (circle.radius > 0 && x >= circle.left && x <= circle.right && y >= circle.top && y <= circle.bottom) {
+        const dx = (circle.x - x) * (circle.x - x);
+        const dy = (circle.y - y) * (circle.y - y);
+        return (dx + dy) <= (circle.radius * circle.radius);
+    }
+    else {
+        return false;
+    }
+}
+
+class Circle {
+    constructor(x = 0, y = 0, radius = 0) {
+        this.set(x, y, radius);
+    }
+    set(x = 0, y = 0, radius = 0) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        return this;
+    }
+    contains(x, y) {
+        return Contains(this, x, y);
+    }
+    get radius() {
+        return this._radius;
+    }
+    set radius(value) {
+        this._radius = value;
+        this._diameter = value * 2;
+    }
+    get diameter() {
+        return this._diameter;
+    }
+    set diameter(value) {
+        this._diameter = value;
+        this._radius = value * 0.5;
+    }
+    get left() {
+        return this.x - this._radius;
+    }
+    set left(value) {
+        this.x = value + this._radius;
+    }
+    get right() {
+        return this.x + this._radius;
+    }
+    set right(value) {
+        this.x = value - this._radius;
+    }
+    get top() {
+        return this.y - this._radius;
+    }
+    set top(value) {
+        this.y = value + this._radius;
+    }
+    get bottom() {
+        return this.y + this._radius;
+    }
+    set bottom(value) {
+        this.y = value - this._radius;
+    }
+}
+
+function CircumCircle(triangle, out = new Circle()) {
     const { x1, y1, x2, y2, x3, y3 } = triangle;
     const A = x2 - x1;
     const B = y2 - y1;
@@ -29,8 +71,6 @@ export default function CircumCircle(triangle, out = new Circle()) {
     const E = A * (x1 + x2) + B * (y1 + y2);
     const F = C * (x1 + x3) + D * (y1 + y3);
     const G = 2 * (A * (y3 - y2) - B * (x3 - x2));
-    //  If the points of the triangle are collinear, then just find the
-    //  extremes and use the midpoint as the center of the circumcircle.
     if (Math.abs(G) < 0.000001) {
         const minX = Math.min(x1, x2, x3);
         const minY = Math.min(y1, y2, y3);
@@ -46,4 +86,5 @@ export default function CircumCircle(triangle, out = new Circle()) {
         return out.set(cx, cy, Math.sqrt(dx * dx + dy * dy));
     }
 }
-//# sourceMappingURL=CircumCircle.js.map
+
+export { CircumCircle };

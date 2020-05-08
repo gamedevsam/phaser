@@ -1,3 +1,2 @@
-import Vec2 from './Vec2';
-export { Vec2 };
-//# sourceMappingURL=index.js.map
+export { Vec2 } from './Vec2.js';
+import '../../index-42d8e2ad.js';

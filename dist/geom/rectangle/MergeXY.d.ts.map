@@ -1,1 +1,1 @@
-{"version":3,"file":"MergeXY.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/MergeXY.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,OAAO,CAAE,MAAM,EAAE,UAAU,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,UAAU,CAarF"}
+{"version":3,"file":"MergeXY.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/MergeXY.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAgB1C,wBAAgB,OAAO,CAAE,MAAM,EAAE,UAAU,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,UAAU,CAa7E"}

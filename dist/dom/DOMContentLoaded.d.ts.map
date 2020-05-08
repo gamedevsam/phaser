@@ -1,1 +1,1 @@
-{"version":3,"file":"DOMContentLoaded.d.ts","sourceRoot":"","sources":["../../src/dom/DOMContentLoaded.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,UAAU,gBAAgB,CAAE,QAAQ,EAAE,MAAM,IAAI,QAiC7D"}
+{"version":3,"file":"DOMContentLoaded.d.ts","sourceRoot":"","sources":["../src/dom/DOMContentLoaded.ts"],"names":[],"mappings":"AAAA,wBAAgB,gBAAgB,CAAE,QAAQ,EAAE,MAAM,IAAI,GAAG,IAAI,CAmC5D"}

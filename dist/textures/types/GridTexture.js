@@ -1,6 +1,15 @@
-import CreateCanvas from '../CreateCanvas';
-import Texture from '../Texture';
-export default function GridTexture(color1, color2, width = 32, height = 32, cols = 2, rows = 2) {
+import '../../renderer/webgl1/GL.js';
+import { CreateCanvas } from '../CreateCanvas.js';
+import '../../math/pow2/IsSizePowerOfTwo.js';
+import '../../renderer/webgl1/CreateGLTexture.js';
+import '../../renderer/webgl1/DeleteFramebuffer.js';
+import '../../renderer/webgl1/DeleteGLTexture.js';
+import '../Frame.js';
+import '../../renderer/webgl1/SetGLTextureFilterMode.js';
+import '../../renderer/webgl1/UpdateGLTexture.js';
+import { Texture } from '../Texture.js';
+
+function GridTexture(color1, color2, width = 32, height = 32, cols = 2, rows = 2) {
     const ctx = CreateCanvas(width, height);
     const colWidth = width / cols;
     const rowHeight = height / rows;
@@ -14,4 +23,5 @@ export default function GridTexture(color1, color2, width = 32, height = 32, col
     }
     return new Texture(ctx.canvas);
 }
-//# sourceMappingURL=GridTexture.js.map
+
+export { GridTexture };

@@ -1,21 +1,15 @@
-import Game from '../Game';
-import IBaseScene from './IBaseScene';
-import ISceneConfig from './ISceneConfig';
-import IBaseSceneConstructor from './IBaseSceneConstructor';
-export default class SceneManager {
+import { Game } from '../Game';
+import { IScene } from './IScene';
+import { ISceneRenderData } from './ISceneRenderData';
+export declare class SceneManager {
     game: Game;
-    scenes: Map<string, IBaseScene>;
+    scenes: Map<string, IScene>;
     sceneIndex: number;
     flush: boolean;
-    dirtyCameras: number;
-    dirtyFrame: number;
-    totalFrame: number;
-    renderList: any[];
+    renderResult: ISceneRenderData;
     constructor();
     boot(): void;
-    add(scene: IBaseSceneConstructor): void;
-    init(scene: IBaseScene, config?: string | ISceneConfig): void;
-    update(delta: number, now: number): void;
-    render(gameFrame: number): [any[], number, number];
+    update(delta: number, time: number): void;
+    render(gameFrame: number): ISceneRenderData;
 }
 //# sourceMappingURL=SceneManager.d.ts.map

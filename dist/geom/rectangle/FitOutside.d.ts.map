@@ -1,1 +1,1 @@
-{"version":3,"file":"FitOutside.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/FitOutside.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAKtC;;;;;;;;;;;;;;;;GAgBG;AACH,MAAM,CAAC,OAAO,UAAU,UAAU,CAAE,MAAM,EAAE,UAAU,EAAE,MAAM,EAAE,UAAU,GAAG,UAAU,CAuBtF"}
+{"version":3,"file":"FitOutside.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/FitOutside.ts"],"names":[],"mappings":"AASA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAmB1C,wBAAgB,UAAU,CAAE,MAAM,EAAE,UAAU,EAAE,MAAM,EAAE,UAAU,GAAG,UAAU,CAuB9E"}

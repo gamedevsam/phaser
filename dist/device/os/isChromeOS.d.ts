@@ -1,2 +1,2 @@
-export declare function isChromeOS(): boolean;
-//# sourceMappingURL=isChromeOS.d.ts.map
+export declare function IsChromeOS(): boolean;
+//# sourceMappingURL=IsChromeOS.d.ts.map

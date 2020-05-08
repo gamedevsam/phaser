@@ -1,1 +1,0 @@
-{"version":3,"file":"SetLineSpacing.js","sourceRoot":"","sources":["../../../src/gameobjects/text/SetLineSpacing.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,cAAc,CAAE,OAAe,EAAE,GAAG,IAAa;IAErE,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAElB,MAAM,CAAC,WAAW,GAAG,OAAO,CAAC;QAC7B,MAAM,CAAC,UAAU,EAAE,CAAC;IAExB,CAAC,CAAC,CAAC;AACP,CAAC"}

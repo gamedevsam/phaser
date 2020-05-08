@@ -1,15 +1,16 @@
-import File from '../File';
-import XHRLoader from '../XHRLoader';
-import GetURL from '../GetURL';
-import ParseXML from '../../dom/ParseXML';
-import GameInstance from '../../GameInstance';
-export default function XMLFile(key, url) {
+import { ParseXML } from '../../dom/ParseXML.js';
+import { Cache } from '../../cache/Cache.js';
+import { File } from '../File.js';
+import { GetURL } from '../GetURL.js';
+import { XHRLoader } from '../XHRLoader.js';
+
+function XMLFile(key, url) {
     const file = new File(key, url);
     file.load = () => {
         file.url = GetURL(file.key, file.url, '.xml', file.loader);
         return new Promise((resolve, reject) => {
-            const game = GameInstance.get();
-            if (!file.skipCache && game.cache.xml.has(file.key)) {
+            const cache = Cache.get('XML');
+            if (!file.skipCache && cache.has(file.key)) {
                 resolve(file);
             }
             else {
@@ -18,7 +19,7 @@ export default function XMLFile(key, url) {
                     if (xml !== null) {
                         file.data = xml;
                         if (!file.skipCache) {
-                            game.cache.xml.set(file.key, xml);
+                            cache.set(file.key, xml);
                         }
                         resolve(file);
                     }
@@ -33,4 +34,5 @@ export default function XMLFile(key, url) {
     };
     return file;
 }
-//# sourceMappingURL=XMLFile.js.map
+
+export { XMLFile };

@@ -1,17 +1,8 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Between from './DistanceBetween';
-import BetweenPoints from './DistanceBetweenPoints';
-import BetweenPointsSquared from './DistanceBetweenPointsSquared';
-import Chebyshev from './DistanceChebyshev';
-import Power from './DistancePower';
-import Snake from './DistanceSnake';
-import Squared from './DistanceSquared';
-/**
- * @namespace Phaser.Math.Distance
- */
-export { Between, BetweenPoints, BetweenPointsSquared, Chebyshev, Power, Snake, Squared };
-//# sourceMappingURL=index.js.map
+export { ChebyshevDistance } from './ChebyshevDistance.js';
+export { DistanceBetween } from './DistanceBetween.js';
+export { DistanceBetweenPoints } from './DistanceBetweenPoints.js';
+export { DistanceBetweenPointsSquared } from './DistanceBetweenPointsSquared.js';
+export { DistancePower } from './DistancePower.js';
+export { DistanceSquared } from './DistanceSquared.js';
+export { SnakeDistance } from './SnakeDistance.js';
+import '../../index-a7c11af2.js';

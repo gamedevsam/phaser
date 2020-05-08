@@ -1,1 +1,1 @@
-{"version":3,"file":"PerpSlope.d.ts","sourceRoot":"","sources":["../../../src/geom/line/PerpSlope.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAKtD"}
+{"version":3,"file":"PerpSlope.d.ts","sourceRoot":"","sources":["../../src/geom/line/PerpSlope.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAYhC,wBAAgB,SAAS,CAAE,IAAI,EAAE,KAAK,GAAG,MAAM,CAK9C"}

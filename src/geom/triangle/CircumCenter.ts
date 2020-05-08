@@ -7,10 +7,9 @@
 import { ITriangle } from './ITriangle';
 import { Vec2 } from '../../math/vec2/Vec2';
 
-
 /**
  * Computes the determinant of a 2x2 matrix. Uses standard double-precision arithmetic, so is susceptible to round-off error.
- * 
+ *
  * Adapted from http://bjornharrtell.github.io/jsts/doc/api/jsts_geom_Triangle.js.html
  *
  * @function det

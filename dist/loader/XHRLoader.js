@@ -1,4 +1,4 @@
-export default function XHRLoader(file) {
+function XHRLoader(file) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', file.url, true);
     xhr.responseType = file.responseType;
@@ -15,4 +15,5 @@ export default function XHRLoader(file) {
         xhr.send();
     });
 }
-//# sourceMappingURL=XHRLoader.js.map
+
+export { XHRLoader };

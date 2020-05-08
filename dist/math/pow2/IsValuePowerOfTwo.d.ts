@@ -1,17 +1,2 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-/**
- * Tests the value and returns `true` if it is a power of two.
- *
- * @function Phaser.Math.Pow2.IsValue
- * @since 3.0.0
- *
- * @param {number} value - The value to check if it's a power of two.
- *
- * @return {boolean} Returns `true` if `value` is a power of two, otherwise `false`.
- */
-export default function IsValuePowerOfTwo(value: number): boolean;
+export declare function IsValuePowerOfTwo(value: number): boolean;
 //# sourceMappingURL=IsValuePowerOfTwo.d.ts.map

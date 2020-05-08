@@ -1,1 +1,1 @@
-{"version":3,"file":"DistanceSquared.d.ts","sourceRoot":"","sources":["../../../src/math/distance/DistanceSquared.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;;;GAYG;AACH,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,EAAE,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,GAAG,MAAM,CAM/F"}
+{"version":3,"file":"DistanceSquared.d.ts","sourceRoot":"","sources":["../../src/math/distance/DistanceSquared.ts"],"names":[],"mappings":"AAmBA,wBAAgB,eAAe,CAAE,EAAE,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,GAAG,MAAM,CAMvF"}

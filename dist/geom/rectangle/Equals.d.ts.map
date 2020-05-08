@@ -1,1 +1,1 @@
-{"version":3,"file":"Equals.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/Equals.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,IAAI,EAAE,UAAU,EAAE,SAAS,EAAE,UAAU,GAAG,OAAO,CAQhF"}
+{"version":3,"file":"Equals.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/Equals.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAa1C,wBAAgB,MAAM,CAAE,IAAI,EAAE,UAAU,EAAE,SAAS,EAAE,UAAU,GAAG,OAAO,CAQxE"}

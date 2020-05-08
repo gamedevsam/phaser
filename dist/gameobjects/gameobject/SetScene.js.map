@@ -1,1 +1,0 @@
-{"version":3,"file":"SetScene.js","sourceRoot":"","sources":["../../../src/gameobjects/gameobject/SetScene.ts"],"names":[],"mappings":"AAGA,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,KAAiB,EAAE,GAAG,KAAoB;IAExE,KAAK,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAEnB,MAAM,CAAC,KAAK,GAAG,KAAK,CAAC;IAEzB,CAAC,CAAC,CAAC;AACP,CAAC"}

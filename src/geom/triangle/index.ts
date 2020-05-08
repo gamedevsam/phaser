@@ -22,8 +22,8 @@ import { GetEdges } from './GetEdges';
 import { GetPoint } from './GetPoint';
 import { GetPoints } from './GetPoints';
 import { InCenter } from './InCenter';
-import { Perimeter } from './Perimeter';
 import { Offset } from './Offset';
+import { Perimeter } from './Perimeter';
 import { Random } from './Random';
 import { Rotate } from './Rotate';
 import { RotateAroundPoint } from './RotateAroundPoint';
@@ -49,8 +49,8 @@ export {
     GetPoint,
     GetPoints,
     InCenter,
-    Perimeter,
     Offset,
+    Perimeter,
     Random,
     Rotate,
     RotateAroundPoint,

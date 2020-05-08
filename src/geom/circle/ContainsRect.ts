@@ -4,8 +4,8 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { ICircle } from './ICircle';
 import { Contains } from './Contains';
+import { ICircle } from './ICircle';
 import { IRectangle } from '../rectangle/IRectangle';
 
 /**

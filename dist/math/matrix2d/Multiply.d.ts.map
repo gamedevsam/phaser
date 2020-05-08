@@ -1,1 +1,1 @@
-{"version":3,"file":"Multiply.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d/Multiply.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AAIpC,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,MAAM,EAAE,SAAS,EAAE,GAAG,EAAE,SAAS,GAAG,SAAS,CAa9E"}
+{"version":3,"file":"Multiply.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d/Multiply.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAIxC,wBAAgB,QAAQ,CAAE,MAAM,EAAE,SAAS,EAAE,GAAG,EAAE,SAAS,GAAG,SAAS,CAatE"}

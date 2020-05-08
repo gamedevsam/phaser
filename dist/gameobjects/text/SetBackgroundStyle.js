@@ -1,4 +1,4 @@
-export default function SetBackgroundStyle(style, cornerRadius, ...text) {
+function SetBackgroundStyle(style, cornerRadius, ...text) {
     text.forEach(entity => {
         entity.backgroundStyle = style;
         if (cornerRadius !== null) {
@@ -7,4 +7,5 @@ export default function SetBackgroundStyle(style, cornerRadius, ...text) {
         entity.updateText();
     });
 }
-//# sourceMappingURL=SetBackgroundStyle.js.map
+
+export { SetBackgroundStyle };

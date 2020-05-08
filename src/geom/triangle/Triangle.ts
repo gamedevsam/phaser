@@ -35,10 +35,10 @@ export class Triangle
 
     constructor (x1: number = 0, y1: number = 0, x2: number = 0, y2: number = 0, x3: number = 0, y3: number = 0)
     {
-        this.set(x1, y1, x2, y2, x2, y3);
+        this.set(x1, y1, x2, y2, x3, y3);
     }
 
-    set (x1: number = 0, y1: number = 0, x2: number = 0, y2: number = 0, x3: number = 0, y3: number = 0)
+    set (x1: number = 0, y1: number = 0, x2: number = 0, y2: number = 0, x3: number = 0, y3: number = 0): this
     {
         this.x1 = x1;
         this.y1 = y1;

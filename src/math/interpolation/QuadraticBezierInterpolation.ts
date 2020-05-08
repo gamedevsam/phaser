@@ -7,7 +7,7 @@
 /**
  * @ignore
  */
-function P0 (t: number, p: number)
+function P0 (t: number, p: number): number
 {
     const k = 1 - t;
 
@@ -17,7 +17,7 @@ function P0 (t: number, p: number)
 /**
  * @ignore
  */
-function P1 (t: number, p: number)
+function P1 (t: number, p: number): number
 {
     return 2 * (1 - t) * t * p;
 }
@@ -25,7 +25,7 @@ function P1 (t: number, p: number)
 /**
  * @ignore
  */
-function P2 (t: number, p: number)
+function P2 (t: number, p: number): number
 {
     return t * t * p;
 }

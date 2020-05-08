@@ -1,44 +1,9 @@
-export default class Vec2 {
-    /**
-     * X component
-     *
-     * @type {number}
-     * @memberof Vec2
-     */
+export declare class Vec2 {
     x: number;
-    /**
-     * Y component
-     *
-     * @type {number}
-     * @memberof Vec2
-     */
     y: number;
-    /**
-     * Creates an instance of a Vector2.
-     *
-     * @param {number} [x=0] - X component
-     * @param {number} [y=0] - Y component
-     * @memberof Vec2
-     */
     constructor(x?: number, y?: number);
     set(x?: number, y?: number): this;
-    /**
-     * Returns a new array containg the Vector2 component values.
-     *
-     * @returns {number[]}
-     * @memberof Vec2
-     */
     getArray(): number[];
-    /**
-     * Sets the values of this Vector2 based on the given array, or array-like object, such as a Float32.
-     *
-     * The source must have 2 elements, starting from index 0 through to index 1.
-     *
-     * @param {number[]} src - The source array to copy the values from.
-     * @returns {Vec2}
-     * @memberof Vec2
-     */
-    fromArray(src: number[]): Vec2;
-    [Symbol.iterator](): IterableIterator<number>;
+    fromArray(src: number[]): this;
 }
 //# sourceMappingURL=Vec2.d.ts.map

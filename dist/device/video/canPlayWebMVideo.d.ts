@@ -1,2 +1,2 @@
-export declare function canPlayWebMVideo(videoElement?: HTMLVideoElement): boolean;
-//# sourceMappingURL=canPlayWebMVideo.d.ts.map
+export declare function CanPlayWebMVideo(videoElement?: HTMLVideoElement): boolean;
+//# sourceMappingURL=CanPlayWebMVideo.d.ts.map

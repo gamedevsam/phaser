@@ -1,9 +1,9 @@
-export default function (texture, x, y, width, height, frameConfig) {
-    let { frameWidth = null, frameHeight = null, startFrame = 0, endFrame = -1, margin = 0, spacing = 0 } = frameConfig;
+function SpriteSheetParser(texture, x, y, width, height, frameConfig) {
+    const { frameWidth = null, endFrame = -1, margin = 0, spacing = 0 } = frameConfig;
+    let { frameHeight = null, startFrame = 0 } = frameConfig;
     if (!frameHeight) {
         frameHeight = frameWidth;
     }
-    //  If missing we can't proceed
     if (frameWidth === null) {
         throw new Error('SpriteSheetParser: Invalid frameWidth');
     }
@@ -17,7 +17,6 @@ export default function (texture, x, y, width, height, frameConfig) {
         startFrame = 0;
     }
     if (startFrame < 0) {
-        //  Allow negative skipframes.
         startFrame = total + startFrame;
     }
     if (endFrame !== -1) {
@@ -30,8 +29,8 @@ export default function (texture, x, y, width, height, frameConfig) {
     for (let i = 0; i < total; i++) {
         ax = 0;
         ay = 0;
-        let w = fx + frameWidth;
-        let h = fy + frameHeight;
+        const w = fx + frameWidth;
+        const h = fy + frameHeight;
         if (w > width) {
             ax = w - width;
         }
@@ -46,4 +45,5 @@ export default function (texture, x, y, width, height, frameConfig) {
         }
     }
 }
-//# sourceMappingURL=SpriteSheetParser.js.map
+
+export { SpriteSheetParser };

@@ -12,5 +12,5 @@ function WebGLContext(contextAttributes) {
 function GetWebGLContext() {
     return _contextAttributes;
 }
-export { WebGLContext, GetWebGLContext };
-//# sourceMappingURL=WebGLContext.js.map
+
+export { GetWebGLContext, WebGLContext };

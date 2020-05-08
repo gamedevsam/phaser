@@ -1,2 +1,2 @@
-export declare function canPlayOGGVideo(videoElement?: HTMLVideoElement): boolean;
-//# sourceMappingURL=canPlayOGGVideo.d.ts.map
+export declare function CanPlayOGGVideo(videoElement?: HTMLVideoElement): boolean;
+//# sourceMappingURL=CanPlayOGGVideo.d.ts.map

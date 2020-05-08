@@ -1,30 +1,11 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Circumference from './Circumference';
-import CircumferencePoint from './CircumferencePoint';
-import FromPercent from '../../math/FromPercent';
-import MATH_CONST from '../../math/const';
-/**
- * Returns an array of Point objects containing the coordinates of the points around the circumference of the Ellipse,
- * based on the given quantity or stepRate values.
- *
- * @function Phaser.Geom.Ellipse.GetPoints
- * @since 3.0.0
- *
- * @generic {Phaser.Geom.Point[]} O - [out,$return]
- *
- * @param {Phaser.Geom.Ellipse} ellipse - The Ellipse to get the points from.
- * @param {integer} quantity - The amount of points to return. If a falsey value the quantity will be derived from the `stepRate` instead.
- * @param {number} [stepRate] - Sets the quantity by getting the circumference of the ellipse and dividing it by the stepRate.
- * @param {(array|Phaser.Geom.Point[])} [out] - An array to insert the points in to. If not provided a new array will be created.
- *
- * @return {(array|Phaser.Geom.Point[])} An array of Point objects pertaining to the points around the circumference of the ellipse.
- */
-export default function GetPoints(ellipse, step, quantity = 0, out = []) {
-    //  If quantity is a falsey value (false, null, 0, undefined, etc) then we calculate it based on the stepRate instead.
+import { MATH_CONST } from '../../math/const.js';
+import '../../math/vec2/Vec2.js';
+import '../../math/Clamp.js';
+import { FromPercent } from '../../math/FromPercent.js';
+import { Circumference } from './Circumference.js';
+import { CircumferencePoint } from './CircumferencePoint.js';
+
+function GetPoints(ellipse, step, quantity = 0, out = []) {
     if (!quantity) {
         quantity = Circumference(ellipse) / step;
     }
@@ -34,4 +15,5 @@ export default function GetPoints(ellipse, step, quantity = 0, out = []) {
     }
     return out;
 }
-//# sourceMappingURL=GetPoints.js.map
+
+export { GetPoints };

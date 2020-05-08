@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
+import { Angle } from './Angle';
 import { ILine } from './ILine';
 import { MATH_CONST } from '../../math/const';
-import { Angle } from './Angle';
 
 /**
  * Returns the x component of the normal vector of the given line.

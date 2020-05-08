@@ -1,1 +1,1 @@
-{"version":3,"file":"Offset.d.ts","sourceRoot":"","sources":["../../../src/geom/ellipse/Offset.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,QAAQ,MAAM,YAAY,CAAC;AAElC;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,OAAO,EAAE,QAAQ,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,QAAQ,CAMjF"}
+{"version":3,"file":"Offset.d.ts","sourceRoot":"","sources":["../../src/geom/ellipse/Offset.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAgBtC,wBAAgB,MAAM,CAAE,OAAO,EAAE,QAAQ,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,QAAQ,CAMzE"}

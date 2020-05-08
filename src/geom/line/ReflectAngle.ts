@@ -5,8 +5,8 @@
  */
 
 import { Angle } from './Angle';
-import { NormalAngle } from './NormalAngle';
 import { ILine } from './ILine';
+import { NormalAngle } from './NormalAngle';
 
 /**
  * Calculate the reflected angle between two lines.

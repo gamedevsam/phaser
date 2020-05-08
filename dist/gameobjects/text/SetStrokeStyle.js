@@ -1,4 +1,4 @@
-export default function SetStrokeStyle(style, lineWidth, ...text) {
+function SetStrokeStyle(style, lineWidth, ...text) {
     text.forEach(entity => {
         entity.strokeStyle = style;
         if (lineWidth) {
@@ -7,4 +7,5 @@ export default function SetStrokeStyle(style, lineWidth, ...text) {
         entity.updateText();
     });
 }
-//# sourceMappingURL=SetStrokeStyle.js.map
+
+export { SetStrokeStyle };

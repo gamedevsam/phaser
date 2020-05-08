@@ -1,56 +1,54 @@
-import { ParseXML } from '../../dom/ParseXML';
-import { GameInstance } from '../../GameInstance';
+import { Cache } from '../../cache/Cache';
 import { File } from '../File';
 import { GetURL } from '../GetURL';
+import { ParseXML } from '../../dom/ParseXML';
 import { XHRLoader } from '../XHRLoader';
 
-export function XMLFile (key: string, url?: string): File<XMLDocument>
+export function XMLFile (key: string, url?: string): File
 {
-    const file = new File<string>(key, url);
-    const fileCast = (file as unknown) as File<XMLDocument>;
+    const file = new File(key, url);
 
-    fileCast.load = () => {
+    file.load = (): Promise<File> =>
+    {
+        file.url = GetURL(file.key, file.url, '.xml', file.loader);
 
-        fileCast.url = GetURL(fileCast.key, file.url, '.xml', fileCast.loader);
+        return new Promise((resolve, reject) =>
+        {
+            const cache = Cache.get('XML');
 
-        return new Promise((resolve, reject) => {
-
-            const game = GameInstance.get();
-
-            if (!fileCast.skipCache && game.cache.xml.has(fileCast.key))
+            if (!file.skipCache && cache.has(file.key))
             {
-                resolve(fileCast);
+                resolve(file);
             }
             else
             {
-                XHRLoader(file).then(file => {
-
+                XHRLoader(file).then(file =>
+                {
                     const xml = ParseXML(file.data);
 
                     if (xml !== null)
                     {
-                        fileCast.data = xml;
+                        file.data = xml;
 
-                        if (!fileCast.skipCache)
+                        if (!file.skipCache)
                         {
-                            game.cache.xml.set(fileCast.key, xml);
+                            cache.set(file.key, xml);
                         }
 
-                        resolve(fileCast);
+                        resolve(file);
                     }
                     else
                     {
-                        reject(fileCast);
+                        reject(file);
                     }
 
-                }).catch(() => {
-
-                    reject(fileCast);
-
+                }).catch(file =>
+                {
+                    reject(file);
                 });
             }
         });
     };
 
-    return fileCast;
+    return file;
 }

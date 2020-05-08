@@ -1,23 +1,23 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Area from './Area';
-import Circle from './Circle';
-import Circumference from './Circumference';
-import CircumferencePoint from './CircumferencePoint';
-import Clone from './Clone';
-import Contains from './Contains';
-import ContainsPoint from './ContainsPoint';
-import ContainsRect from './ContainsRect';
-import CopyFrom from './CopyFrom';
-import Equals from './Equals';
-import GetBounds from './GetBounds';
-import GetPoint from './GetPoint';
-import GetPoints from './GetPoints';
-import Offset from './Offset';
-import OffsetPoint from './OffsetPoint';
-import Random from './Random';
-export { Area, Circle, Circumference, CircumferencePoint, Clone, Contains, ContainsPoint, ContainsRect, CopyFrom, Equals, GetBounds, GetPoint, GetPoints, Offset, OffsetPoint, Random };
-//# sourceMappingURL=index.js.map
+import '../rectangle/Contains.js';
+import '../rectangle/Rectangle.js';
+import '../../math/const.js';
+export { Area } from './Area.js';
+export { Contains } from './Contains.js';
+export { Circle } from './Circle.js';
+export { Circumference } from './Circumference.js';
+import '../../math/vec2/Vec2.js';
+export { CircumferencePoint } from './CircumferencePoint.js';
+export { Clone } from './Clone.js';
+export { ContainsPoint } from './ContainsPoint.js';
+export { ContainsRect } from './ContainsRect.js';
+export { CopyFrom } from './CopyFrom.js';
+export { Equals } from './Equals.js';
+export { GetBounds } from './GetBounds.js';
+import '../../math/Clamp.js';
+import '../../math/FromPercent.js';
+export { GetPoint } from './GetPoint.js';
+export { GetPoints } from './GetPoints.js';
+export { Offset } from './Offset.js';
+export { OffsetPoint } from './OffsetPoint.js';
+export { Random } from './Random.js';
+import '../../index-bebe1ae7.js';

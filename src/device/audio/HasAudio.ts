@@ -1,4 +1,4 @@
 export function HasAudio (): boolean
 {
-    return Object.prototype.hasOwnProperty.call(window, 'Audio');
+    return (window && window.hasOwnProperty('Audio'));
 }

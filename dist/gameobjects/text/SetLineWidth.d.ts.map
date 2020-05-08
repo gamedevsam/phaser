@@ -1,1 +1,1 @@
-{"version":3,"file":"SetLineWidth.d.ts","sourceRoot":"","sources":["../../../src/gameobjects/text/SetLineWidth.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,SAAS,CAAC;AAE5B,MAAM,CAAC,OAAO,UAAU,YAAY,CAAE,KAAK,EAAE,MAAM,EAAE,GAAG,IAAI,EAAE,KAAK,EAAE,QAQpE"}
+{"version":3,"file":"SetLineWidth.d.ts","sourceRoot":"","sources":["../../src/gameobjects/text/SetLineWidth.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAEhC,wBAAgB,YAAY,CAAE,KAAK,EAAE,MAAM,EAAE,GAAG,IAAI,EAAE,KAAK,EAAE,GAAG,IAAI,CAOnE"}

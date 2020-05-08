@@ -1,1 +1,1 @@
-{"version":3,"file":"GetAspectRatio.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/GetAspectRatio.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,cAAc,CAAE,IAAI,EAAE,UAAU,GAAG,MAAM,CAGhE"}
+{"version":3,"file":"GetAspectRatio.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/GetAspectRatio.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAY1C,wBAAgB,cAAc,CAAE,IAAI,EAAE,UAAU,GAAG,MAAM,CAGxD"}

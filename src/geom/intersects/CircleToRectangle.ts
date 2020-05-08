@@ -5,7 +5,7 @@
  */
 
 import { ICircle } from '../circle/ICircle';
-import { IRectangle } from '../Rectangle/IRectangle';
+import { IRectangle } from '../rectangle/IRectangle';
 
 /**
  * Checks for intersection between a circle and a rectangle.

@@ -1,8 +1,9 @@
-import { canPlayH264Video } from './canPlayH264Video';
-import { canPlayHLSVideo } from './canPlayHLSVideo';
-import { canPlayOGGVideo } from './canPlayOGGVideo';
-import { canPlayVP9Video } from './canPlayVP9Video';
-import { canPlayWebMVideo } from './canPlayWebMVideo';
+import { CanPlayH264Video } from './CanPlayH264Video';
+import { CanPlayHLSVideo } from './CanPlayHLSVideo';
+import { CanPlayOGGVideo } from './CanPlayOGGVideo';
+import { CanPlayVP9Video } from './CanPlayVP9Video';
+import { CanPlayVideoType } from './CanPlayVideoType';
+import { CanPlayWebMVideo } from './CanPlayWebMVideo';
 import { GetVideo } from './GetVideo';
-export { canPlayH264Video, canPlayHLSVideo, canPlayOGGVideo, canPlayVP9Video, canPlayWebMVideo, GetVideo };
+export { CanPlayH264Video, CanPlayHLSVideo, CanPlayOGGVideo, CanPlayVP9Video, CanPlayVideoType, CanPlayWebMVideo, GetVideo };
 //# sourceMappingURL=index.d.ts.map

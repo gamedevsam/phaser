@@ -1,7 +1,7 @@
-import { Sprite } from '../sprite/Sprite';
-import { IAnimationData } from './IAnimationData';
 import { Frame } from '../../textures/Frame';
+import { IAnimationData } from './IAnimationData';
 import { IContainer } from '../container/IContainer';
+import { Sprite } from '../sprite/Sprite';
 
 export class AnimatedSprite extends Sprite
 {

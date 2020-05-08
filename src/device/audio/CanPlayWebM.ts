@@ -1,8 +1,6 @@
-import { CanPlayType } from './CanPlayType';
+import { CanPlayAudioType } from './CanPlayAudioType';
 
 export function CanPlayWebM (audioElement?: HTMLAudioElement): boolean
 {
-    return (
-        CanPlayType('audio/webm; codecs="vorbis"', audioElement)
-    );
+    return CanPlayAudioType('audio/webm; codecs="vorbis"', audioElement);
 }

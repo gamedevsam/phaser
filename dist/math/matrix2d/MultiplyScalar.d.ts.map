@@ -1,1 +1,1 @@
-{"version":3,"file":"MultiplyScalar.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d/MultiplyScalar.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AAIpC,MAAM,CAAC,OAAO,UAAU,cAAc,CAAE,MAAM,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,GAAG,SAAS,CAUnF"}
+{"version":3,"file":"MultiplyScalar.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d/MultiplyScalar.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAIxC,wBAAgB,cAAc,CAAE,MAAM,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,GAAG,SAAS,CAU3E"}

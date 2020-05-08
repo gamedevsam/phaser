@@ -4,10 +4,20 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-export * as DistanceBetween from './DistanceBetween';
-export * as DistanceBetweenPoints from './DistanceBetweenPoints';
-export * as DistanceBetweenPointsSquared from './DistanceBetweenPointsSquared';
-export * as ChebyshevDistance from './ChebyshevDistance';
-export * as DistancePower from './DistancePower';
-export * as SnakeDistance from './SnakeDistance';
-export * as DistanceSquared from './DistanceSquared';
+import { ChebyshevDistance } from './ChebyshevDistance';
+import { DistanceBetween } from './DistanceBetween';
+import { DistanceBetweenPoints } from './DistanceBetweenPoints';
+import { DistanceBetweenPointsSquared } from './DistanceBetweenPointsSquared';
+import { DistancePower } from './DistancePower';
+import { DistanceSquared } from './DistanceSquared';
+import { SnakeDistance } from './SnakeDistance';
+
+export {
+    ChebyshevDistance,
+    DistanceBetween,
+    DistanceBetweenPoints,
+    DistanceBetweenPointsSquared,
+    DistancePower,
+    DistanceSquared,
+    SnakeDistance
+};

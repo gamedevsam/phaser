@@ -1,1 +1,1 @@
-{"version":3,"file":"FitInside.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/FitInside.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH,OAAO,UAAU,MAAM,cAAc,CAAC;AAGtC;;;;;;;;;;;;;;;;GAgBG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,MAAM,EAAE,UAAU,EAAE,MAAM,EAAE,UAAU,GAAG,UAAU,CAwBrF"}
+{"version":3,"file":"FitInside.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/FitInside.ts"],"names":[],"mappings":"AASA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAmB1C,wBAAgB,SAAS,CAAE,MAAM,EAAE,UAAU,EAAE,MAAM,EAAE,UAAU,GAAG,UAAU,CAwB7E"}

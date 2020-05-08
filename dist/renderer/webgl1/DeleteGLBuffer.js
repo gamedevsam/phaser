@@ -1,8 +1,10 @@
-import GL from './GL';
-export default function DeleteGLBuffer(buffer) {
+import { GL } from './GL.js';
+
+function DeleteGLBuffer(buffer) {
     const gl = GL.get();
     if (gl.isBuffer(buffer)) {
         gl.deleteBuffer(buffer);
     }
 }
-//# sourceMappingURL=DeleteGLBuffer.js.map
+
+export { DeleteGLBuffer };

@@ -1,1 +1,0 @@
-{"version":3,"file":"SetText.js","sourceRoot":"","sources":["../../../src/gameobjects/text/SetText.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,OAAO,CAAE,KAAwB,EAAE,GAAG,IAAa;IAEvE,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAElB,MAAM,CAAC,OAAO,CAAC,KAAK,CAAC,CAAC;IAE1B,CAAC,CAAC,CAAC;AACP,CAAC"}

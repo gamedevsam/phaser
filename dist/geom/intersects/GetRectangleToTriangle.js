@@ -1,26 +1,17 @@
-/**
- * @author       Florian Vazelle
- * @author       Geoffrey Glaive
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import RectangleToTriangle from './RectangleToTriangle';
-import GetLineToRectangle from './GetLineToRectangle';
-import GetEdges from '../triangle/GetEdges';
-/**
- * Checks for intersection between Rectangle shape and Triangle shape,
- * and returns the intersection points as a Point object array.
- *
- * @function Phaser.Geom.Intersects.GetRectangleToTriangle
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Rectangle} rect - Rectangle object to test.
- * @param {Phaser.Geom.Triangle} triangle - Triangle object to test.
- * @param {array} [out] - An optional array in which to store the points of intersection.
- *
- * @return {array} An array with the points of intersection if objects intersect, otherwise an empty array.
- */
-export default function GetRectangleToTriangle(rect, triangle, out = []) {
+import '../rectangle/Contains.js';
+import '../../math/vec2/Vec2.js';
+import '../line/Line.js';
+import '../../GetEdges-95a2b4b0.js';
+import './LineToLine.js';
+import './LineToRectangle.js';
+import { GetLineToRectangle } from './GetLineToRectangle.js';
+import { GetEdges } from '../triangle/GetEdges.js';
+import '../triangle/Contains.js';
+import '../triangle/ContainsArray.js';
+import '../rectangle/Decompose.js';
+import { RectangleToTriangle } from './RectangleToTriangle.js';
+
+function GetRectangleToTriangle(rect, triangle, out = []) {
     if (RectangleToTriangle(rect, triangle)) {
         const [lineA, lineB, lineC] = GetEdges(triangle);
         GetLineToRectangle(lineA, rect, out);
@@ -29,4 +20,5 @@ export default function GetRectangleToTriangle(rect, triangle, out = []) {
     }
     return out;
 }
-//# sourceMappingURL=GetRectangleToTriangle.js.map
+
+export { GetRectangleToTriangle };

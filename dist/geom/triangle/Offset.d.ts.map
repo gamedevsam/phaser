@@ -1,1 +1,1 @@
-{"version":3,"file":"Offset.d.ts","sourceRoot":"","sources":["../../../src/geom/triangle/Offset.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,SAAS,MAAM,aAAa,CAAC;AAEpC;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,QAAQ,EAAE,SAAS,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,SAAS,CAYpF"}
+{"version":3,"file":"Offset.d.ts","sourceRoot":"","sources":["../../src/geom/triangle/Offset.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAgBxC,wBAAgB,MAAM,CAAE,QAAQ,EAAE,SAAS,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,SAAS,CAY5E"}

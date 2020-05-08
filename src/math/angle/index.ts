@@ -4,18 +4,32 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-export * as AngleBetween from './AngleBetween';
-export * as AngleBetweenPoints from './AngleBetweenPoints';
-export * as AngleBetweenPointsY from './AngleBetweenPointsY';
-export * as AngleBetweenY from './AngleBetweenY';
-export * as CounterClockwise from './CounterClockwise';
-export * as NormalizeAngle from './NormalizeAngle';
-export * as ReverseAngle from './ReverseAngle';
-export * as RotateAngleTo from './RotateAngleTo';
-export * as ShortestAngleBetween from './ShortestAngleBetween';
-export * as WrapAngle from './WrapAngle';
-export * as WrapAngleDegrees from './WrapAngleDegrees';
+import { AngleBetween } from './AngleBetween';
+import { AngleBetweenPoints } from './AngleBetweenPoints';
+import { AngleBetweenPointsY } from './AngleBetweenPointsY';
+import { AngleBetweenY } from './AngleBetweenY';
+import { CounterClockwise } from './CounterClockwise';
+import { NormalizeAngle } from './NormalizeAngle';
+import { ReverseAngle } from './ReverseAngle';
+import { RotateAngleTo } from './RotateAngleTo';
+import { ShortestAngleBetween } from './ShortestAngleBetween';
+import { WrapAngle } from './WrapAngle';
+import { WrapAngleDegrees } from './WrapAngleDegrees';
 
 /**
  * @namespace Phaser.Math.Angle
  */
+
+export {
+    AngleBetween,
+    AngleBetweenPoints,
+    AngleBetweenPointsY,
+    AngleBetweenY,
+    CounterClockwise,
+    NormalizeAngle,
+    ReverseAngle,
+    RotateAngleTo,
+    ShortestAngleBetween,
+    WrapAngle,
+    WrapAngleDegrees
+};

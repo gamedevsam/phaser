@@ -1,20 +1,20 @@
 import { Loader } from './Loader';
 
-export class File<T = string>
+export class File<TData = any, TConfig = unknown>
 {
     key: string;
     url: string;
     responseType: XMLHttpRequestResponseType = 'text';
     crossOrigin: string | undefined = undefined;
-    data: T;
-    error: string | Event | ErrorEvent | undefined;
-    config: object;
+    data: TData;
+    error: ErrorEvent | undefined;
+    config: TConfig;
     skipCache: boolean = false;
     hasLoaded: boolean = false;
     loader: Loader;
-    load: () => Promise<File<T>>;
+    load: () => Promise<File<TData>>;
 
-    constructor (key: string, url: string, config?: object)
+    constructor (key: string, url: string, config?: TConfig)
     {
         this.key = key;
         this.url = url;

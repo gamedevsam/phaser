@@ -1,1 +1,0 @@
-{"version":3,"file":"ContainsPoint.js","sourceRoot":"","sources":["../../../src/geom/rectangle/ContainsPoint.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,QAAQ,MAAM,YAAY,CAAC;AAIlC;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,aAAa,CAAE,IAAgB,EAAE,KAAY;IAEjE,OAAO,QAAQ,CAAC,IAAI,EAAE,KAAK,CAAC,CAAC,EAAE,KAAK,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC"}

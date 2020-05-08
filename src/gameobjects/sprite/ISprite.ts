@@ -1,6 +1,6 @@
 import { Frame } from '../../textures/Frame';
-import { Texture } from '../../textures/Texture';
 import { IContainer } from '../container/IContainer';
+import { Texture } from '../../textures/Texture';
 
 export interface ISprite extends IContainer
 {
@@ -12,9 +12,6 @@ export interface ISprite extends IContainer
     vertexAlpha: Float32Array;
     vertexTint: Uint32Array;
     tint: number;
-    updateVertices (): void;
-    uploadBuffers (F32: Float32Array, U32: Uint32Array, offset: number, setTexture?: boolean): void;
     setTexture (key: string | Texture, frame?: string | number): this;
     setFrame (key?: string | number | Frame): this;
-    isRenderable (): boolean;
 }

@@ -1,24 +1,22 @@
-import IGameObject from '../gameobjects/gameobject/IGameObject';
-import StaticCamera from '../camera/StaticCamera';
-import StaticScene from '../scenes/StaticScene';
-import Matrix2D from '../math/matrix2d/Matrix2D';
-export default class StaticWorld {
-    scene: StaticScene;
-    children: IGameObject[];
-    camera: StaticCamera;
-    dirtyFrame: number;
-    totalFrame: number;
-    visibleFrame: number;
-    private renderList;
+import { Clock } from '../time/Clock';
+import { GameObject } from '../gameobjects/GameObject';
+import { IScene } from '../scenes/IScene';
+import { ISceneRenderData } from '../scenes/ISceneRenderData';
+import { IStaticCamera } from '../camera/IStaticCamera';
+import { IWorld } from './IWorld';
+import { IWorldRenderData } from './IWorldRenderData';
+export declare class StaticWorld extends GameObject implements IWorld {
+    scene: IScene;
+    clock: Clock;
+    camera: IStaticCamera;
+    renderData: IWorldRenderData;
     forceRefresh: boolean;
-    worldTransform: Matrix2D;
-    constructor(scene: StaticScene);
+    constructor(scene: IScene);
     private scanChildren;
     private buildRenderList;
-    update(delta?: number, time?: number): void;
-    render(gameFrame: number): number;
+    update(delta: number, time: number): void;
+    render(sceneRenderData: ISceneRenderData): void;
     shutdown(): void;
     destroy(): void;
-    get numChildren(): number;
 }
 //# sourceMappingURL=StaticWorld.d.ts.map

@@ -4,8 +4,8 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { IEllipse } from './IEllipse';
 import { Ellipse } from './Ellipse';
+import { IEllipse } from './IEllipse';
 
 /**
  * Creates a new Ellipse instance based on the values contained in the given source.

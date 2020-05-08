@@ -1,2 +1,2 @@
-export declare function canPlayM4A(audioElement?: HTMLAudioElement): boolean;
-//# sourceMappingURL=canPlayM4A.d.ts.map
+export declare function CanPlayM4A(audioElement?: HTMLAudioElement): boolean;
+//# sourceMappingURL=CanPlayM4A.d.ts.map

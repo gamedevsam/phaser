@@ -1,4 +1,4 @@
-export default interface IEllipse {
+export interface IEllipse {
     x: number;
     y: number;
     width: number;

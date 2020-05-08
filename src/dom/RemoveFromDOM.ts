@@ -1,4 +1,4 @@
-export function RemoveFromDOM (element: HTMLElement)
+export function RemoveFromDOM (element: HTMLElement): void
 {
     if (element.parentNode)
     {

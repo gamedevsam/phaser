@@ -1,10 +1,41 @@
-import Sprite from '../sprite/Sprite';
-export default class AnimatedSprite extends Sprite {
+import '../../GameInstance.js';
+import '../../renderer/webgl1/GL.js';
+import '../../math/pow2/IsSizePowerOfTwo.js';
+import '../../renderer/webgl1/CreateGLTexture.js';
+import '../../renderer/webgl1/DeleteFramebuffer.js';
+import '../../renderer/webgl1/DeleteGLTexture.js';
+import '../../textures/Frame.js';
+import '../../renderer/webgl1/SetGLTextureFilterMode.js';
+import '../../renderer/webgl1/UpdateGLTexture.js';
+import '../../textures/Texture.js';
+import '../../textures/TextureManagerInstance.js';
+import '../../math/matrix2d/Matrix2D.js';
+import '../../geom/rectangle/Contains.js';
+import '../../geom/rectangle/Rectangle.js';
+import '../GetChildIndex.js';
+import '../RemoveChild.js';
+import '../SetParent.js';
+import '../../math/matrix2d/Copy.js';
+import '../components/transform/UpdateWorldTransform.js';
+import '../RemoveChildrenBetween.js';
+import '../DestroyChildren.js';
+import '../components/bounds/BoundsComponent.js';
+import '../components/dirty/DirtyComponent.js';
+import '../components/input/InputComponent.js';
+import '../components/transform/UpdateLocalTransform.js';
+import '../components/transform/TransformComponent.js';
+import '../ReparentChildren.js';
+import '../GameObject.js';
+import '../container/Container.js';
+import '../sprite/SetFrame.js';
+import '../sprite/SetTexture.js';
+import { Sprite } from '../sprite/Sprite.js';
+
+class AnimatedSprite extends Sprite {
     constructor(x, y, texture, frame) {
         super(x, y, texture, frame);
         this.type = 'AnimatedSprite';
         this.anims = new Map();
-        //  Holds all the data for the current animation only
         this.animData = {
             currentAnim: '',
             currentFrames: [],
@@ -30,12 +61,10 @@ export default class AnimatedSprite extends Sprite {
         if (data.onComplete) {
             data.onComplete(this, data.currentAnim);
         }
-        return this;
     }
     nextFrame() {
         const data = this.animData;
         data.frameIndex++;
-        //  There are no more frames, do we yoyo or repeat or end?
         if (data.frameIndex === data.currentFrames.length) {
             if (data.yoyo) {
                 data.frameIndex--;
@@ -58,12 +87,10 @@ export default class AnimatedSprite extends Sprite {
         }
         this.setFrame(data.currentFrames[data.frameIndex]);
         data.nextFrameTime += data.animSpeed;
-        return this;
     }
     prevFrame() {
         const data = this.animData;
         data.frameIndex--;
-        //  There are no more frames, do we repeat or end?
         if (data.frameIndex === -1) {
             if (data.repeatCount === -1 || data.repeatCount > 0) {
                 data.frameIndex = 0;
@@ -83,7 +110,6 @@ export default class AnimatedSprite extends Sprite {
         }
         this.setFrame(data.currentFrames[data.frameIndex]);
         data.nextFrameTime += data.animSpeed;
-        return this;
     }
     update(delta, now) {
         super.update(delta, now);
@@ -92,11 +118,8 @@ export default class AnimatedSprite extends Sprite {
             return;
         }
         data.nextFrameTime -= delta * 1000;
-        //  Clamp to zero, otherwise a huge delta could cause animation playback issues
         data.nextFrameTime = Math.max(data.nextFrameTime, 0);
-        //  It's time for a new frame
         if (data.nextFrameTime === 0) {
-            //  Is this the start of our animation?
             if (data.pendingStart) {
                 if (data.onStart) {
                     data.onStart(this, data.currentAnim);
@@ -127,4 +150,5 @@ export default class AnimatedSprite extends Sprite {
         this.animData = null;
     }
 }
-//# sourceMappingURL=AnimatedSprite.js.map
+
+export { AnimatedSprite };

@@ -20,5 +20,5 @@ function GetHeight() {
 function GetResolution() {
     return _resolution;
 }
-export { Size, GetWidth, GetHeight, GetResolution };
-//# sourceMappingURL=Size.js.map
+
+export { GetHeight, GetResolution, GetWidth, Size };

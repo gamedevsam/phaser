@@ -1,7 +1,17 @@
-export * as AddAnimation from './AddAnimation';
-export * as AddAnimationFromAtlas from './AddAnimationFromAtlas';
-export * as AnimatedSprite from './AnimatedSprite';
-export * as ClearAnimations from './ClearAnimations';
-export * as Play from './Play';
-export * as RemoveAnimation from './RemoveAnimation';
-export * as Stop from './Stop';
+import { AddAnimation } from './AddAnimation';
+import { AddAnimationFromAtlas } from './AddAnimationFromAtlas';
+import { AnimatedSprite } from './AnimatedSprite';
+import { ClearAnimations } from './ClearAnimations';
+import { Play } from './Play';
+import { RemoveAnimation } from './RemoveAnimation';
+import { Stop } from './Stop';
+
+export {
+    AddAnimation,
+    AddAnimationFromAtlas,
+    AnimatedSprite,
+    ClearAnimations,
+    Play,
+    RemoveAnimation,
+    Stop
+};

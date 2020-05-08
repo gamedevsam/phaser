@@ -1,1 +1,1 @@
-{"version":3,"file":"Clamp.d.ts","sourceRoot":"","sources":["../../src/math/Clamp.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;;GAWG;AACH,MAAM,CAAC,OAAO,UAAU,KAAK,CAAE,KAAK,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,GAAG,MAAM,CAG9E"}
+{"version":3,"file":"Clamp.d.ts","sourceRoot":"","sources":["../src/math/Clamp.ts"],"names":[],"mappings":"AAkBA,wBAAgB,KAAK,CAAE,KAAK,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,GAAG,MAAM,CAGtE"}

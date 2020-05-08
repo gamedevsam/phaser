@@ -1,7 +1,7 @@
-import { WebGLRenderer } from '../WebGLRenderer';
-import { IShaderAttributes as IShaderAttributes } from './IShaderAttributes';
+import { IShaderAttributes } from './IShaderAttributes';
 import { IShaderConfig } from './IShaderConfig';
 import { IShaderUniforms } from './IShaderUniforms';
+import { WebGLRenderer } from '../WebGLRenderer';
 
 const shaderSource = {
 
@@ -20,7 +20,7 @@ void main (void)
 
     gl_FragColor = color * vec4(vTintColor.bgr * vTintColor.a, vTintColor.a);
 }`,
-    
+
     vertexShader: `
 precision highp float;
 
@@ -82,9 +82,9 @@ export class SingleTextureQuadShader
 
     /**
      * The amount of elements / floats a single vertex consists of.
-     * 
+     *
      * The default is 6:
-     * 
+     *
      * position (x,y - 2 floats)
      * texture coord (x,y - 2 floats)
      * texture index (float)
@@ -97,7 +97,7 @@ export class SingleTextureQuadShader
 
     /**
      * The size, in bytes, of a single vertex in the array buffer.
-     * 
+     *
      * This is `vertexElementSize * dataSize`.
      *
      * @type {number}
@@ -107,7 +107,7 @@ export class SingleTextureQuadShader
 
     /**
      * The size, in bytes, of a single quad in the array buffer.
-     * 
+     *
      * This is `vertexByteSize * 4`.
      *
      * @type {number}
@@ -117,7 +117,7 @@ export class SingleTextureQuadShader
 
     /**
      * The size, in quantity of elements, of a single quad in the element index array.
-     * 
+     *
      * This is `vertexElementSize * 4`.
      *
      * @type {number}
@@ -127,9 +127,9 @@ export class SingleTextureQuadShader
 
     /**
      * The total number of entries per quad in the element index array.
-     * 
+     *
      * The IBO contains 6 entries per quad:
-     * 
+     *
      * 0, 1, 2
      * 2, 3, 0
      *
@@ -229,13 +229,13 @@ export class SingleTextureQuadShader
     createBuffers (): void
     {
         let ibo: number[] = [];
-        
+
         //  Seed the index buffer
         for (let i = 0; i < (this.batchSize * this.indexSize); i += this.indexSize)
         {
             ibo.push(i + 0, i + 1, i + 2, i + 2, i + 3, i + 0);
         }
-        
+
         this.data = new ArrayBuffer(this.bufferByteSize);
         this.index = new Uint16Array(ibo);
 
@@ -264,17 +264,17 @@ export class SingleTextureQuadShader
         //  Create the shaders
 
         const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
-        
+
         gl.shaderSource(fragmentShader, fragmentShaderSource);
         gl.compileShader(fragmentShader);
-        
+
         const vertexShader = gl.createShader(gl.VERTEX_SHADER);
-        
+
         gl.shaderSource(vertexShader, vertexShaderSource);
         gl.compileShader(vertexShader);
-        
+
         const program = gl.createProgram();
-        
+
         gl.attachShader(program, vertexShader);
         gl.attachShader(program, fragmentShader);
         gl.linkProgram(program);
@@ -282,7 +282,7 @@ export class SingleTextureQuadShader
         gl.useProgram(program);
 
         this.program = program;
-        
+
         for (const key of Object.keys(this.attribs) as Array<keyof IShaderAttributes>)
         {
             const location = gl.getAttribLocation(program, key);

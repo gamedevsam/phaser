@@ -1,9 +1,20 @@
-import Texture from './Texture';
-import CreateCanvas from './CreateCanvas';
-export default class TextureManager {
+import '../renderer/webgl1/GL.js';
+import { CreateCanvas } from './CreateCanvas.js';
+import '../math/pow2/IsSizePowerOfTwo.js';
+import '../renderer/webgl1/CreateGLTexture.js';
+import '../renderer/webgl1/DeleteFramebuffer.js';
+import '../renderer/webgl1/DeleteGLTexture.js';
+import './Frame.js';
+import '../renderer/webgl1/SetGLTextureFilterMode.js';
+import '../renderer/webgl1/UpdateGLTexture.js';
+import { Texture } from './Texture.js';
+import { TextureManagerInstance } from './TextureManagerInstance.js';
+
+class TextureManager {
     constructor() {
         this.textures = new Map();
         this.createDefaultTextures();
+        TextureManagerInstance.set(this);
     }
     createDefaultTextures() {
         this.add('__BLANK', new Texture(CreateCanvas(32, 32).canvas));
@@ -16,11 +27,12 @@ export default class TextureManager {
         this.add('__MISSING', new Texture(missing.canvas));
     }
     get(key) {
-        if (this.textures.has(key)) {
-            return this.textures.get(key);
+        const textures = this.textures;
+        if (textures.has(key)) {
+            return textures.get(key);
         }
         else {
-            return this.textures.get('__MISSING');
+            return textures.get('__MISSING');
         }
     }
     has(key) {
@@ -28,7 +40,8 @@ export default class TextureManager {
     }
     add(key, source) {
         let texture;
-        if (!this.textures.has(key)) {
+        const textures = this.textures;
+        if (!textures.has(key)) {
             if (source instanceof Texture) {
                 texture = source;
             }
@@ -39,9 +52,10 @@ export default class TextureManager {
             if (!texture.glTexture) {
                 texture.createGL();
             }
-            this.textures.set(key, texture);
+            textures.set(key, texture);
         }
         return texture;
     }
 }
-//# sourceMappingURL=TextureManager.js.map
+
+export { TextureManager };

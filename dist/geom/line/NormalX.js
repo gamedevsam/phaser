@@ -1,21 +1,8 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import MATH_CONST from '../../math/const';
-import Angle from './Angle';
-/**
- * Returns the x component of the normal vector of the given line.
- *
- * @function Phaser.Geom.Line.NormalX
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Line} line - The Line object to get the normal value from.
- *
- * @return {number} The x component of the normal vector of the line.
- */
-export default function NormalX(line) {
-    return Math.cos(Angle(line) - MATH_CONST.TAU);
+import { MATH_CONST } from '../../math/const.js';
+import { Angle } from './Angle.js';
+
+function NormalX(line) {
+    return Math.cos(Angle(line) - MATH_CONST.HALF_PI);
 }
-//# sourceMappingURL=NormalX.js.map
+
+export { NormalX };

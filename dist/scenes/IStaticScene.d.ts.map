@@ -1,1 +1,0 @@
-{"version":3,"file":"IStaticScene.d.ts","sourceRoot":"","sources":["../../src/scenes/IStaticScene.ts"],"names":[],"mappings":"AAAA,OAAO,WAAW,MAAM,sBAAsB,CAAC;AAC/C,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC,MAAM,CAAC,OAAO,WAAW,YAAa,SAAQ,UAAU;IAEpD,KAAK,EAAE,WAAW,CAAC;CACtB"}

@@ -4,6 +4,12 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-export * as SnapCeil from './SnapCeil';
-export * as SnapFloor from './SnapFloor';
-export * as SnapTo from './SnapTo';
+import { SnapCeil } from './SnapCeil';
+import { SnapFloor } from './SnapFloor';
+import { SnapTo } from './SnapTo';
+
+export {
+    SnapCeil,
+    SnapFloor,
+    SnapTo
+};

@@ -6,14 +6,14 @@
 
 import { CenterX } from './CenterX';
 import { CenterY } from './CenterY';
-import { IRectangle } from './IRectangle';
 import { GetAspectRatio } from './GetAspectRatio';
+import { IRectangle } from './IRectangle';
 
 /**
  * Adjusts the target rectangle, changing its width, height and position,
  * so that it fits inside the area of the source rectangle, while maintaining its original
  * aspect ratio.
- * 
+ *
  * Unlike the `FitOutside` function, there may be some space inside the source area not covered.
  *
  * @function Phaser.Geom.Rectangle.FitInside

@@ -1,1 +1,1 @@
-{"version":3,"file":"CheckShaderMaxIfStatements.d.ts","sourceRoot":"","sources":["../../../../src/renderer/webgl1/shaders/CheckShaderMaxIfStatements.ts"],"names":[],"mappings":"AA+BA,MAAM,CAAC,OAAO,UAAU,0BAA0B,CAAE,MAAM,EAAE,MAAM,EAAE,EAAE,EAAE,qBAAqB,GAAG,MAAM,CAuBrG"}
+{"version":3,"file":"CheckShaderMaxIfStatements.d.ts","sourceRoot":"","sources":["../../../src/renderer/webgl1/shaders/CheckShaderMaxIfStatements.ts"],"names":[],"mappings":"AA+BA,wBAAgB,0BAA0B,CAAE,MAAM,EAAE,MAAM,EAAE,EAAE,EAAE,qBAAqB,GAAG,MAAM,CAwB7F"}

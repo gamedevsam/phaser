@@ -1,1 +1,0 @@
-{"version":3,"file":"SetFont.js","sourceRoot":"","sources":["../../../src/gameobjects/text/SetFont.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,OAAO,CAAE,IAAY,EAAE,GAAG,IAAa;IAE3D,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAElB,MAAM,CAAC,IAAI,GAAG,IAAI,CAAC;QACnB,MAAM,CAAC,UAAU,EAAE,CAAC;IAExB,CAAC,CAAC,CAAC;AACP,CAAC"}

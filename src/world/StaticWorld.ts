@@ -1,134 +1,50 @@
-import { ICamera } from '../camera/ICamera';
+import { BaseWorld } from './BaseWorld';
+import { CreateWorldRenderData } from './CreateWorldRenderData';
+import { IGameObject } from '../gameobjects/IGameObject';
+import { IScene } from '../scenes/IScene';
+import { ISceneRenderData } from '../scenes/ISceneRenderData';
+import { IStaticCamera } from '../camera/IStaticCamera';
+import { IStaticWorld } from './IStaticWorld';
 import { StaticCamera } from '../camera/StaticCamera';
-import { IContainer } from '../gameobjects/container/IContainer';
-import { IGameObject } from '../gameobjects/gameobject/IGameObject';
-import { ISprite } from '../gameobjects/sprite/ISprite';
-import { Matrix2D } from '../math/matrix2d/Matrix2D';
-import { StaticScene } from '../scenes/StaticScene';
-import { IWorld } from './IWorld';
 
 //  A Static World is designed specifically to have a bounds of a fixed size
 //  and a camera that doesn't move at all (no scrolling, rotation, etc)
 //  Because it has a fixed size, there is no camera culling enabled.
 //  Games that use this kind of world include Pacman, Bejeweled and 2048.
 
-export class StaticWorld implements IWorld
+export class StaticWorld extends BaseWorld implements IStaticWorld
 {
-    scene: StaticScene;
+    camera: IStaticCamera;
 
-    camera: ICamera;
-
-    children: IGameObject[] = [];
-
-    //  How many Game Objects were made dirty this frame?
-    dirtyFrame: number = 0;
-
-    //  How many Game Objects will be rendered this frame? (are in-bounds)
-    numRendered: number = 0;
-
-    //  How many Game Objects passed `willRender` this frame? (but may not have been in bounds)
-    numRenderable: number = 0;
-
-    //  A list of Game Objects that will be rendered in the next pass
-    rendered: ISprite[] = [];
-
-    forceRefresh: boolean = false;
-
-    worldTransform: Matrix2D = new Matrix2D();
-
-    constructor (scene: StaticScene)
+    constructor (scene: IScene)
     {
-        this.scene = scene;
-        // TODO: Remove as unknown when camera system has proper types
-        this.camera = new StaticCamera(scene) as unknown as ICamera;
+        super(scene);
+
+        this.type = 'StaticWorld';
+
+        this.camera = new StaticCamera();
+
+        this.renderData = CreateWorldRenderData(this.camera);
     }
 
-    private scanChildren (root: IContainer | StaticWorld, gameFrame: number)
+    sceneRender (sceneRenderData: ISceneRenderData): void
     {
-        const children = root.children;
+        super.sceneRender(sceneRenderData);
 
-        for (let i = 0; i < children.length; i++)
-        {
-            this.buildRenderList(children[i], gameFrame);
-        }
+        this.camera.dirtyRender = false;
     }
 
-    private buildRenderList (root: IGameObject, gameFrame: number)
+    shutdown (): void
     {
-        if (root.isRenderable())
-        {
-            this.numRendered++;
-            this.rendered.push(root as ISprite);
-
-            if (root.dirtyFrame >= gameFrame)
-            {
-                this.dirtyFrame++;
-            }
-
-            this.numRenderable++;
-        }
-
-        if (root.isParent && root.visible)
-        {
-            this.scanChildren(root as IContainer, gameFrame);
-        }
-    }
-
-    update (delta?: number, time?: number)
-    {
-        const children = this.children;
-
-        for (let i = 0; i < children.length; i++)
-        {
-            let child = children[i];
-
-            if (child && child.willUpdate)
-            {
-                child.update(delta, time);
-            }
-        }
-    }
-
-    render (gameFrame: number): number
-    {
-        this.dirtyFrame = 0;
-        this.numRendered = 0;
-        this.numRenderable = 0;
-
-        this.scanChildren(this, gameFrame);
-
-        if (this.forceRefresh)
-        {
-            this.dirtyFrame++;
-            this.forceRefresh = false;
-        }
-
-        return this.dirtyFrame;
-    }
-
-    shutdown ()
-    {
-        //  Clear the display list and reset the camera, but leave
-        //  everything in place so we can return to this World again
-        //  at a later stage
-
-        // this.removeChildren();
-
-        this.rendered = [];
+        super.shutdown();
 
         this.camera.reset();
     }
 
-    destroy ()
+    destroy (reparentChildren?: IGameObject): void
     {
         this.camera.destroy();
 
-        this.camera = null;
-        this.rendered = null;
-    }
-
-    get numChildren (): number
-    {
-        return this.children.length;
+        super.destroy(reparentChildren);
     }
 }

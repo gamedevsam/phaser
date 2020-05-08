@@ -1,1 +1,1 @@
-{"version":3,"file":"Overlaps.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/Overlaps.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,KAAK,EAAE,UAAU,EAAE,KAAK,EAAE,UAAU,GAAG,OAAO,CAQ/E"}
+{"version":3,"file":"Overlaps.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/Overlaps.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAa1C,wBAAgB,QAAQ,CAAE,KAAK,EAAE,UAAU,EAAE,KAAK,EAAE,UAAU,GAAG,OAAO,CAQvE"}

@@ -1,9 +1,11 @@
 import { IAnimatedSprite } from './IAnimatedSprite';
 
-export function RemoveAnimation (key: string, ...sprite: IAnimatedSprite[]): void
+export function RemoveAnimation <T extends IAnimatedSprite> (key: string, ...sprites: T[]): T[]
 {
-    sprite.forEach(entity =>
+    sprites.forEach(sprite =>
     {
-        entity.anims.delete(key);
+        sprite.anims.delete(key);
     });
+
+    return sprites;
 }

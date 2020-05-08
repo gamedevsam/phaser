@@ -1,36 +1,33 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Angle from './Angle';
-import BresenhamPoints from './BresenhamPoints';
-import CenterOn from './CenterOn';
-import Clone from './Clone';
-import CopyFrom from './CopyFrom';
-import Equals from './Equals';
-import Extend from './Extend';
-import GetMidPoint from './GetMidPoint';
-import GetNearestPoint from './GetNearestPoint';
-import GetNormal from './GetNormal';
-import GetPoint from './GetPoint';
-import GetPoints from './GetPoints';
-import GetShortestDistance from './GetShortestDistance';
-import Height from './Height';
-import Length from './Length';
-import Line from './Line';
-import NormalAngle from './NormalAngle';
-import NormalX from './NormalX';
-import NormalY from './NormalY';
-import Offset from './Offset';
-import PerpSlope from './PerpSlope';
-import Random from './Random';
-import ReflectAngle from './ReflectAngle';
-import Rotate from './Rotate';
-import RotateAroundPoint from './RotateAroundPoint';
-import RotateAroundXY from './RotateAroundXY';
-import SetToAngle from './SetToAngle';
-import Slope from './Slope';
-import Width from './Width';
-export { Angle, BresenhamPoints, CenterOn, Clone, CopyFrom, Equals, Extend, GetMidPoint, GetNearestPoint, GetNormal, GetPoint, GetPoints, GetShortestDistance, Height, Length, Line, NormalAngle, NormalX, NormalY, Offset, PerpSlope, Random, ReflectAngle, Rotate, RotateAroundPoint, RotateAroundXY, SetToAngle, Slope, Width };
-//# sourceMappingURL=index.js.map
+import '../../math/const.js';
+import '../../math/Wrap.js';
+import '../../math/vec2/Vec2.js';
+export { Line } from './Line.js';
+export { Angle } from './Angle.js';
+export { BresenhamPoints } from './BresenhamPoints.js';
+export { CenterOn } from './CenterOn.js';
+export { Clone } from './Clone.js';
+export { CopyFrom } from './CopyFrom.js';
+export { Equals } from './Equals.js';
+export { Length } from './Length.js';
+export { Extend } from './Extend.js';
+export { GetMidPoint } from './GetMidPoint.js';
+export { GetNearestPoint } from './GetNearestPoint.js';
+export { GetNormal } from './GetNormal.js';
+export { GetPoint } from './GetPoint.js';
+export { GetPoints } from './GetPoints.js';
+export { GetShortestDistance } from './GetShortestDistance.js';
+export { Height } from './Height.js';
+export { NormalAngle } from './NormalAngle.js';
+export { NormalX } from './NormalX.js';
+export { NormalY } from './NormalY.js';
+export { Offset } from './Offset.js';
+export { PerpSlope } from './PerpSlope.js';
+export { Random } from './Random.js';
+export { ReflectAngle } from './ReflectAngle.js';
+export { RotateAroundXY } from './RotateAroundXY.js';
+export { Rotate } from './Rotate.js';
+export { RotateAroundPoint } from './RotateAroundPoint.js';
+export { SetToAngle } from './SetToAngle.js';
+export { Slope } from './Slope.js';
+export { Width } from './Width.js';
+import '../../index-dd8c68bf.js';

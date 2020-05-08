@@ -1,18 +1,3 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import ITriangle from './ITriangle';
-/**
- * Returns the 2D area of a triangle. The area value is always non-negative.
- *
- * @function Phaser.Geom.Triangle.Area
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Triangle} triangle - The Triangle to use.
- *
- * @return {number} The area of the Triangle, always non-negative.
- */
-export default function Area(triangle: ITriangle): number;
+import { ITriangle } from './ITriangle';
+export declare function Area(triangle: ITriangle): number;
 //# sourceMappingURL=Area.d.ts.map

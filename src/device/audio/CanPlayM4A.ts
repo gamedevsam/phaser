@@ -1,9 +1,9 @@
-import { CanPlayType } from './CanPlayType';
+import { CanPlayAudioType } from './CanPlayAudioType';
 
 export function CanPlayM4A (audioElement?: HTMLAudioElement): boolean
 {
     return (
-        CanPlayType('audio/x-m4a', audioElement) ||
-        CanPlayType('audio/aac', audioElement)
+        CanPlayAudioType('audio/x-m4a', audioElement) ||
+        CanPlayAudioType('audio/aac', audioElement)
     );
 }

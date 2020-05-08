@@ -23,15 +23,25 @@
     "plugins": [
         "@typescript-eslint"
     ],
+    "ignorePatterns": [
+        "**/*.js",
+        "src/stats/",
+        "/dist/*",
+        "/dev/*",
+        "/src/textures/parsers/BitmapTextParser.ts"
+    ],
     "rules": {
+        "no-prototype-builtins": [ "off" ],
         "indent": [ "off" ],
         "@typescript-eslint/indent": [ "error", 4, { "SwitchCase": 1 } ],
+        "sort-imports": [ "error", { "ignoreCase": false } ],
         "linebreak-style": [ "off" ],
         "brace-style": [ "off" ],
         "@typescript-eslint/brace-style": [ "error", "allman", { "allowSingleLine": true } ],
         "array-bracket-spacing": [ "error", "always" ],
         "block-spacing": [ "error", "always" ],
-        "camelcase": "error",
+        "camelcase": "off",
+        "@typescript-eslint/camelcase": "off",
         "comma-dangle": [ "error", "never" ],
         "comma-style": [ "error", "last" ],
         "eol-last": [ "error" ],
@@ -78,8 +88,35 @@
             },
             {
                 "selector": "variable",
-                "format": [ "camelCase", "UPPER_CASE" ],
+                "format": [ "camelCase", "UPPER_CASE", "PascalCase" ],
                 "leadingUnderscore": "allow"
+            },
+            {
+                "selector": "property",
+                "format": [ "camelCase", "UPPER_CASE" ],
+                "leadingUnderscore": "forbid"
+            },
+            {
+                "selector": "property",
+                "modifiers": [ "private" ],
+                "format": [ "camelCase" ],
+                "leadingUnderscore": "allow"
+            },
+            {
+                "selector": "property",
+                "modifiers": [ "protected" ],
+                "format": [ "camelCase" ],
+                "leadingUnderscore": "allow"
+            },
+            {
+                "selector": "property",
+                "modifiers": [ "readonly" ],
+                "format": [ "camelCase", "UPPER_CASE" ]
+            },
+            {
+                "selector": "property",
+                "prefix": [ "OES" ],
+                "format": null
             },
             {
                 "selector": "parameter",
@@ -89,6 +126,12 @@
             {
                 "selector": "memberLike",
                 "modifiers": [ "private" ],
+                "format": [ "camelCase" ],
+                "leadingUnderscore": "allow"
+            },
+            {
+                "selector": "memberLike",
+                "modifiers": [ "protected" ],
                 "format": [ "camelCase" ],
                 "leadingUnderscore": "allow"
             },

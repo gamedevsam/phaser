@@ -1,1 +1,1 @@
-{"version":3,"file":"Translate.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d/Translate.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AAIpC,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,MAAM,EAAE,SAAS,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,SAAS,CAQrF"}
+{"version":3,"file":"Translate.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d/Translate.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAIxC,wBAAgB,SAAS,CAAE,MAAM,EAAE,SAAS,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,GAAG,SAAS,CAQ7E"}

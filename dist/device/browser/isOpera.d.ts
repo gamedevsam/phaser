@@ -1,4 +1,4 @@
-export declare function isOpera(): {
+export declare function IsOpera(): {
     opera: boolean;
 };
-//# sourceMappingURL=isOpera.d.ts.map
+//# sourceMappingURL=IsOpera.d.ts.map

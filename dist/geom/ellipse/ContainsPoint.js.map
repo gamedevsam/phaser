@@ -1,1 +1,0 @@
-{"version":3,"file":"ContainsPoint.js","sourceRoot":"","sources":["../../../src/geom/ellipse/ContainsPoint.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH,OAAO,QAAQ,MAAM,YAAY,CAAC;AAElC;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,aAAa,CAAE,OAAiB,EAAE,KAAY;IAElE,OAAO,QAAQ,CAAC,OAAO,EAAE,KAAK,CAAC,CAAC,EAAE,KAAK,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC"}

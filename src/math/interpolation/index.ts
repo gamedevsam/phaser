@@ -4,10 +4,20 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-export * as BezierInterpolation from './BezierInterpolation';
-export * as CatmullRomInterpolation from './CatmullRomInterpolation';
-export * as CubicBezierInterpolation from './CubicBezierInterpolation';
-export * as LinearInterpolation from './LinearInterpolation';
-export * as QuadraticBezierInterpolation from './QuadraticBezierInterpolation';
-export * as SmoothStepInterpolation from './SmoothStepInterpolation';
-export * as SmootherStepInterpolation from './SmootherStepInterpolation';
+import { BezierInterpolation } from './BezierInterpolation';
+import { CatmullRomInterpolation } from './CatmullRomInterpolation';
+import { CubicBezierInterpolation } from './CubicBezierInterpolation';
+import { LinearInterpolation } from './LinearInterpolation';
+import { QuadraticBezierInterpolation } from './QuadraticBezierInterpolation';
+import { SmoothStepInterpolation } from './SmoothStepInterpolation';
+import { SmootherStepInterpolation } from './SmootherStepInterpolation';
+
+export {
+    BezierInterpolation,
+    CatmullRomInterpolation,
+    CubicBezierInterpolation,
+    LinearInterpolation,
+    QuadraticBezierInterpolation,
+    SmoothStepInterpolation,
+    SmootherStepInterpolation
+};

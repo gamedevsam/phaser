@@ -1,24 +1,8 @@
-/**
- * @author       Florian Vazelle
- * @author       Geoffrey Glaive
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import CircleToCircle from './CircleToCircle';
-import Vec2 from '../../math/vec2/Vec2';
-/**
- * Checks if two Circles intersect and returns the intersection points as a Point object array.
- *
- * @function Phaser.Geom.Intersects.GetCircleToCircle
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Circle} circleA - The first Circle to check for intersection.
- * @param {Phaser.Geom.Circle} circleB - The second Circle to check for intersection.
- * @param {array} [out] - An optional array in which to store the points of intersection.
- *
- * @return {array} An array with the points of intersection if objects intersect, otherwise an empty array.
- */
-export default function GetCircleToCircle(circleA, circleB, out = []) {
+import '../../math/distance/DistanceBetween.js';
+import { Vec2 } from '../../math/vec2/Vec2.js';
+import { CircleToCircle } from './CircleToCircle.js';
+
+function GetCircleToCircle(circleA, circleB, out = []) {
     if (CircleToCircle(circleA, circleB)) {
         const x0 = circleA.x;
         const y0 = circleA.y;
@@ -66,4 +50,5 @@ export default function GetCircleToCircle(circleA, circleB, out = []) {
     }
     return out;
 }
-//# sourceMappingURL=GetCircleToCircle.js.map
+
+export { GetCircleToCircle };

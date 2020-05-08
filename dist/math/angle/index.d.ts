@@ -1,21 +1,13 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Between from './Between';
-import BetweenPoints from './BetweenPoints';
-import BetweenPointsY from './BetweenPointsY';
-import BetweenY from './BetweenY';
-import CounterClockwise from './CounterClockwise';
-import Normalize from './Normalize';
-import Reverse from './Reverse';
-import RotateTo from './RotateTo';
-import ShortestBetween from './ShortestBetween';
-import Wrap from './Wrap';
-import WrapDegrees from './WrapDegrees';
-/**
- * @namespace Phaser.Math.Angle
- */
-export { Between, BetweenPoints, BetweenPointsY, BetweenY, CounterClockwise, Normalize, Reverse, RotateTo, ShortestBetween, Wrap, WrapDegrees };
+import { AngleBetween } from './AngleBetween';
+import { AngleBetweenPoints } from './AngleBetweenPoints';
+import { AngleBetweenPointsY } from './AngleBetweenPointsY';
+import { AngleBetweenY } from './AngleBetweenY';
+import { CounterClockwise } from './CounterClockwise';
+import { NormalizeAngle } from './NormalizeAngle';
+import { ReverseAngle } from './ReverseAngle';
+import { RotateAngleTo } from './RotateAngleTo';
+import { ShortestAngleBetween } from './ShortestAngleBetween';
+import { WrapAngle } from './WrapAngle';
+import { WrapAngleDegrees } from './WrapAngleDegrees';
+export { AngleBetween, AngleBetweenPoints, AngleBetweenPointsY, AngleBetweenY, CounterClockwise, NormalizeAngle, ReverseAngle, RotateAngleTo, ShortestAngleBetween, WrapAngle, WrapAngleDegrees };
 //# sourceMappingURL=index.d.ts.map

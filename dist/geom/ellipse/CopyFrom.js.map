@@ -1,1 +1,0 @@
-{"version":3,"file":"CopyFrom.js","sourceRoot":"","sources":["../../../src/geom/ellipse/CopyFrom.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH;;;;;;;;;;;;;GAaG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,MAAgB,EAAE,IAAc;IAE9D,OAAO,IAAI,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,EAAE,MAAM,CAAC,CAAC,EAAE,MAAM,CAAC,KAAK,EAAE,MAAM,CAAC,MAAM,CAAC,CAAC;AACrE,CAAC"}

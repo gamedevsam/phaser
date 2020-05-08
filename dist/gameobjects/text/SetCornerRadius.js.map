@@ -1,1 +1,0 @@
-{"version":3,"file":"SetCornerRadius.js","sourceRoot":"","sources":["../../../src/gameobjects/text/SetCornerRadius.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,YAAoB,EAAE,GAAG,IAAa;IAE3E,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAElB,MAAM,CAAC,YAAY,GAAG,YAAY,CAAC;QACnC,MAAM,CAAC,UAAU,EAAE,CAAC;IAExB,CAAC,CAAC,CAAC;AACP,CAAC"}

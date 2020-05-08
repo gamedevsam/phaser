@@ -1,1 +1,0 @@
-{"version":3,"file":"IsValuePowerOfTwo.js","sourceRoot":"","sources":["../../../src/math/pow2/IsValuePowerOfTwo.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,iBAAiB,CAAE,KAAa;IAEpD,OAAO,CAAC,KAAK,GAAG,CAAC,IAAI,CAAC,KAAK,GAAG,CAAC,KAAK,GAAG,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC;AACtD,CAAC"}

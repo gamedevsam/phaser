@@ -1,4 +1,4 @@
-export default function Stop(...sprite) {
+function Stop(...sprite) {
     sprite.forEach(entity => {
         const data = entity.animData;
         data.isPlaying = false;
@@ -8,4 +8,5 @@ export default function Stop(...sprite) {
         }
     });
 }
-//# sourceMappingURL=Stop.js.map
+
+export { Stop };

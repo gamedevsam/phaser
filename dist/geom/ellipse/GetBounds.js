@@ -1,23 +1,50 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Rectangle from '../Rectangle/Rectangle';
-/**
- * Returns the bounds of the Ellipse object.
- *
- * @function Phaser.Geom.Ellipse.GetBounds
- * @since 3.0.0
- *
- * @generic {Phaser.Geom.Rectangle} O - [out,$return]
- *
- * @param {Phaser.Geom.Ellipse} ellipse - The Ellipse to get the bounds from.
- * @param {(Phaser.Geom.Rectangle|object)} [out] - A Rectangle, or rectangle-like object, to store the ellipse bounds in. If not given a new Rectangle will be created.
- *
- * @return {(Phaser.Geom.Rectangle|object)} The Rectangle object containing the Ellipse bounds.
- */
-export default function GetBounds(ellipse, out = new Rectangle()) {
+function Contains(rect, x, y) {
+    if (rect.width <= 0 || rect.height <= 0) {
+        return false;
+    }
+    return (rect.x <= x && rect.x + rect.width >= x && rect.y <= y && rect.y + rect.height >= y);
+}
+
+class Rectangle {
+    constructor(x = 0, y = 0, width = 0, height = 0) {
+        this.set(x, y, width, height);
+    }
+    set(x = 0, y = 0, width = 0, height = 0) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        return this;
+    }
+    contains(x, y) {
+        return Contains(this, x, y);
+    }
+    set right(value) {
+        if (value <= this.x) {
+            this.width = 0;
+        }
+        else {
+            this.width = value - this.x;
+        }
+    }
+    get right() {
+        return this.x + this.width;
+    }
+    set bottom(value) {
+        if (value <= this.y) {
+            this.height = 0;
+        }
+        else {
+            this.height = value - this.y;
+        }
+    }
+    get bottom() {
+        return this.y + this.height;
+    }
+}
+
+function GetBounds(ellipse, out = new Rectangle()) {
     return out.set(ellipse.left, ellipse.top, ellipse.width, ellipse.height);
 }
-//# sourceMappingURL=GetBounds.js.map
+
+export { GetBounds };

@@ -1,1 +1,1 @@
-{"version":3,"file":"Rotate.d.ts","sourceRoot":"","sources":["../../../src/geom/triangle/Rotate.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH,OAAO,SAAS,MAAM,aAAa,CAAC;AAEpC;;;;;;;;;;;;GAYG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAE,QAAQ,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,GAAG,SAAS,CAK7E"}
+{"version":3,"file":"Rotate.d.ts","sourceRoot":"","sources":["../../src/geom/triangle/Rotate.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAiBxC,wBAAgB,MAAM,CAAE,QAAQ,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,GAAG,SAAS,CAKrE"}

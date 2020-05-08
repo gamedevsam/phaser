@@ -1,1 +1,1 @@
-{"version":3,"file":"Zero.d.ts","sourceRoot":"","sources":["../../../src/math/matrix2d/Zero.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AAIpC,MAAM,CAAC,OAAO,UAAU,IAAI,CAAE,MAAM,EAAE,SAAS,GAAG,SAAS,CAG1D"}
+{"version":3,"file":"Zero.d.ts","sourceRoot":"","sources":["../../src/math/matrix2d/Zero.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAIxC,wBAAgB,IAAI,CAAE,MAAM,EAAE,SAAS,GAAG,SAAS,CAGlD"}

@@ -1,8 +1,9 @@
-export default function SetFixedSize(width, height, ...text) {
+function SetFixedSize(width, height, ...text) {
     text.forEach(entity => {
         entity.fixedWidth = width;
         entity.fixedHeight = height;
         entity.updateText();
     });
 }
-//# sourceMappingURL=SetFixedSize.js.map
+
+export { SetFixedSize };

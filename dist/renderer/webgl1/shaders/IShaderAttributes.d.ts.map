@@ -1,0 +1,1 @@
+{"version":3,"file":"IShaderAttributes.d.ts","sourceRoot":"","sources":["../../../src/renderer/webgl1/shaders/IShaderAttributes.ts"],"names":[],"mappings":"AAAA,oBAAY,iBAAiB,GAAG;IAC5B,eAAe,EAAE,MAAM,CAAC;IACxB,aAAa,EAAE,MAAM,CAAC;IACtB,UAAU,EAAE,MAAM,CAAC;IACnB,UAAU,EAAE,MAAM,CAAC;CACtB,CAAC"}

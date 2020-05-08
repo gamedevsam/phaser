@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/gameobjects/sprite/index.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,MAAM,YAAY,CAAC;AAClC,OAAO,YAAY,MAAM,gBAAgB,CAAC;AAC1C,OAAO,WAAW,MAAM,eAAe,CAAC;AACxC,OAAO,UAAU,MAAM,cAAc,CAAC;AACtC,OAAO,MAAM,MAAM,UAAU,CAAC;AAE9B,OAAO,EACH,QAAQ,EACR,YAAY,EACZ,WAAW,EACX,UAAU,EACV,MAAM,EACT,CAAA"}

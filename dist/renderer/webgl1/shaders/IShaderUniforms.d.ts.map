@@ -1,0 +1,1 @@
+{"version":3,"file":"IShaderUniforms.d.ts","sourceRoot":"","sources":["../../../src/renderer/webgl1/shaders/IShaderUniforms.ts"],"names":[],"mappings":"AAAA,oBAAY,eAAe,GAAG;IAC1B,iBAAiB,EAAE,oBAAoB,CAAC;IACxC,aAAa,EAAE,oBAAoB,CAAC;IACpC,QAAQ,EAAE,oBAAoB,CAAC;CAClC,CAAC"}

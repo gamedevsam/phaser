@@ -36,7 +36,7 @@ export class Circle
         this.set(x, y, radius);
     }
 
-    set (x: number = 0, y: number = 0, radius: number = 0)
+    set (x: number = 0, y: number = 0, radius: number = 0): this
     {
         this.x = x;
         this.y = y;

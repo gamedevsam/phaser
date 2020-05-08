@@ -1,9 +1,8 @@
-//  @namespace Phaser.Device.Video
-import { canPlayH264Video } from './canPlayH264Video';
-import { canPlayHLSVideo } from './canPlayHLSVideo';
-import { canPlayOGGVideo } from './canPlayOGGVideo';
-import { canPlayVP9Video } from './canPlayVP9Video';
-import { canPlayWebMVideo } from './canPlayWebMVideo';
-import { GetVideo } from './GetVideo';
-export { canPlayH264Video, canPlayHLSVideo, canPlayOGGVideo, canPlayVP9Video, canPlayWebMVideo, GetVideo };
-//# sourceMappingURL=index.js.map
+export { CanPlayVideoType } from './CanPlayVideoType.js';
+export { CanPlayH264Video } from './CanPlayH264Video.js';
+export { CanPlayHLSVideo } from './CanPlayHLSVideo.js';
+export { CanPlayOGGVideo } from './CanPlayOGGVideo.js';
+export { CanPlayVP9Video } from './CanPlayVP9Video.js';
+export { CanPlayWebMVideo } from './CanPlayWebMVideo.js';
+export { GetVideo } from './GetVideo.js';
+import '../../index-ee6bd33e.js';

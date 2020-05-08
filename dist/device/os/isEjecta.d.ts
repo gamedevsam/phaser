@@ -1,2 +1,2 @@
-export declare function isEjecta(): boolean;
-//# sourceMappingURL=isEjecta.d.ts.map
+export declare function IsEjecta(): boolean;
+//# sourceMappingURL=IsEjecta.d.ts.map

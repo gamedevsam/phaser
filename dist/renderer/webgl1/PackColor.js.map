@@ -1,1 +1,0 @@
-{"version":3,"file":"PackColor.js","sourceRoot":"","sources":["../../../src/renderer/webgl1/PackColor.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,UAAU,SAAS,CAAE,GAAW,EAAE,KAAa;IAEzD,IAAI,EAAE,GAAG,CAAC,CAAC,KAAK,GAAG,GAAG,CAAC,GAAG,CAAC,CAAC,GAAG,IAAI,CAAC;IAEpC,OAAO,CAAC,CAAC,EAAE,IAAI,EAAE,CAAC,GAAG,GAAG,CAAC,KAAK,CAAC,CAAC;AACpC,CAAC"}

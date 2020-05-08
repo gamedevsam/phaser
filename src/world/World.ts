@@ -1,142 +1,75 @@
+import { BaseWorld } from './BaseWorld';
 import { Camera } from '../camera/Camera';
+import { CreateWorldRenderData } from './CreateWorldRenderData';
 import { ICamera } from '../camera/ICamera';
-import { IContainer } from '../gameobjects/container/IContainer';
-import { IParent } from '../gameobjects/container/IParent';
-import { IGameObject } from '../gameobjects/gameobject/IGameObject';
-import { ISprite } from '../gameobjects/sprite/ISprite';
-import { RectangleToRectangle } from '../geom/intersects/RectangleToRectangle';
-import { Matrix2D } from '../math/matrix2d/Matrix2D';
+import { IGameObject } from '../gameobjects/IGameObject';
 import { IScene } from '../scenes/IScene';
+import { ISceneRenderData } from '../scenes/ISceneRenderData';
 import { IWorld } from './IWorld';
+import { IWorldRenderData } from './IWorldRenderData';
+import { RectangleToRectangle } from '../geom/intersects';
 
-export interface IWorldRenderResult {
-    camera: ICamera;
-    rendered: ISprite[];
-    numRendered: number;
-}
-
-export class World implements IWorld
+export class World extends BaseWorld implements IWorld
 {
-    scene: IScene;
-
-    children: IGameObject[] = [];
-
-    camera: ICamera = new Camera();
-
-    //  How many Game Objects were made dirty this frame?
-    dirtyFrame: number = 0;
-
-    //  How many Game Objects will be rendered this frame? (are in-bounds)
-    numRendered: number = 0;
-
-    //  How many Game Objects passed `willRender` this frame? (but may not have been in bounds)
-    numRenderable: number = 0;
-
-    //  A list of Game Objects that will be rendered in the next pass
-    rendered: ISprite[] = [];
-
-    forceRefresh: boolean = false;
+    camera: ICamera;
 
     enableCameraCull: boolean = true;
 
-    worldTransform: Matrix2D = new Matrix2D();
-
     constructor (scene: IScene)
     {
-        this.scene = scene;
+        super(scene);
+
+        this.type = 'World';
+
+        this.camera = new Camera();
+
+        this.renderData = CreateWorldRenderData(this.camera);
     }
 
-    private scanChildren (root: IContainer | World, gameFrame: number)
-    {
-        const children = root.children;
-
-        for (let i = 0; i < children.length; i++)
-        {
-            this.buildRenderList(children[i], gameFrame);
-        }
-    }
-
-    private buildRenderList (root: IGameObject, gameFrame: number)
+    buildRenderList (root: IGameObject, renderData: IWorldRenderData): void
     {
         if (root.isRenderable())
         {
             const cull = this.enableCameraCull;
 
-            if (!cull || (cull && RectangleToRectangle(root.getBounds(), this.camera.bounds)))
+            if (!cull || (cull && RectangleToRectangle(root.bounds.get(), this.camera.bounds)))
             {
-                this.numRendered++;
-                this.rendered.push(root as ISprite);
+                renderData.numRendered++;
+                renderData.renderList.push(root);
 
-                if (root.dirtyFrame >= gameFrame)
+                if (root.dirty.frame >= renderData.gameFrame)
                 {
-                    this.dirtyFrame++;
+                    renderData.dirtyFrame++;
                 }
             }
 
-            this.numRenderable++;
+            renderData.numRenderable++;
         }
 
-        if (root.isParent && root.visible)
+        if (root.visible && root.willRenderChildren && root.numChildren)
         {
-            this.scanChildren(root as IContainer, gameFrame);
+            this.scanChildren(root, renderData);
         }
     }
 
-    update (delta?: number, time?: number)
+    sceneRender (sceneRenderData: ISceneRenderData): void
     {
-        const children = this.children;
+        super.sceneRender(sceneRenderData);
 
-        for (let i = 0; i < children.length; i++)
-        {
-            let child = children[i];
-
-            if (child && child.willUpdate)
-            {
-                child.update(delta, time);
-            }
-        }
+        this.camera.dirtyRender = false;
     }
 
-    render (gameFrame: number): number
+    shutdown (): void
     {
-        this.dirtyFrame = 0;
-        this.numRendered = 0;
-        this.numRenderable = 0;
-
-        this.scanChildren(this, gameFrame);
-
-        if (this.forceRefresh)
-        {
-            this.dirtyFrame++;
-            this.forceRefresh = false;
-        }
-
-        return this.dirtyFrame;
-    }
-
-    shutdown ()
-    {
-        //  Clear the display list and reset the camera, but leave
-        //  everything in place so we can return to this World again
-        //  at a later stage
-
-        // this.removeChildren();
-
-        this.rendered = [];
+        super.shutdown();
 
         this.camera.reset();
     }
 
-    destroy (reparentChildren?: IParent)
+    destroy (reparentChildren?: IGameObject): void
     {
         this.camera.destroy();
 
-        this.camera = null;
-        this.rendered = null;
-    }
-
-    get numChildren (): number
-    {
-        return this.children.length;
+        super.destroy(reparentChildren);
     }
 }

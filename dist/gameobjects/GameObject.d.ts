@@ -1,0 +1,48 @@
+import { IBoundsComponent } from './components/bounds/IBoundsComponent';
+import { IDirtyComponent } from './components/dirty/IDirtyComponent';
+import { IGameObject } from './IGameObject';
+import { IInputComponent } from './components/input/IInputComponent';
+import { ITransformComponent } from './components/transform/ITransformComponent';
+import { IWorld } from '../world/IWorld';
+export declare class GameObject {
+    world: IWorld;
+    name: string;
+    type: string;
+    parent: IGameObject;
+    children: IGameObject[];
+    willRender: boolean;
+    willUpdate: boolean;
+    transform: ITransformComponent;
+    dirty: IDirtyComponent;
+    bounds: IBoundsComponent;
+    input: IInputComponent;
+    visible: boolean;
+    constructor(x?: number, y?: number);
+    isRenderable(): boolean;
+    update(delta: number, time: number): void;
+    get numChildren(): number;
+    set width(value: number);
+    get width(): number;
+    set height(value: number);
+    get height(): number;
+    set x(value: number);
+    get x(): number;
+    set y(value: number);
+    get y(): number;
+    set originX(value: number);
+    get originX(): number;
+    set originY(value: number);
+    get originY(): number;
+    set skewX(value: number);
+    get skewX(): number;
+    set skewY(value: number);
+    get skewY(): number;
+    set scaleX(value: number);
+    get scaleX(): number;
+    set scaleY(value: number);
+    get scaleY(): number;
+    set rotation(value: number);
+    get rotation(): number;
+    destroy(reparentChildren?: IGameObject): void;
+}
+//# sourceMappingURL=GameObject.d.ts.map

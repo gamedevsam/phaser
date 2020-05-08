@@ -1,19 +1,4 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Circle from './Circle';
-import ICircle from './ICircle';
-/**
- * Creates a new Circle instance based on the values contained in the given source.
- *
- * @function Phaser.Geom.Circle.Clone
- * @since 3.0.0
- *
- * @param {(Phaser.Geom.Circle|object)} source - The Circle to be cloned. Can be an instance of a Circle or a circle-like object, with x, y and radius properties.
- *
- * @return {Phaser.Geom.Circle} A clone of the source Circle.
- */
-export default function Clone(source: ICircle): Circle;
+import { Circle } from './Circle';
+import { ICircle } from './ICircle';
+export declare function Clone(source: ICircle): Circle;
 //# sourceMappingURL=Clone.d.ts.map

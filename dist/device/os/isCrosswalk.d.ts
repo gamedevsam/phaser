@@ -1,2 +1,2 @@
-export declare function isCrosswalk(): boolean;
-//# sourceMappingURL=isCrosswalk.d.ts.map
+export declare function IsCrosswalk(): boolean;
+//# sourceMappingURL=IsCrosswalk.d.ts.map

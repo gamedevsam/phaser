@@ -1,1 +1,1 @@
-{"version":3,"file":"GetEdges.d.ts","sourceRoot":"","sources":["../../../src/geom/triangle/GetEdges.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AACpC,OAAO,IAAI,MAAM,cAAc,CAAC;AAEhC,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,QAAQ,EAAE,SAAS,GAAG,IAAI,EAAE,CAS7D"}
+{"version":3,"file":"GetEdges.d.ts","sourceRoot":"","sources":["../../src/geom/triangle/GetEdges.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AACxC,OAAO,EAAE,IAAI,EAAE,MAAM,cAAc,CAAC;AAEpC,wBAAgB,QAAQ,CAAE,QAAQ,EAAE,SAAS,GAAG,IAAI,EAAE,CASrD"}

@@ -1,32 +1,35 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-/**
- * @namespace Phaser.Geom.Intersects
- */
-import CircleToCircle from './CircleToCircle';
-import CircleToRectangle from './CircleToRectangle';
-import GetCircleToCircle from './GetCircleToCircle';
-import GetCircleToRectangle from './GetCircleToRectangle';
-import GetLineToCircle from './GetLineToCircle';
-import GetLineToRectangle from './GetLineToRectangle';
-import GetRectangleIntersection from './GetRectangleIntersection';
-import GetRectangleToRectangle from './GetRectangleToRectangle';
-import GetRectangleToTriangle from './GetRectangleToTriangle';
-import GetTriangleToCircle from './GetTriangleToCircle';
-import GetTriangleToLine from './GetTriangleToLine';
-import GetTriangleToTriangle from './GetTriangleToTriangle';
-import LineToCircle from './LineToCircle';
-import LineToLine from './LineToLine';
-import LineToRectangle from './LineToRectangle';
-import PointToLine from './PointToLine';
-import PointToLineSegment from './PointToLineSegment';
-import RectangleToRectangle from './RectangleToRectangle';
-import RectangleToTriangle from './RectangleToTriangle';
-import TriangleToCircle from './TriangleToCircle';
-import TriangleToLine from './TriangleToLine';
-import TriangleToTriangle from './TriangleToTriangle';
-export { CircleToCircle, CircleToRectangle, GetCircleToCircle, GetCircleToRectangle, GetLineToCircle, GetLineToRectangle, GetRectangleIntersection, GetRectangleToRectangle, GetRectangleToTriangle, GetTriangleToCircle, GetTriangleToLine, GetTriangleToTriangle, LineToCircle, LineToLine, LineToRectangle, PointToLine, PointToLineSegment, RectangleToRectangle, RectangleToTriangle, TriangleToCircle, TriangleToLine, TriangleToTriangle };
-//# sourceMappingURL=index.js.map
+import '../rectangle/Contains.js';
+import '../rectangle/Rectangle.js';
+import '../../math/distance/DistanceBetween.js';
+import '../circle/Contains.js';
+import '../../math/vec2/Vec2.js';
+export { CircleToCircle } from './CircleToCircle.js';
+export { CircleToRectangle } from './CircleToRectangle.js';
+export { GetCircleToCircle } from './GetCircleToCircle.js';
+import '../line/Line.js';
+import '../../GetEdges-95a2b4b0.js';
+export { LineToCircle } from './LineToCircle.js';
+export { GetLineToCircle } from './GetLineToCircle.js';
+export { GetCircleToRectangle } from './GetCircleToRectangle.js';
+export { LineToLine } from './LineToLine.js';
+export { LineToRectangle } from './LineToRectangle.js';
+export { GetLineToRectangle } from './GetLineToRectangle.js';
+export { RectangleToRectangle } from './RectangleToRectangle.js';
+export { GetRectangleIntersection } from './GetRectangleIntersection.js';
+export { GetRectangleToRectangle } from './GetRectangleToRectangle.js';
+import '../triangle/GetEdges.js';
+import '../triangle/Contains.js';
+import '../triangle/ContainsArray.js';
+import '../rectangle/Decompose.js';
+export { RectangleToTriangle } from './RectangleToTriangle.js';
+export { GetRectangleToTriangle } from './GetRectangleToTriangle.js';
+export { TriangleToCircle } from './TriangleToCircle.js';
+export { GetTriangleToCircle } from './GetTriangleToCircle.js';
+export { TriangleToLine } from './TriangleToLine.js';
+export { GetTriangleToLine } from './GetTriangleToLine.js';
+import '../triangle/Decompose.js';
+export { TriangleToTriangle } from './TriangleToTriangle.js';
+export { GetTriangleToTriangle } from './GetTriangleToTriangle.js';
+export { PointToLine } from './PointToLine.js';
+export { PointToLineSegment } from './PointToLineSegment.js';
+import '../../index-a1be7d69.js';

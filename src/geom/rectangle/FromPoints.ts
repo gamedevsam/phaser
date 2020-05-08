@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { Rectangle } from './Rectangle';
-import { MATH_CONST } from '../../math/const';
 import { IVec2 } from '../../math/vec2/IVec2';
+import { MATH_CONST } from '../../math/const';
+import { Rectangle } from './Rectangle';
 
 /**
  * Constructs new Rectangle or repositions and resizes an existing Rectangle so that all of the given points are on or within its bounds.

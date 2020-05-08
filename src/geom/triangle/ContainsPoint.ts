@@ -4,8 +4,8 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { ITriangle } from './ITriangle';
 import { Contains } from './Contains';
+import { ITriangle } from './ITriangle';
 import { IVec2 } from '../../math/vec2/IVec2';
 
 /**

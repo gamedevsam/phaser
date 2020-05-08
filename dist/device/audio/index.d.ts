@@ -1,11 +1,12 @@
-import { canPlayM4A } from './canPlayM4A';
-import { canPlayMP3 } from './canPlayMP3';
-import { canPlayOGG } from './canPlayOGG';
-import { canPlayOpus } from './canPlayOpus';
-import { canPlayWAV } from './canPlayWAV';
-import { canPlayWebM } from './canPlayWebM';
+import { CanPlayAudioType } from './CanPlayAudioType';
+import { CanPlayM4A } from './CanPlayM4A';
+import { CanPlayMP3 } from './CanPlayMP3';
+import { CanPlayOGG } from './CanPlayOGG';
+import { CanPlayOpus } from './CanPlayOpus';
+import { CanPlayWAV } from './CanPlayWAV';
+import { CanPlayWebM } from './CanPlayWebM';
 import { GetAudio } from './GetAudio';
-import { hasAudio } from './hasAudio';
-import { hasWebAudio } from './hasWebAudio';
-export { canPlayM4A, canPlayMP3, canPlayOGG, canPlayOpus, canPlayWAV, canPlayWebM, GetAudio, hasAudio, hasWebAudio };
+import { HasAudio } from './HasAudio';
+import { HasWebAudio } from './HasWebAudio';
+export { CanPlayAudioType, CanPlayM4A, CanPlayMP3, CanPlayOGG, CanPlayOpus, CanPlayWAV, CanPlayWebM, GetAudio, HasAudio, HasWebAudio };
 //# sourceMappingURL=index.d.ts.map

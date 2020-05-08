@@ -1,8 +1,6 @@
-import AddToDOM from './AddToDOM';
-import DOMContentLoaded from './DOMContentLoaded';
-import GetElement from './GetElement';
-import ParseXML from './ParseXML';
-import RemoveFromDOM from './RemoveFromDOM';
-//  @namespace Phaser.DOM
-export { AddToDOM, DOMContentLoaded, GetElement, ParseXML, RemoveFromDOM };
-//# sourceMappingURL=index.js.map
+export { GetElement } from './GetElement.js';
+export { AddToDOM } from './AddToDOM.js';
+export { DOMContentLoaded } from './DOMContentLoaded.js';
+export { ParseXML } from './ParseXML.js';
+export { RemoveFromDOM } from './RemoveFromDOM.js';
+import '../index-65b46f08.js';

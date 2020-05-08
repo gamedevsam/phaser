@@ -12,4 +12,4 @@ export {
     GetElement,
     ParseXML,
     RemoveFromDOM
-}
+};

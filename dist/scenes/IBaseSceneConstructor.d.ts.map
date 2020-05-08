@@ -1,1 +1,0 @@
-{"version":3,"file":"IBaseSceneConstructor.d.ts","sourceRoot":"","sources":["../../src/scenes/IBaseSceneConstructor.ts"],"names":[],"mappings":"AAAA,OAAO,YAAY,MAAM,gBAAgB,CAAC;AAC1C,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC,MAAM,CAAC,OAAO,WAAW,qBAAqB;IAE1C,KAAK,MAAM,CAAC,EAAE,MAAM,GAAG,YAAY,GAAG,UAAU,CAAA;CACnD"}

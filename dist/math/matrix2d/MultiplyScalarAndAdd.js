@@ -1,5 +1,4 @@
-//  Multiplies the target Matrix by the given amount, then returns the target Matrix.
-export default function MultiplyScalarAndAdd(target, src, scale) {
+function MultiplyScalarAndAdd(target, src, scale) {
     const { a, b, c, d, tx, ty } = src;
     target.a += (a * scale);
     target.b += (b * scale);
@@ -9,4 +8,5 @@ export default function MultiplyScalarAndAdd(target, src, scale) {
     target.ty += (ty * scale);
     return target;
 }
-//# sourceMappingURL=MultiplyScalarAndAdd.js.map
+
+export { MultiplyScalarAndAdd };

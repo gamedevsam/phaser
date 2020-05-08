@@ -1,1 +1,1 @@
-{"version":3,"file":"DistanceBetweenPoints.d.ts","sourceRoot":"","sources":["../../../src/math/distance/DistanceBetweenPoints.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,KAAK,MAAM,eAAe,CAAC;AAElC;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,qBAAqB,CAAE,CAAC,EAAE,KAAK,EAAE,CAAC,EAAE,KAAK,GAAG,MAAM,CAMzE"}
+{"version":3,"file":"DistanceBetweenPoints.d.ts","sourceRoot":"","sources":["../../src/math/distance/DistanceBetweenPoints.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAAE,MAAM,eAAe,CAAC;AAatC,wBAAgB,qBAAqB,CAAE,CAAC,EAAE,KAAK,EAAE,CAAC,EAAE,KAAK,GAAG,MAAM,CAMjE"}

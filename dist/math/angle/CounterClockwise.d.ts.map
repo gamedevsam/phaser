@@ -1,1 +1,1 @@
-{"version":3,"file":"CounterClockwise.d.ts","sourceRoot":"","sources":["../../../src/math/angle/CounterClockwise.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH;;;;;;;;;;;;;;;;;;;GAmBG;AACH,MAAM,CAAC,OAAO,UAAU,gBAAgB,CAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAQ/D"}
+{"version":3,"file":"CounterClockwise.d.ts","sourceRoot":"","sources":["../../src/math/angle/CounterClockwise.ts"],"names":[],"mappings":"AA4BA,wBAAgB,gBAAgB,CAAE,KAAK,EAAE,MAAM,GAAG,MAAM,CAQvD"}

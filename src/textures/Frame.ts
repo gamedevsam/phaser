@@ -1,3 +1,4 @@
+import { IGameObject } from '../gameobjects/IGameObject';
 import { Texture } from './Texture';
 
 export class Frame
@@ -79,6 +80,71 @@ export class Frame
         this.spriteSourceSizeY = y;
         this.spriteSourceSizeWidth = w;
         this.spriteSourceSizeHeight = h;
+    }
+
+    getExtent (originX: number, originY: number): { left: number; right: number; top: number; bottom: number }
+    {
+        const sourceSizeWidth = this.sourceSizeWidth;
+        const sourceSizeHeight = this.sourceSizeHeight;
+
+        let left: number;
+        let right: number;
+        let top: number;
+        let bottom: number;
+
+        if (this.trimmed)
+        {
+            left = this.spriteSourceSizeX - (originX * sourceSizeWidth);
+            right = left + this.spriteSourceSizeWidth;
+
+            top = this.spriteSourceSizeY - (originY * sourceSizeHeight);
+            bottom = top + this.spriteSourceSizeHeight;
+        }
+        else
+        {
+            left = -originX * sourceSizeWidth;
+            right = left + sourceSizeWidth;
+
+            top = -originY * sourceSizeHeight;
+            bottom = top + sourceSizeHeight;
+        }
+
+        return { left, right, top, bottom };
+    }
+
+    setExtent (child: IGameObject): void
+    {
+        const transform = child.transform;
+
+        const originX = transform.origin.x;
+        const originY = transform.origin.y;
+
+        const sourceSizeWidth = this.sourceSizeWidth;
+        const sourceSizeHeight = this.sourceSizeHeight;
+
+        let x: number;
+        let y: number;
+        let width: number;
+        let height: number;
+
+        if (this.trimmed)
+        {
+            x = this.spriteSourceSizeX - (originX * sourceSizeWidth);
+            y = this.spriteSourceSizeY - (originY * sourceSizeHeight);
+
+            width = this.spriteSourceSizeWidth;
+            height = this.spriteSourceSizeHeight;
+        }
+        else
+        {
+            x = -originX * sourceSizeWidth;
+            y = -originY * sourceSizeHeight;
+
+            width = sourceSizeWidth;
+            height = sourceSizeHeight;
+        }
+
+        transform.setExtent(x, y, width, height);
     }
 
     updateUVs (): void

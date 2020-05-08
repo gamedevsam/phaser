@@ -1,14 +1,5 @@
-export * as AddChild from './AddChild';
-export * as AddChildAt from './AddChildAt';
-export * as AddChildren from './AddChildren';
-export * as Container from './Container';
-export * as DestroyChildren from './DestroyChildren';
-export * as GetChildAt from './GetChildAt';
-export * as GetChildIndex from './GetChildIndex';
-export * as RemoveChild from './RemoveChild';
-export * as RemoveChildAt from './RemoveChildAt';
-export * as RemoveChildren from './RemoveChildren';
-export * as RemoveChildrenBetween from './RemoveChildrenBetween';
-export * as ReparentChildren from './ReparentChildren';
-export * as SetParent from './SetParent';
-export * as SwapChildren from './SwapChildren';
+import { Container } from './Container';
+
+export {
+    Container
+};

@@ -1,1 +1,0 @@
-{"version":3,"file":"GL.js","sourceRoot":"","sources":["../../../src/renderer/webgl1/GL.ts"],"names":[],"mappings":"AAAA,IAAI,EAAyB,CAAC;AAE9B,SAAS,GAAG;IAER,OAAO,EAAE,CAAC;AACd,CAAC;AAED,SAAS,GAAG,CAAE,OAA8B;IAExC,EAAE,GAAG,OAAO,CAAC;AACjB,CAAC;AAED,eAAe;IACX,GAAG;IACH,GAAG;CACN,CAAA"}

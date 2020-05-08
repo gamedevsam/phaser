@@ -1,5 +1,6 @@
+import { Emit, EventEmitter } from '../events';
+
 import { File } from './File';
-import { EventEmitter } from '../events/EventEmitter';
 
 export class Loader extends EventEmitter
 {
@@ -65,7 +66,7 @@ export class Loader extends EventEmitter
 
             this.onComplete = onComplete;
 
-            this.emit('start');
+            Emit(this, 'start');
 
             this.nextFile();
         }
@@ -73,7 +74,7 @@ export class Loader extends EventEmitter
         {
             this.progress = 1;
 
-            this.emit('complete');
+            Emit(this, 'complete');
 
             onComplete();
         }
@@ -101,11 +102,11 @@ export class Loader extends EventEmitter
                 const file = iterator.next().value;
 
                 // console.log('Loader.nextFile', file.key, '=>', file.url);
-    
+
                 this.inflight.add(file);
-    
+
                 this.queue.delete(file);
-    
+
                 file.load().then((file: File) => this.fileComplete(file)).catch((file: File) => this.fileError(file));
 
                 limit--;
@@ -121,7 +122,7 @@ export class Loader extends EventEmitter
     {
         this.isLoading = false;
 
-        this.emit('complete', this.completed);
+        Emit(this, 'complete', this.completed);
 
         this.onComplete();
 
@@ -141,21 +142,21 @@ export class Loader extends EventEmitter
             this.progress = totalCompleted / (totalCompleted + totalQueued);
         }
 
-        this.emit('progress', this.progress, totalCompleted, totalQueued);
+        Emit(this, 'progress', this.progress, totalCompleted, totalQueued);
 
         this.nextFile();
     }
 
     private fileComplete (file: File): void
     {
-        this.emit('filecomplete', file);
+        Emit(this, 'filecomplete', file);
 
         this.updateProgress(file);
     }
 
     private fileError (file: File): void
     {
-        this.emit('fileerror', file);
+        Emit(this, 'fileerror', file);
 
         this.updateProgress(file);
     }

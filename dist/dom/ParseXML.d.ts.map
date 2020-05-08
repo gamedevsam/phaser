@@ -1,1 +1,1 @@
-{"version":3,"file":"ParseXML.d.ts","sourceRoot":"","sources":["../../src/dom/ParseXML.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAE,IAAI,EAAE,MAAM,GAAG,WAAW,GAAG,IAAI,CAuBlE"}
+{"version":3,"file":"ParseXML.d.ts","sourceRoot":"","sources":["../src/dom/ParseXML.ts"],"names":[],"mappings":"AAiBA,wBAAgB,QAAQ,CAAE,IAAI,EAAE,MAAM,GAAG,WAAW,GAAG,IAAI,CAuB1D"}

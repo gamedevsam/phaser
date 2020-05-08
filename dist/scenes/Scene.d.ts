@@ -1,17 +1,12 @@
-import Game from '../Game';
-import World from '../world/World';
-import ISceneConfig from './ISceneConfig';
-export default class Scene {
+import { Game } from '../Game';
+import { IEventEmitter } from '../events/IEventEmitter';
+import { IEventInstance } from '../events/IEventInstance';
+import { IScene } from './IScene';
+import { ISceneConfig } from './ISceneConfig';
+export declare class Scene implements IScene, IEventEmitter {
     key: string;
-    willUpdate: boolean;
-    willRender: boolean;
     game: Game;
-    world: World;
+    events: Map<string, Set<IEventInstance>>;
     constructor(config?: string | ISceneConfig);
-    boot(): void;
-    update(): void;
-    render(): void;
-    shutdown(): void;
-    destroy(): void;
 }
 //# sourceMappingURL=Scene.d.ts.map

@@ -19,7 +19,7 @@ export function ParseXML (data: string): XMLDocument | null
 {
     let xml: XMLDocument;
 
-    try 
+    try
     {
         const parser = new DOMParser();
 

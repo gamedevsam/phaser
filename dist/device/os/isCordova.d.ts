@@ -1,2 +1,2 @@
-export declare function isCordova(): boolean;
-//# sourceMappingURL=isCordova.d.ts.map
+export declare function IsCordova(): boolean;
+//# sourceMappingURL=IsCordova.d.ts.map

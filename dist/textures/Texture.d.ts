@@ -1,5 +1,5 @@
-import Frame from './Frame';
-export default class Texture {
+import { Frame } from './Frame';
+export declare class Texture {
     key: string;
     width: number;
     height: number;
@@ -10,7 +10,7 @@ export default class Texture {
     glFramebuffer: WebGLFramebuffer;
     firstFrame: Frame;
     frames: Map<string | number, Frame>;
-    data: any;
+    data: unknown;
     constructor(image?: TexImageSource, width?: number, height?: number);
     add(key: string | number, x: number, y: number, width: number, height: number): Frame;
     get(key?: string | number | Frame): Frame;

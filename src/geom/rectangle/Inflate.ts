@@ -4,10 +4,10 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { IRectangle } from './IRectangle';
 import { CenterOn } from './CenterOn';
 import { CenterX } from './CenterX';
 import { CenterY } from './CenterY';
+import { IRectangle } from './IRectangle';
 
 /**
  * Increases the size of a Rectangle by a specified amount.

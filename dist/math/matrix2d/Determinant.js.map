@@ -1,1 +1,0 @@
-{"version":3,"file":"Determinant.js","sourceRoot":"","sources":["../../../src/math/matrix2d/Determinant.ts"],"names":[],"mappings":"AAEA,8CAA8C;AAE9C,MAAM,CAAC,OAAO,UAAU,WAAW,CAAE,GAAc;IAE/C,MAAM,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,GAAG,GAAG,CAAC;IAE3B,OAAO,CAAC,CAAC,GAAG,CAAC,CAAC,GAAG,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC;AAC7B,CAAC"}

@@ -1,17 +1,14 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Bezier from './BezierInterpolation';
-import CatmullRom from './CatmullRomInterpolation';
-import CubicBezier from './CubicBezierInterpolation';
-import Linear from './LinearInterpolation';
-import QuadraticBezier from './QuadraticBezierInterpolation';
-import SmoothStep from './SmoothStepInterpolation';
-import SmootherStep from './SmootherStepInterpolation';
-/**
- * @namespace Phaser.Math.Interpolation
- */
-export { Bezier, CatmullRom, CubicBezier, Linear, QuadraticBezier, SmoothStep, SmootherStep };
-//# sourceMappingURL=index.js.map
+import '../Factorial.js';
+import '../Bernstein.js';
+export { BezierInterpolation } from './BezierInterpolation.js';
+import '../CatmullRom.js';
+export { CatmullRomInterpolation } from './CatmullRomInterpolation.js';
+export { CubicBezierInterpolation } from './CubicBezierInterpolation.js';
+import '../Linear.js';
+export { LinearInterpolation } from './LinearInterpolation.js';
+export { QuadraticBezierInterpolation } from './QuadraticBezierInterpolation.js';
+import '../SmoothStep.js';
+export { SmoothStepInterpolation } from './SmoothStepInterpolation.js';
+import '../SmootherStep.js';
+export { SmootherStepInterpolation } from './SmootherStepInterpolation.js';
+import '../../index-519cf613.js';

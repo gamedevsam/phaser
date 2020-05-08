@@ -1,27 +1,10 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import DegToRad from '../../math/DegToRad';
-import CenterX from './CenterX';
-import CenterY from './CenterY';
-import Vec2 from '../../math/vec2/Vec2';
-/**
- * Returns a Point from the perimeter of a Rectangle based on the given angle.
- *
- * @function Phaser.Geom.Rectangle.PerimeterPoint
- * @since 3.0.0
- *
- * @generic {Phaser.Geom.Point} O - [out,$return]
- *
- * @param {Phaser.Geom.Rectangle} rectangle - The Rectangle to get the perimeter point from.
- * @param {number} angle - The angle of the point, in degrees.
- * @param {Phaser.Geom.Point} [out] - The Point object to store the position in. If not given, a new Point instance is created.
- *
- * @return {Phaser.Geom.Point} A Point object holding the coordinates of the Rectangle perimeter.
- */
-export default function PerimeterPoint(rectangle, angle, out = new Vec2()) {
+import '../../math/const.js';
+import { Vec2 } from '../../math/vec2/Vec2.js';
+import { CenterX } from './CenterX.js';
+import { CenterY } from './CenterY.js';
+import { DegToRad } from '../../math/DegToRad.js';
+
+function PerimeterPoint(rectangle, angle, out = new Vec2()) {
     angle = DegToRad(angle);
     const s = Math.sin(angle);
     const c = Math.cos(angle);
@@ -35,4 +18,5 @@ export default function PerimeterPoint(rectangle, angle, out = new Vec2()) {
     }
     return out.set(dx + CenterX(rectangle), dy + CenterY(rectangle));
 }
-//# sourceMappingURL=PerimeterPoint.js.map
+
+export { PerimeterPoint };

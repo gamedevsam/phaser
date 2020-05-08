@@ -1,1 +1,0 @@
-{"version":3,"file":"SameDimensions.js","sourceRoot":"","sources":["../../../src/geom/rectangle/SameDimensions.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,cAAc,CAAE,IAAgB,EAAE,SAAqB;IAE3E,OAAO,CAAC,IAAI,CAAC,KAAK,KAAK,SAAS,CAAC,KAAK,IAAI,IAAI,CAAC,MAAM,KAAK,SAAS,CAAC,MAAM,CAAC,CAAC;AAChF,CAAC"}

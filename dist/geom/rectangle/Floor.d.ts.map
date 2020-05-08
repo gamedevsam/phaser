@@ -1,1 +1,1 @@
-{"version":3,"file":"Floor.d.ts","sourceRoot":"","sources":["../../../src/geom/rectangle/Floor.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,UAAU,MAAM,cAAc,CAAC;AAEtC;;;;;;;;;;;GAWG;AACH,MAAM,CAAC,OAAO,UAAU,KAAK,CAAE,IAAI,EAAE,UAAU,GAAG,UAAU,CAM3D"}
+{"version":3,"file":"Floor.d.ts","sourceRoot":"","sources":["../../src/geom/rectangle/Floor.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAc1C,wBAAgB,KAAK,CAAE,IAAI,EAAE,UAAU,GAAG,UAAU,CAMnD"}

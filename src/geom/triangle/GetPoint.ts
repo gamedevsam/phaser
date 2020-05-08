@@ -4,10 +4,10 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { Length } from '../line/Length';
-import { ITriangle } from './ITriangle';
-import { Vec2 } from '../../math/vec2/Vec2';
 import { GetEdges } from './GetEdges';
+import { ITriangle } from './ITriangle';
+import { Length } from '../line/Length';
+import { Vec2 } from '../../math/vec2/Vec2';
 
 /**
  * Returns a Point from around the perimeter of a Triangle.

@@ -1,8 +1,6 @@
-import { CanPlayType } from './CanPlayType';
+import { CanPlayAudioType } from './CanPlayAudioType';
 
 export function CanPlayOGG (audioElement?: HTMLAudioElement): boolean
 {
-    return (
-        CanPlayType('audio/ogg; codecs="vorbis"', audioElement)
-    );
+    return CanPlayAudioType('audio/ogg; codecs="vorbis"', audioElement);
 }

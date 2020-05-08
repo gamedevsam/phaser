@@ -1,1 +1,1 @@
-{"version":3,"file":"GameInstance.d.ts","sourceRoot":"","sources":["../src/GameInstance.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,QAAQ,CAAC;AAI1B,iBAAS,GAAG,SAGX;AAED,iBAAS,GAAG,CAAE,IAAI,EAAE,IAAI,GAAG,IAAI,QAG9B;;;;;AAED,wBAGC"}
+{"version":3,"file":"GameInstance.d.ts","sourceRoot":"","sources":["src/GameInstance.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAC;AAK9B,eAAO,MAAM,YAAY;;;;;CAqBxB,CAAC"}

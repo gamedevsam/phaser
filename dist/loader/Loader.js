@@ -1,11 +1,12 @@
-import EventEmitter from '../events/EventEmitter';
-export default class Loader extends EventEmitter {
+import { Emit } from '../events/Emit.js';
+import { EventEmitter } from '../events/EventEmitter.js';
+
+class Loader extends EventEmitter {
     constructor() {
         super();
         this.baseURL = '';
         this.path = '';
         this.crossOrigin = 'anonymous';
-        //  -1 means load everything at once (only recommended on http/2 servers)
         this.maxParallelDownloads = -1;
         this.isLoading = false;
         this.reset();
@@ -26,19 +27,19 @@ export default class Loader extends EventEmitter {
     }
     start(onComplete) {
         if (this.isLoading) {
-            return;
+            return this;
         }
         this.completed.clear();
         this.progress = 0;
         if (this.queue.size > 0) {
             this.isLoading = true;
             this.onComplete = onComplete;
-            this.emit('start');
+            Emit(this, 'start');
             this.nextFile();
         }
         else {
             this.progress = 1;
-            this.emit('complete');
+            Emit(this, 'complete');
             onComplete();
         }
         return this;
@@ -49,11 +50,9 @@ export default class Loader extends EventEmitter {
             limit = Math.min(limit, this.maxParallelDownloads) - this.inflight.size;
         }
         if (limit) {
-            // console.log('Batching', limit, 'files to download');
             const iterator = this.queue.values();
             while (limit > 0) {
                 const file = iterator.next().value;
-                // console.log('Loader.nextFile', file.key, '=>', file.url);
                 this.inflight.add(file);
                 this.queue.delete(file);
                 file.load().then((file) => this.fileComplete(file)).catch((file) => this.fileError(file));
@@ -66,7 +65,7 @@ export default class Loader extends EventEmitter {
     }
     stop() {
         this.isLoading = false;
-        this.emit('complete', this.completed);
+        Emit(this, 'complete', this.completed);
         this.onComplete();
         this.completed.clear();
     }
@@ -78,15 +77,15 @@ export default class Loader extends EventEmitter {
         if (totalCompleted > 0) {
             this.progress = totalCompleted / (totalCompleted + totalQueued);
         }
-        this.emit('progress', this.progress, totalCompleted, totalQueued);
+        Emit(this, 'progress', this.progress, totalCompleted, totalQueued);
         this.nextFile();
     }
     fileComplete(file) {
-        this.emit('filecomplete', file);
+        Emit(this, 'filecomplete', file);
         this.updateProgress(file);
     }
     fileError(file) {
-        this.emit('fileerror', file);
+        Emit(this, 'fileerror', file);
         this.updateProgress(file);
     }
     totalFilesToLoad() {
@@ -115,4 +114,5 @@ export default class Loader extends EventEmitter {
         return this;
     }
 }
-//# sourceMappingURL=Loader.js.map
+
+export { Loader };

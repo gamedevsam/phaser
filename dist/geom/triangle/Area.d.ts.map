@@ -1,1 +1,1 @@
-{"version":3,"file":"Area.d.ts","sourceRoot":"","sources":["../../../src/geom/triangle/Area.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,SAAS,MAAM,aAAa,CAAC;AAEpC;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,IAAI,CAAE,QAAQ,EAAE,SAAS,GAAG,MAAM,CAKzD"}
+{"version":3,"file":"Area.d.ts","sourceRoot":"","sources":["../../src/geom/triangle/Area.ts"],"names":[],"mappings":"AAMA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAYxC,wBAAgB,IAAI,CAAE,QAAQ,EAAE,SAAS,GAAG,MAAM,CAKjD"}

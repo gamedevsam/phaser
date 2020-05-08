@@ -1,12 +1,15 @@
+import { GetFrames } from '../../textures/GetFrames';
 import { IAnimatedSprite } from './IAnimatedSprite';
 
-export function AddAnimation (key: string, frames: string[] | number[], ...sprite: IAnimatedSprite[]): void
+export function AddAnimation <T extends IAnimatedSprite> (key: string, frames: string[] | number[], ...sprites: T[]): T[]
 {
-    sprite.forEach(entity =>
+    sprites.forEach(sprite =>
     {
-        if (!entity.anims.has(key))
+        if (!sprite.anims.has(key))
         {
-            entity.anims.set(key, entity.texture.getFrames(frames));
+            sprite.anims.set(key, GetFrames(sprite.texture, frames));
         }
     });
+
+    return sprites;
 }

@@ -1,2 +1,2 @@
-export declare function isWindows(): boolean;
-//# sourceMappingURL=isWindows.d.ts.map
+export declare function IsWindows(): boolean;
+//# sourceMappingURL=IsWindows.d.ts.map

@@ -1,2 +1,2 @@
-export default function RemoveFromDOM(element: HTMLElement): void;
+export declare function RemoveFromDOM(element: HTMLElement): void;
 //# sourceMappingURL=RemoveFromDOM.d.ts.map

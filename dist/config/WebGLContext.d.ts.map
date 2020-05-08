@@ -1,1 +1,1 @@
-{"version":3,"file":"WebGLContext.d.ts","sourceRoot":"","sources":["../../src/config/WebGLContext.ts"],"names":[],"mappings":"AAOA,iBAAS,YAAY,CAAE,iBAAiB,EAAE,sBAAsB,cAO/D;AAED,iBAAS,eAAe,IAAK,sBAAsB,CAGlD;AAED,OAAO,EACH,YAAY,EACZ,eAAe,EAClB,CAAA"}
+{"version":3,"file":"WebGLContext.d.ts","sourceRoot":"","sources":["../src/config/WebGLContext.ts"],"names":[],"mappings":"AAOA,iBAAS,YAAY,CAAE,iBAAiB,EAAE,sBAAsB,GAAG,MAAM,IAAI,CAM5E;AAED,iBAAS,eAAe,IAAK,sBAAsB,CAGlD;AAED,OAAO,EACH,YAAY,EACZ,eAAe,EAClB,CAAC"}

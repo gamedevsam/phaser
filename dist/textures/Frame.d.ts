@@ -1,5 +1,5 @@
-import Texture from './Texture';
-export default class Frame {
+import { Texture } from './Texture';
+export declare class Frame {
     texture: Texture;
     key: string | number;
     x: number;

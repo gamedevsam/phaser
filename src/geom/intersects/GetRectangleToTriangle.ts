@@ -5,12 +5,12 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { RectangleToTriangle } from './RectangleToTriangle';
+import { GetEdges } from '../triangle/GetEdges';
 import { GetLineToRectangle } from './GetLineToRectangle';
 import { IRectangle } from '../rectangle/IRectangle';
-import { Vec2 } from '../../math/vec2/Vec2';
-import { GetEdges } from '../triangle/GetEdges';
 import { ITriangle } from '../triangle/ITriangle';
+import { RectangleToTriangle } from './RectangleToTriangle';
+import { Vec2 } from '../../math/vec2/Vec2';
 
 /**
  * Checks for intersection between Rectangle shape and Triangle shape,

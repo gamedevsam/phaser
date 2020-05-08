@@ -1,17 +1,16 @@
-import Camera from '../camera/Camera';
-import Scene from '../scenes/Scene';
-import IGameObject from '../gameobjects/gameobject/IGameObject';
-export default interface IWorld {
-    scene: Scene;
-    dirtyFrame: number;
-    totalFrame: number;
-    visibleFrame: number;
-    boundsFrame: number;
-    children: IGameObject[];
-    camera: Camera;
+import { Clock } from '../time/Clock';
+import { IGameObject } from '../gameobjects/IGameObject';
+import { IScene } from '../scenes/IScene';
+import { ISceneRenderData } from '../scenes/ISceneRenderData';
+import { IStaticCamera } from '../camera/IStaticCamera';
+import { IWorldRenderData } from './IWorldRenderData';
+export interface IWorld extends IGameObject {
+    scene: IScene;
+    clock: Clock;
+    camera: IStaticCamera;
+    renderData: IWorldRenderData;
     forceRefresh: boolean;
-    render(gameFrame: number): number;
+    render(renderData: ISceneRenderData): void;
     shutdown(): void;
-    destroy(): void;
 }
 //# sourceMappingURL=IWorld.d.ts.map

@@ -1,21 +1,45 @@
-export * as Add from './Add';
-export * as Copy from './Copy';
-export * as CopyToContext from './CopyToContext';
-export * as Determinant from './Determinant';
-export * as Frobenius from './Frobenius';
-export * as GlobalToLocal from './GlobalToLocal';
-export * as Invert from './Invert';
-export * as ITRS from './ITRS';
-export * as ITRSS from './ITRSS';
-export * as LocalToGlobal from './LocalToGlobal';
-export * as Matrix2D from './Matrix2D';
-export * as Multiply from './Multiply';
-export * as MultiplyScalar from './MultiplyScalar';
-export * as MultiplyScalarAndAdd from './MultiplyScalarAndAdd';
-export * as Rotate from './Rotate';
-export * as Scale from './Scale';
-export * as SetToContext from './SetToContext';
-export * as Skew from './Skew';
-export * as Subtract from './Subtract';
-export * as Translate from './Translate';
-export * as Zero from './Zero';
+import { Add } from './Add';
+import { Copy } from './Copy';
+import { CopyToContext } from './CopyToContext';
+import { Determinant } from './Determinant';
+import { Frobenius } from './Frobenius';
+import { GlobalToLocal } from './GlobalToLocal';
+import { ITRS } from './ITRS';
+import { ITRSS } from './ITRSS';
+import { Invert } from './Invert';
+import { LocalToGlobal } from './LocalToGlobal';
+import { Matrix2D } from './Matrix2D';
+import { Multiply } from './Multiply';
+import { MultiplyScalar } from './MultiplyScalar';
+import { MultiplyScalarAndAdd } from './MultiplyScalarAndAdd';
+import { Rotate } from './Rotate';
+import { Scale } from './Scale';
+import { SetToContext } from './SetToContext';
+import { Skew } from './Skew';
+import { Subtract } from './Subtract';
+import { Translate } from './Translate';
+import { Zero } from './Zero';
+
+export {
+    Add,
+    Copy,
+    CopyToContext,
+    Determinant,
+    Frobenius,
+    GlobalToLocal,
+    Invert,
+    ITRS,
+    ITRSS,
+    LocalToGlobal,
+    Matrix2D,
+    Multiply,
+    MultiplyScalar,
+    MultiplyScalarAndAdd,
+    Rotate,
+    Scale,
+    SetToContext,
+    Skew,
+    Subtract,
+    Translate,
+    Zero
+};

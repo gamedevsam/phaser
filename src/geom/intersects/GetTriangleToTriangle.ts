@@ -5,11 +5,11 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { TriangleToTriangle } from './TriangleToTriangle';
+import { GetEdges } from '../triangle/GetEdges';
 import { GetTriangleToLine } from './GetTriangleToLine';
 import { ITriangle } from '../triangle/ITriangle';
+import { TriangleToTriangle } from './TriangleToTriangle';
 import { Vec2 } from '../../math/vec2/Vec2';
-import { GetEdges } from '../triangle/GetEdges';
 
 /**
  * Checks if two Triangles intersect, and returns the intersection points as a Point object array.

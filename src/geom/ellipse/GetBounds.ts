@@ -5,7 +5,7 @@
  */
 
 import { IEllipse } from './IEllipse';
-import { Rectangle } from '../Rectangle/Rectangle';
+import { Rectangle } from '../rectangle/Rectangle';
 
 /**
  * Returns the bounds of the Ellipse object.

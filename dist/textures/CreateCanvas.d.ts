@@ -1,2 +1,2 @@
-export default function CreateCanvas(width: number, height: number): CanvasRenderingContext2D;
+export declare function CreateCanvas(width: number, height: number): CanvasRenderingContext2D;
 //# sourceMappingURL=CreateCanvas.d.ts.map

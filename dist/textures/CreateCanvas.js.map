@@ -1,1 +1,0 @@
-{"version":3,"file":"CreateCanvas.js","sourceRoot":"","sources":["../../src/textures/CreateCanvas.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,UAAU,YAAY,CAAE,KAAa,EAAE,MAAc;IAE/D,MAAM,MAAM,GAAG,QAAQ,CAAC,aAAa,CAAC,QAAQ,CAAC,CAAC;IAEhD,MAAM,CAAC,KAAK,GAAG,KAAK,CAAC;IACrB,MAAM,CAAC,MAAM,GAAG,MAAM,CAAC;IAEvB,OAAO,MAAM,CAAC,UAAU,CAAC,IAAI,CAAC,CAAC;AACnC,CAAC"}

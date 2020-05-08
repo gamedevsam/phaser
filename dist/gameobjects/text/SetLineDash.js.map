@@ -1,1 +1,0 @@
-{"version":3,"file":"SetLineDash.js","sourceRoot":"","sources":["../../../src/gameobjects/text/SetLineDash.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,WAAW,CAAE,QAAkB,EAAE,GAAG,IAAa;IAErE,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAElB,MAAM,CAAC,QAAQ,GAAG,QAAQ,CAAC;QAC3B,MAAM,CAAC,UAAU,EAAE,CAAC;IAExB,CAAC,CAAC,CAAC;AACP,CAAC"}

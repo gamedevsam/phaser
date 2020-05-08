@@ -1,6 +1,8 @@
-import GL from './GL';
-import CreateGLTexture from './CreateGLTexture';
-export default function CreateFramebuffer(width, height) {
+import { GL } from './GL.js';
+import '../../math/pow2/IsSizePowerOfTwo.js';
+import { CreateGLTexture } from './CreateGLTexture.js';
+
+function CreateFramebuffer(width, height) {
     const gl = GL.get();
     const texture = CreateGLTexture(null, width, height);
     const framebuffer = gl.createFramebuffer();
@@ -9,4 +11,5 @@ export default function CreateFramebuffer(width, height) {
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     return [texture, framebuffer];
 }
-//# sourceMappingURL=CreateFramebuffer.js.map
+
+export { CreateFramebuffer };

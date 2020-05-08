@@ -1,6 +1,6 @@
 import { GL } from './GL';
 
-export function DeleteGLBuffer (buffer: WebGLBuffer)
+export function DeleteGLBuffer (buffer: WebGLBuffer): void
 {
     const gl = GL.get();
 

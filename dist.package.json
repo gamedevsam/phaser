@@ -5,8 +5,10 @@
     "publishConfig": {
         "access": "public"
     },
-    "main": "index.js",
-    "module": "index.js",
+    "main": "Phaser4.esm.js",
+    "module": "Phaser4.esm.js",
+    "jsnext:main": "Phaser4.esm.js",
+    "browser": "Phaser4.js",
     "types": "index.d.ts",
     "repository": {
         "type": "git",

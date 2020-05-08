@@ -6,7 +6,7 @@
 
 import { Contains } from './Contains';
 import { IEllipse } from './IEllipse';
-import { IRectangle } from '../Rectangle/IRectangle';
+import { IRectangle } from '../rectangle/IRectangle';
 
 /**
  * Check to see if the Ellipse contains all four points of the given Rectangle object.

@@ -4,6 +4,6 @@ interface IGetIOSResult {
     iPhone: boolean;
     iPad: boolean;
 }
-export declare function isiOS(): IGetIOSResult;
+export declare function IsiOS(): IGetIOSResult;
 export {};
-//# sourceMappingURL=isiOS.d.ts.map
+//# sourceMappingURL=IsiOS.d.ts.map

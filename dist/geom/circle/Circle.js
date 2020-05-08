@@ -1,27 +1,6 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Contains from './Contains';
-/**
- * @classdesc
- * A Circle object.
- *
- * This is a geometry object, containing numerical values and related methods to inspect and modify them.
- * It is not a Game Object, in that you cannot add it to the display list, and it has no texture.
- * To render a Circle you should look at the capabilities of the Graphics class.
- *
- * @class Circle
- * @memberof Phaser.Geom
- * @constructor
- * @since 3.0.0
- *
- * @param {number} [x=0] - The x position of the center of the circle.
- * @param {number} [y=0] - The y position of the center of the circle.
- * @param {number} [radius=0] - The radius of the circle.
- */
-export default class Circle {
+import { Contains } from './Contains.js';
+
+class Circle {
     constructor(x = 0, y = 0, radius = 0) {
         this.set(x, y, radius);
     }
@@ -73,4 +52,5 @@ export default class Circle {
         this.y = value - this._radius;
     }
 }
-//# sourceMappingURL=Circle.js.map
+
+export { Circle };

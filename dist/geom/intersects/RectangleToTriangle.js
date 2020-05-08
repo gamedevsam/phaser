@@ -1,35 +1,21 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import LineToLine from './LineToLine';
-import Contains from '../rectangle/Contains';
-import ContainsArray from '../triangle/ContainsArray';
-import Decompose from '../rectangle/Decompose';
-import GetTriangleEdges from '../triangle/GetEdges';
-import GetRectangleEdges from '../Rectangle/GetEdges';
-/**
- * Checks for intersection between Rectangle shape and Triangle shape.
- *
- * @function Phaser.Geom.Intersects.RectangleToTriangle
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Rectangle} rect - Rectangle object to test.
- * @param {Phaser.Geom.Triangle} triangle - Triangle object to test.
- *
- * @return {boolean} A value of `true` if objects intersect; otherwise `false`.
- */
-export default function RectangleToTriangle(rect, triangle) {
-    //  First the cheapest ones:
+import { Contains } from '../rectangle/Contains.js';
+import '../../math/vec2/Vec2.js';
+import '../line/Line.js';
+import { G as GetEdges$1 } from '../../GetEdges-95a2b4b0.js';
+import { LineToLine } from './LineToLine.js';
+import { GetEdges } from '../triangle/GetEdges.js';
+import '../triangle/Contains.js';
+import { ContainsArray } from '../triangle/ContainsArray.js';
+import { Decompose } from '../rectangle/Decompose.js';
+
+function RectangleToTriangle(rect, triangle) {
     if (triangle.left > rect.right ||
         triangle.right < rect.x ||
         triangle.top > rect.bottom ||
         triangle.bottom < rect.y) {
         return false;
     }
-    const [triA, triB, triC] = GetTriangleEdges(triangle);
-    //  Are any of the triangle points within the rectangle?
+    const [triA, triB, triC] = GetEdges(triangle);
     if (Contains(rect, triA.x1, triA.y1) || Contains(rect, triA.x2, triA.y2)) {
         return true;
     }
@@ -39,8 +25,7 @@ export default function RectangleToTriangle(rect, triangle) {
     if (Contains(rect, triC.x1, triC.y1) || Contains(rect, triC.x2, triC.y2)) {
         return true;
     }
-    //  Cheap tests over, now to see if any of the lines intersect ...
-    const [rectA, rectB, rectC, rectD] = GetRectangleEdges(rect);
+    const [rectA, rectB, rectC, rectD] = GetEdges$1(rect);
     if (LineToLine(triA, rectA) || LineToLine(triA, rectB) || LineToLine(triA, rectC) || LineToLine(triA, rectD)) {
         return true;
     }
@@ -50,8 +35,8 @@ export default function RectangleToTriangle(rect, triangle) {
     if (LineToLine(triC, rectA) || LineToLine(triC, rectB) || LineToLine(triC, rectC) || LineToLine(triC, rectD)) {
         return true;
     }
-    //  None of the lines intersect, so are any rectangle points within the triangle?
     const within = ContainsArray(triangle, Decompose(rect), true);
     return (within.length > 0);
 }
-//# sourceMappingURL=RectangleToTriangle.js.map
+
+export { RectangleToTriangle };

@@ -5,12 +5,12 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { GetLineToCircle } from './GetLineToCircle';
 import { CircleToRectangle } from './CircleToRectangle';
+import { GetEdges } from '../rectangle/GetEdges';
+import { GetLineToCircle } from './GetLineToCircle';
 import { ICircle } from '../circle/ICircle';
-import { IRectangle } from '../Rectangle/IRectangle';
+import { IRectangle } from '../rectangle/IRectangle';
 import { Vec2 } from '../../math/vec2/Vec2';
-import { GetEdges } from '../Rectangle/GetEdges';
 
 /**
  * Checks for intersection between a circle and a rectangle,

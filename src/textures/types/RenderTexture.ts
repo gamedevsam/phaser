@@ -1,9 +1,9 @@
-import { ISprite } from '../../gameobjects/sprite/ISprite';
-import { RenderWebGL } from '../../gameobjects/sprite/RenderWebGL';
 import { CreateFramebuffer } from '../../renderer/webgl1/CreateFramebuffer';
+import { GLTextureBinding } from '../GLTextureBinding';
+import { ISprite } from '../../gameobjects/sprite/ISprite';
 import { Ortho } from '../../renderer/webgl1/Ortho';
-import { WebGLRenderer } from '../../renderer/webgl1/WebGLRenderer';
 import { Texture } from '../Texture';
+import { WebGLRenderer } from '../../renderer/webgl1/WebGLRenderer';
 
 export class RenderTexture extends Texture
 {
@@ -19,19 +19,21 @@ export class RenderTexture extends Texture
 
         const [ texture, framebuffer ] = CreateFramebuffer(width, height);
 
-        this.glTexture = texture;
-        this.glFramebuffer = framebuffer;
+        this.binding = new GLTextureBinding(this);
+
+        this.binding.texture = texture;
+        this.binding.framebuffer = framebuffer;
 
         this.projectionMatrix = Ortho(width, height);
         this.cameraMatrix = new Float32Array([ 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, height, 0, 1 ]);
     }
 
-    cls ()
+    cls (): this
     {
         const renderer = this.renderer;
         const gl = renderer.gl;
 
-        renderer.reset(this.glFramebuffer, this.width, this.height);
+        renderer.reset(this.binding.framebuffer, this.width, this.height);
 
         gl.clearColor(0, 0, 0, 0);
         gl.clear(gl.COLOR_BUFFER_BIT);
@@ -41,43 +43,42 @@ export class RenderTexture extends Texture
         return this;
     }
 
-    batchStart ()
+    batchStart (): this
     {
         const renderer = this.renderer;
 
-        renderer.reset(this.glFramebuffer, this.width, this.height);
+        renderer.reset(this.binding.framebuffer, this.width, this.height);
 
-        renderer.shader.bind(this.projectionMatrix, this.cameraMatrix);
+        renderer.shader.bind(renderer, this.projectionMatrix, this.cameraMatrix);
 
         return this;
     }
 
-    batchDraw (sprites: ISprite[])
+    batchDraw (sprites: ISprite[]): this
     {
         const renderer = this.renderer;
-        const shader = renderer.shader;
 
         for (let i = 0, len = sprites.length; i < len; i++)
         {
-            RenderWebGL(sprites[i], renderer, shader, renderer.startActiveTexture);
+            sprites[i].render(renderer);
         }
 
         return this;
     }
 
-    batchEnd ()
+    batchEnd (): this
     {
         const renderer = this.renderer;
         const shader = renderer.shader;
 
-        shader.flush();
+        shader.flush(renderer);
 
         renderer.reset();
 
         return this;
     }
 
-    draw (...sprites: ISprite[])
+    draw (...sprites: ISprite[]): this
     {
         this.batchStart();
         this.batchDraw(sprites);

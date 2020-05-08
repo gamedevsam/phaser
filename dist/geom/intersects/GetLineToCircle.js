@@ -1,25 +1,8 @@
-/**
- * @author       Florian Vazelle
- * @author       Geoffrey Glaive
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import LineToCircle from './LineToCircle';
-import Vec2 from '../../math/vec2/Vec2';
-/**
- * Checks for intersection between the line segment and circle,
- * and returns the intersection points as a Point object array.
- *
- * @function Phaser.Geom.Intersects.GetLineToCircle
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Line} line - The line segment to check.
- * @param {Phaser.Geom.Circle} circle - The circle to check against the line.
- * @param {array} [out] - An optional array in which to store the points of intersection.
- *
- * @return {array} An array with the points of intersection if objects intersect, otherwise an empty array.
- */
-export default function GetLineToCircle(line, circle, out = []) {
+import '../circle/Contains.js';
+import { Vec2 } from '../../math/vec2/Vec2.js';
+import { LineToCircle } from './LineToCircle.js';
+
+function GetLineToCircle(line, circle, out = []) {
     if (LineToCircle(line, circle)) {
         const { x1, y1, x2, y2 } = line;
         const cr = circle.radius;
@@ -34,7 +17,7 @@ export default function GetLineToCircle(line, circle, out = []) {
         let x;
         let y;
         if (lambda === 0) {
-            var root = -coefficientB / (2 * coefficientA);
+            const root = -coefficientB / (2 * coefficientA);
             x = x1 + root * lDirX;
             y = y1 + root * lDirY;
             if (root >= 0 && root <= 1) {
@@ -42,13 +25,13 @@ export default function GetLineToCircle(line, circle, out = []) {
             }
         }
         else if (lambda > 0) {
-            var root1 = (-coefficientB - Math.sqrt(lambda)) / (2 * coefficientA);
+            const root1 = (-coefficientB - Math.sqrt(lambda)) / (2 * coefficientA);
             x = x1 + root1 * lDirX;
             y = y1 + root1 * lDirY;
             if (root1 >= 0 && root1 <= 1) {
                 out.push(new Vec2(x, y));
             }
-            var root2 = (-coefficientB + Math.sqrt(lambda)) / (2 * coefficientA);
+            const root2 = (-coefficientB + Math.sqrt(lambda)) / (2 * coefficientA);
             x = x1 + root2 * lDirX;
             y = y1 + root2 * lDirY;
             if (root2 >= 0 && root2 <= 1) {
@@ -58,4 +41,5 @@ export default function GetLineToCircle(line, circle, out = []) {
     }
     return out;
 }
-//# sourceMappingURL=GetLineToCircle.js.map
+
+export { GetLineToCircle };

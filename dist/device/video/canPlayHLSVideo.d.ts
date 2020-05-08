@@ -1,2 +1,2 @@
-export declare function canPlayHLSVideo(videoElement?: HTMLVideoElement): boolean;
-//# sourceMappingURL=canPlayHLSVideo.d.ts.map
+export declare function CanPlayHLSVideo(videoElement?: HTMLVideoElement): boolean;
+//# sourceMappingURL=CanPlayHLSVideo.d.ts.map

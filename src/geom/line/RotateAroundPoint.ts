@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { RotateAroundXY } from './RotateAroundXY';
 import { ILine } from './ILine';
 import { IVec2 } from '../../math/vec2/IVec2';
+import { RotateAroundXY } from './RotateAroundXY';
 
 /**
  * Rotate a line around a point by the given angle in radians.

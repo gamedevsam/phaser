@@ -1,6 +1,7 @@
-import Texture from '../../textures/Texture';
-import IShader from './shaders/IShader';
-export default class WebGLRenderer {
+import { ISceneRenderData } from '../../scenes/ISceneRenderData';
+import { IShader } from './shaders/IShader';
+import { Texture } from '../../textures/Texture';
+export declare class WebGLRenderer {
     canvas: HTMLCanvasElement;
     gl: WebGLRenderingContext;
     clearColor: number[];
@@ -24,12 +25,12 @@ export default class WebGLRenderer {
     constructor();
     initContext(): void;
     resize(width: number, height: number, resolution?: number): void;
-    onContextLost(event: any): void;
+    onContextLost(event: Event): void;
     onContextRestored(): void;
     setBackgroundColor(color: number): this;
     private getMaxTextures;
     reset(framebuffer?: WebGLFramebuffer, width?: number, height?: number): void;
-    render(sceneList: any[], dirtyFrame: number, dirtyCameras: number): void;
+    render(renderData: ISceneRenderData): void;
     resetTextures(texture?: Texture): void;
     requestTexture(texture: Texture): void;
 }

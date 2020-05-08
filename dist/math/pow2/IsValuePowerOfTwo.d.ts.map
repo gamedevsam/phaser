@@ -1,1 +1,1 @@
-{"version":3,"file":"IsValuePowerOfTwo.d.ts","sourceRoot":"","sources":["../../../src/math/pow2/IsValuePowerOfTwo.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;;;;;;;;GASG;AACH,MAAM,CAAC,OAAO,UAAU,iBAAiB,CAAE,KAAK,EAAE,MAAM,GAAG,OAAO,CAGjE"}
+{"version":3,"file":"IsValuePowerOfTwo.d.ts","sourceRoot":"","sources":["../../src/math/pow2/IsValuePowerOfTwo.ts"],"names":[],"mappings":"AAgBA,wBAAgB,iBAAiB,CAAE,KAAK,EAAE,MAAM,GAAG,OAAO,CAGzD"}

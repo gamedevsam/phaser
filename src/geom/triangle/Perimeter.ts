@@ -4,9 +4,9 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-import { Length } from '../line/Length';
-import { ITriangle } from './ITriangle';
 import { GetEdges } from './GetEdges';
+import { ITriangle } from './ITriangle';
+import { Length } from '../line/Length';
 
 /**
  * Gets the length of the perimeter of the given triangle.

@@ -1,17 +1,19 @@
 import { IAnimatedSprite } from './IAnimatedSprite';
 
-export function Stop (...sprite: IAnimatedSprite[]): void
+export function Stop <T extends IAnimatedSprite> (...sprites: T[]): T[]
 {
-    sprite.forEach(entity =>
+    sprites.forEach(sprite =>
     {
-        const data = entity.animData;
+        const data = sprite.animData;
 
         data.isPlaying = false;
         data.currentAnim = '';
 
         if (data.onComplete)
         {
-            data.onComplete(entity, data.currentAnim);
+            data.onComplete(sprite, data.currentAnim);
         }
     });
+
+    return sprites;
 }

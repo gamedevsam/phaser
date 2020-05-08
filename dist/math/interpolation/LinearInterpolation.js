@@ -1,22 +1,6 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Linear from '../Linear';
-/**
- * A linear interpolation method.
- *
- * @function Phaser.Math.Interpolation.Linear
- * @since 3.0.0
- * @see {@link https://en.wikipedia.org/wiki/Linear_interpolation}
- *
- * @param {number[]} v - The input array of values to interpolate between.
- * @param {!number} k - The percentage of interpolation, between 0 and 1.
- *
- * @return {!number} The interpolated value.
- */
-export default function LinearInterpolation(v, k) {
+import { Linear } from '../Linear.js';
+
+function LinearInterpolation(v, k) {
     const m = v.length - 1;
     const f = m * k;
     const i = Math.floor(f);
@@ -30,4 +14,5 @@ export default function LinearInterpolation(v, k) {
         return Linear(v[i], v[(i + 1 > m) ? m : i + 1], f - i);
     }
 }
-//# sourceMappingURL=LinearInterpolation.js.map
+
+export { LinearInterpolation };

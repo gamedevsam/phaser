@@ -1,8 +1,7 @@
-import { Sprite } from '../sprite/Sprite';
-import { CreateGLTexture } from '../../renderer/webgl1/CreateGLTexture';
-import { IContainer } from '../container/IContainer';
 import { CanvasTexture } from '../../textures/types/CanvasTexture';
 import { GameInstance } from '../../GameInstance';
+import { IContainer } from '../container/IContainer';
+import { Sprite } from '../sprite/Sprite';
 
 export type VerticalTextAlignment = 'ascent' | 'lineheight';
 
@@ -12,7 +11,7 @@ export class Text extends Sprite
 
     preRenderCallback: (canvas: HTMLCanvasElement, context: CanvasRenderingContext2D) => void;
     wordWrapCallback: (text: string) => string;
-   
+
     canvas: HTMLCanvasElement;
     context: CanvasRenderingContext2D;
     splitRegExp: RegExp = /(?:\r\n|\r|\n)/;
@@ -46,7 +45,7 @@ export class Text extends Sprite
         this.canvas = this.texture.image as HTMLCanvasElement;
         this.context = this.canvas.getContext('2d');
 
-        this.texture.glTexture = CreateGLTexture(this.canvas, 32, 32, false, this.antialias);
+        // this.texture.glTexture = CreateGLTexture(this.canvas, 32, 32, false, this.antialias);
 
         if (font)
         {
@@ -180,7 +179,7 @@ export class Text extends Sprite
         {
             canvas.width = canvasWidth;
             canvas.height = canvasHeight;
-    
+
             this.texture.setSize(displayWidth, displayHeight);
             this.setSize(displayWidth, displayHeight);
         }
@@ -205,7 +204,7 @@ export class Text extends Sprite
             if (cornerRadius)
             {
                 ctx.lineWidth = cornerRadius;
-                
+
                 ctx.strokeRect(halfRadius, halfRadius, displayWidth - cornerRadius, displayHeight - cornerRadius);
             }
 
@@ -251,9 +250,12 @@ export class Text extends Sprite
 
         ctx.restore();
 
-        this.texture.updateGL();
+        if (this.texture.binding)
+        {
+            this.texture.binding.update();
+        }
 
-        this.setDirtyRender(true);
+        this.dirty.setRender();
 
         return this;
     }

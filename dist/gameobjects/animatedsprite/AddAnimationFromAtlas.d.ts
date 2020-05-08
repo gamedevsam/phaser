@@ -1,4 +1,4 @@
-import IAnimatedSprite from './IAnimatedSprite';
+import { IAnimatedSprite } from './IAnimatedSprite';
 export declare type AtlasFrameConfig = {
     key: string;
     prefix?: string;
@@ -7,5 +7,5 @@ export declare type AtlasFrameConfig = {
     zeroPad?: number;
     suffix?: string;
 };
-export default function AddAnimationFromAtlas(config: AtlasFrameConfig, ...sprite: IAnimatedSprite[]): void;
+export declare function AddAnimationFromAtlas(config: AtlasFrameConfig, ...sprite: IAnimatedSprite[]): void;
 //# sourceMappingURL=AddAnimationFromAtlas.d.ts.map

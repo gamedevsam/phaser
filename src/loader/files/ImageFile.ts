@@ -1,15 +1,14 @@
-import { GameInstance } from '../../GameInstance';
 import { File } from '../File';
 import { GetURL } from '../GetURL';
-import { ImageLoder } from '../ImageLoader';
+import { ImageLoader } from '../ImageLoader';
+import { TextureManagerInstance } from '../../textures/TextureManagerInstance';
 
-export function ImageFile (key: string, url?: string): File<HTMLImageElement>
+export function ImageFile (key: string, url?: string): File
 {
     const file = new File(key, url);
-    const fileCast = file as unknown as File<HTMLImageElement>;
 
-    fileCast.load = () => {
-
+    file.load = (): Promise<File> =>
+    {
         file.url = GetURL(file.key, file.url, '.png', file.loader);
 
         if (file.loader)
@@ -17,31 +16,29 @@ export function ImageFile (key: string, url?: string): File<HTMLImageElement>
             file.crossOrigin = file.loader.crossOrigin;
         }
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) =>
+        {
+            const textureManager = TextureManagerInstance.get();
 
-            const game = GameInstance.get();
-
-            if (game.textures.has(file.key))
+            if (textureManager.has(file.key))
             {
-                resolve(fileCast);
+                resolve(file);
             }
             else
             {
-                ImageLoder(file).then(file => {
+                ImageLoader(file).then(file =>
+                {
+                    textureManager.add(file.key, file.data);
 
-                    game.textures.add(file.key, file.data);
+                    resolve(file);
 
-                    resolve(fileCast);
-
-                }).catch(() => {
-
-                    reject(fileCast);
-
+                }).catch(file =>
+                {
+                    reject(file);
                 });
             }
-
         });
     };
 
-    return fileCast;
+    return file;
 }

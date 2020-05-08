@@ -5,14 +5,14 @@
  */
 
 import { Contains } from '../triangle/Contains';
-import { LineToLine } from './LineToLine';
-import { ITriangle } from '../triangle/ITriangle';
-import { ILine } from '../line/ILine';
 import { GetEdges } from '../triangle/GetEdges';
+import { ILine } from '../line/ILine';
+import { ITriangle } from '../triangle/ITriangle';
+import { LineToLine } from './LineToLine';
 
 /**
  * Checks if a Triangle and a Line intersect.
- * 
+ *
  * The Line intersects the Triangle if it starts inside of it, ends inside of it, or crosses any of the Triangle's sides. Thus, the Triangle is considered "solid".
  *
  * @function Phaser.Geom.Intersects.TriangleToLine

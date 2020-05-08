@@ -1,5 +1,6 @@
-import { Texture } from './Texture';
 import { CreateCanvas } from './CreateCanvas';
+import { Texture } from './Texture';
+import { TextureManagerInstance } from './TextureManagerInstance';
 
 export class TextureManager
 {
@@ -10,6 +11,8 @@ export class TextureManager
         this.textures = new Map();
 
         this.createDefaultTextures();
+
+        TextureManagerInstance.set(this);
     }
 
     private createDefaultTextures (): void
@@ -29,13 +32,15 @@ export class TextureManager
 
     get (key: string): Texture
     {
-        if (this.textures.has(key))
+        const textures = this.textures;
+
+        if (textures.has(key))
         {
-            return this.textures.get(key);
+            return textures.get(key);
         }
         else
         {
-            return this.textures.get('__MISSING');
+            return textures.get('__MISSING');
         }
     }
 
@@ -47,8 +52,9 @@ export class TextureManager
     add (key: string, source: Texture | HTMLImageElement): Texture
     {
         let texture: Texture;
+        const textures = this.textures;
 
-        if (!this.textures.has(key))
+        if (!textures.has(key))
         {
             if (source instanceof Texture)
             {
@@ -61,12 +67,7 @@ export class TextureManager
 
             texture.key = key;
 
-            if (!texture.glTexture)
-            {
-                texture.createGL();
-            }
-
-            this.textures.set(key, texture);
+            textures.set(key, texture);
         }
 
         return texture;

@@ -1,78 +1,97 @@
-import StaticCamera from '../camera/StaticCamera';
-import Matrix2D from '../math/matrix2d/Matrix2D';
-//  A Static World is designed specifically to have a bounds of a fixed size
-//  and a camera that doesn't move at all (no scrolling, rotation, etc)
-//  Because it has a fixed size, there is no camera culling enabled.
-//  Games that use this kind of world include Pacman, Bejeweled and 2048.
-export default class StaticWorld {
+import '../events/EventInstance.js';
+import { On } from '../events/On.js';
+import { Once } from '../events/Once.js';
+import '../GameInstance.js';
+import '../math/matrix2d/Matrix2D.js';
+import '../geom/rectangle/Contains.js';
+import '../geom/rectangle/Rectangle.js';
+import { StaticCamera } from '../camera/StaticCamera.js';
+import '../gameobjects/GetChildIndex.js';
+import '../gameobjects/RemoveChild.js';
+import '../gameobjects/SetParent.js';
+import '../math/matrix2d/Copy.js';
+import '../gameobjects/components/transform/UpdateWorldTransform.js';
+import '../gameobjects/RemoveChildrenBetween.js';
+import '../gameobjects/DestroyChildren.js';
+import '../gameobjects/components/bounds/BoundsComponent.js';
+import '../gameobjects/components/dirty/DirtyComponent.js';
+import '../gameobjects/components/input/InputComponent.js';
+import '../gameobjects/components/transform/UpdateLocalTransform.js';
+import '../gameobjects/components/transform/TransformComponent.js';
+import '../gameobjects/ReparentChildren.js';
+import { GameObject } from '../gameobjects/GameObject.js';
+import { RemoveChildren } from '../gameobjects/RemoveChildren.js';
+import { Clock } from '../time/Clock.js';
+import { CreateWorldRenderData } from './CreateWorldRenderData.js';
+import { MergeRenderData } from './MergeRenderData.js';
+import { ResetWorldRenderData } from './ResetWorldRenderData.js';
+
+class StaticWorld extends GameObject {
     constructor(scene) {
-        //  How many Game Objects were made dirty this frame?
-        this.dirtyFrame = 0;
-        //  How many Game Objects will be rendered this frame? (are in-bounds)
-        this.totalFrame = 0;
-        //  How many Game Objects passed `willRender` this frame? (but may not have been in bounds)
-        this.visibleFrame = 0;
+        super();
+        this.camera = new StaticCamera();
         this.forceRefresh = false;
+        this.world = this;
         this.scene = scene;
-        this.children = [];
-        this.renderList = [];
-        this.worldTransform = new Matrix2D();
-        this.camera = new StaticCamera(scene);
+        this.clock = new Clock(this);
+        this.renderData = CreateWorldRenderData(this.camera);
+        On(scene, 'update', (delta, time) => this.update(delta, time));
+        On(scene, 'render', (renderData) => this.render(renderData));
+        On(scene, 'shutdown', () => this.shutdown());
+        Once(scene, 'destroy', () => this.destroy());
     }
-    scanChildren(root, gameFrame) {
+    scanChildren(root, renderData) {
         const children = root.children;
         for (let i = 0; i < children.length; i++) {
-            this.buildRenderList(children[i], gameFrame);
+            this.buildRenderList(children[i], renderData);
         }
     }
-    buildRenderList(root, gameFrame) {
+    buildRenderList(root, renderData) {
         if (root.isRenderable()) {
-            this.renderList.push(root);
-            if (root.dirtyFrame >= gameFrame) {
-                this.dirtyFrame++;
+            renderData.numRendered++;
+            renderData.numRenderable++;
+            renderData.renderList.push(root);
+            if (root.dirty.frame >= renderData.gameFrame) {
+                renderData.dirtyFrame++;
             }
-            this.visibleFrame++;
         }
-        if (root.isParent && root.visible) {
-            this.scanChildren(root, gameFrame);
+        if (root.visible && root.numChildren) {
+            this.scanChildren(root, renderData);
         }
     }
     update(delta, time) {
-        const children = this.children;
-        for (let i = 0; i < children.length; i++) {
-            let child = children[i];
-            if (child && child.willUpdate) {
-                child.update(delta, time);
-            }
+        if (!this.willUpdate) {
+            return;
         }
+        this.clock.update(delta, time);
+        super.update(delta, time);
     }
-    render(gameFrame) {
-        this.dirtyFrame = 0;
-        this.visibleFrame = 0;
-        this.renderList.length = 0;
-        this.scanChildren(this, gameFrame);
-        this.totalFrame = this.renderList.length;
+    render(sceneRenderData) {
+        const renderData = this.renderData;
+        ResetWorldRenderData(renderData, sceneRenderData.gameFrame);
+        if (!this.willRender) {
+            return;
+        }
+        this.scanChildren(this, renderData);
         if (this.forceRefresh) {
-            this.dirtyFrame++;
+            renderData.dirtyFrame++;
             this.forceRefresh = false;
         }
-        return this.dirtyFrame;
+        MergeRenderData(sceneRenderData, renderData);
+        this.camera.dirtyRender = false;
     }
     shutdown() {
-        //  Clear the display list and reset the camera, but leave
-        //  everything in place so we can return to this World again
-        //  at a later stage
-        // this.removeChildren();
-        this.renderList = [];
+        RemoveChildren(this);
+        this.renderData.renderList.length = 0;
         this.camera.reset();
     }
     destroy() {
+        super.destroy();
         this.camera.destroy();
+        this.renderData.renderList.length = 0;
         this.camera = null;
-        this.renderList = null;
-    }
-    get numChildren() {
-        return this.children.length;
+        this.renderData = null;
     }
 }
-//# sourceMappingURL=StaticWorld.js.map
+
+export { StaticWorld };

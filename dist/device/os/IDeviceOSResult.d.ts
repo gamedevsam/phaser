@@ -5,7 +5,6 @@ export interface IDeviceOSResult {
     crosswalk: boolean;
     desktop: boolean;
     ejecta: boolean;
-    electron: boolean;
     iOS: boolean;
     iOSVersion: number;
     iPad: boolean;

@@ -1,94 +1,86 @@
-import { AddToDOM, DOMContentLoaded } from './dom';
-import WebGLRenderer from './renderer/webgl1/WebGLRenderer';
-import SceneManager from './scenes/SceneManager';
-import TextureManager from './textures/TextureManager';
-import EventEmitter from './events/EventEmitter';
-import GameInstance from './GameInstance';
-import { GetParent } from './config';
-export default class Game extends EventEmitter {
+import './dom/GetElement.js';
+import { AddToDOM } from './dom/AddToDOM.js';
+import { DOMContentLoaded } from './dom/DOMContentLoaded.js';
+import { Emit } from './events/Emit.js';
+import { EventEmitter } from './events/EventEmitter.js';
+import './events/EventInstance.js';
+import './events/On.js';
+import './events/Once.js';
+import { GameInstance } from './GameInstance.js';
+import { GetBanner } from './config/Banner.js';
+import { GetRenderer } from './config/SetRenderer.js';
+import { GetParent } from './config/Parent.js';
+import './config/Scenes.js';
+import './renderer/webgl1/GL.js';
+import './scenes/CreateSceneRenderData.js';
+import './scenes/ResetSceneRenderData.js';
+import './scenes/SceneManagerInstance.js';
+import { SceneManager } from './scenes/SceneManager.js';
+import './textures/CreateCanvas.js';
+import './math/pow2/IsSizePowerOfTwo.js';
+import './renderer/webgl1/CreateGLTexture.js';
+import './renderer/webgl1/DeleteFramebuffer.js';
+import './renderer/webgl1/DeleteGLTexture.js';
+import './textures/Frame.js';
+import './renderer/webgl1/SetGLTextureFilterMode.js';
+import './renderer/webgl1/UpdateGLTexture.js';
+import './textures/Texture.js';
+import './textures/TextureManagerInstance.js';
+import { TextureManager } from './textures/TextureManager.js';
+
+class Game extends EventEmitter {
     constructor(...settings) {
         super();
         this.VERSION = '4.0.0-beta1';
-        this.isPaused = false;
         this.isBooted = false;
-        this.lifetime = 0;
-        this.elapsed = 0;
-        //  The current game frame
+        this.isPaused = false;
+        this.willUpdate = true;
+        this.willRender = true;
+        this.lastTick = 0;
         this.frame = 0;
-        settings.forEach(setting => {
-            setting();
-        });
-        this.cache = {
-            json: new Map(),
-            csv: new Map(),
-            xml: new Map()
-        };
         GameInstance.set(this);
-        DOMContentLoaded(() => this.boot());
+        DOMContentLoaded(() => this.boot(settings));
     }
-    boot() {
-        this.isBooted = true;
-        this.lastTick = Date.now();
-        const renderer = new WebGLRenderer();
-        //  Only add to the DOM if they either didn't set a Parent, or expressly set it to be non-null
-        //  Otherwise we'll let them add the canvas to the DOM themselves
-        if (GetParent()) {
-            AddToDOM(renderer.canvas, GetParent());
+    boot(settings) {
+        settings.forEach(setting => setting());
+        const renderer = GetRenderer();
+        this.renderer = new renderer();
+        this.textureManager = new TextureManager();
+        this.sceneManager = new SceneManager();
+        const parent = GetParent();
+        if (parent) {
+            AddToDOM(this.renderer.canvas, parent);
         }
-        this.renderer = renderer;
-        this.textures = new TextureManager();
-        this.scenes = new SceneManager();
-        this.banner(this.VERSION);
-        //  Visibility API
-        document.addEventListener('visibilitychange', () => {
-            this.emit('visibilitychange', document.hidden);
-            if (document.hidden) {
-                this.pause();
-            }
-            else {
-                this.resume();
-            }
-        });
-        // window.addEventListener('blur', () => this.pause());
-        // window.addEventListener('focus', () => this.resume());
-        this.emit('boot');
-        requestAnimationFrame(() => this.step());
+        this.isBooted = true;
+        GetBanner();
+        Emit(this, 'boot');
+        this.lastTick = performance.now();
+        this.step(this.lastTick);
     }
     pause() {
         this.isPaused = true;
-        this.emit('pause');
     }
     resume() {
         this.isPaused = false;
-        this.lastTick = Date.now();
-        this.emit('resume');
+        this.lastTick = performance.now();
     }
-    banner(version) {
-        console.log('%cPhaser v' + version + '%c https://phaser4.io', 'padding: 4px 16px; color: #fff; background: linear-gradient(#3e0081 40%, #00bcc3)', '');
-    }
-    step() {
-        const now = Date.now();
-        const delta = now - this.lastTick;
-        const dt = delta / 1000;
-        this.lifetime += dt;
-        this.elapsed = dt;
-        this.lastTick = now;
-        this.emit('step', dt, now);
-        const sceneManager = this.scenes;
+    step(time) {
+        const delta = time - this.lastTick;
+        this.lastTick = time;
         if (!this.isPaused) {
-            sceneManager.update(dt, now);
+            if (this.willUpdate) {
+                this.sceneManager.update(delta, time);
+            }
+            if (this.willRender) {
+                this.renderer.render(this.sceneManager.render(this.frame));
+            }
         }
-        this.emit('update', dt, now);
-        //  TODO: Optimize to remove const and array creation here:
-        const [renderList, dirtyFrame, dirtyCameras] = sceneManager.render(this.frame);
-        this.renderer.render(renderList, dirtyFrame, dirtyCameras);
-        this.emit('render', dt, now);
-        //  The frame always advances by 1 each step (even when paused)
         this.frame++;
-        requestAnimationFrame(() => this.step());
+        GameInstance.setFrame(this.frame);
+        requestAnimationFrame(now => this.step(now));
     }
     destroy() {
-        //  TODO
     }
 }
-//# sourceMappingURL=Game.js.map
+
+export { Game };

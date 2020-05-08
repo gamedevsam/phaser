@@ -1,2 +1,2 @@
-export declare function canPlayOpus(audioElement?: HTMLAudioElement): boolean;
-//# sourceMappingURL=canPlayOpus.d.ts.map
+export declare function CanPlayOpus(audioElement?: HTMLAudioElement): boolean;
+//# sourceMappingURL=CanPlayOpus.d.ts.map

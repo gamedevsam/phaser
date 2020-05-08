@@ -1,1 +1,1 @@
-{"version":3,"file":"TriangleToTriangle.d.ts","sourceRoot":"","sources":["../../../src/geom/intersects/TriangleToTriangle.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAKH,OAAO,SAAS,MAAM,uBAAuB,CAAC;AAG9C;;;;;;;;;;;;GAYG;AACH,MAAM,CAAC,OAAO,UAAU,kBAAkB,CAAE,SAAS,EAAE,SAAS,EAAE,SAAS,EAAE,SAAS,GAAG,OAAO,CA6C/F"}
+{"version":3,"file":"TriangleToTriangle.d.ts","sourceRoot":"","sources":["../../src/geom/intersects/TriangleToTriangle.ts"],"names":[],"mappings":"AASA,OAAO,EAAE,SAAS,EAAE,MAAM,uBAAuB,CAAC;AAgBlD,wBAAgB,kBAAkB,CAAE,SAAS,EAAE,SAAS,EAAE,SAAS,EAAE,SAAS,GAAG,OAAO,CA6CvF"}

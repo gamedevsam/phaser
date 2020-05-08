@@ -1,40 +1,33 @@
-import { canPlayM4A } from './canPlayM4A';
-import { canPlayMP3 } from './canPlayMP3';
-import { canPlayOGG } from './canPlayOGG';
-import { canPlayOpus } from './canPlayOpus';
-import { canPlayWAV } from './canPlayWAV';
-import { canPlayWebM } from './canPlayWebM';
-import { hasAudio } from './hasAudio';
-import { hasWebAudio } from './hasWebAudio';
-export function GetAudio() {
+import './CanPlayAudioType.js';
+import { CanPlayM4A } from './CanPlayM4A.js';
+import { CanPlayMP3 } from './CanPlayMP3.js';
+import { CanPlayOGG } from './CanPlayOGG.js';
+import { CanPlayOpus } from './CanPlayOpus.js';
+import { CanPlayWAV } from './CanPlayWAV.js';
+import { CanPlayWebM } from './CanPlayWebM.js';
+import { HasAudio } from './HasAudio.js';
+import { HasWebAudio } from './HasWebAudio.js';
+
+function GetAudio() {
     const result = {
-        audioData: hasAudio(),
+        audioData: HasAudio(),
         m4a: false,
         mp3: false,
         ogg: false,
         opus: false,
         wav: false,
-        webAudio: hasWebAudio(),
+        webAudio: HasWebAudio(),
         webm: false
     };
     if (result.audioData) {
-        const audioElement = document.createElement('audio');
-        // IE9 Running on Windows Server SKU can cause an exception to be thrown
-        try {
-            const canPlay = !!audioElement.canPlayType;
-            if (canPlay) {
-                result.m4a = canPlayM4A(audioElement);
-                result.mp3 = canPlayMP3(audioElement);
-                result.ogg = canPlayOGG(audioElement);
-                result.opus = canPlayOpus(audioElement);
-                result.wav = canPlayWAV(audioElement);
-                result.webm = canPlayWebM(audioElement);
-            }
-        }
-        catch (error) {
-            result.audioData = false;
-        }
+        result.m4a = CanPlayM4A();
+        result.mp3 = CanPlayMP3();
+        result.ogg = CanPlayOGG();
+        result.opus = CanPlayOpus();
+        result.wav = CanPlayWAV();
+        result.webm = CanPlayWebM();
     }
     return result;
 }
-//# sourceMappingURL=GetAudio.js.map
+
+export { GetAudio };

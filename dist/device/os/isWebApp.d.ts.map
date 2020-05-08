@@ -1,1 +1,1 @@
-{"version":3,"file":"isWebApp.d.ts","sourceRoot":"","sources":["../../../src/device/os/isWebApp.ts"],"names":[],"mappings":"AAAA,wBAAgB,QAAQ,IAAK,OAAO,CAGnC"}
+{"version":3,"file":"IsWebApp.d.ts","sourceRoot":"","sources":["../../src/device/os/IsWebApp.ts"],"names":[],"mappings":"AAAA,wBAAgB,QAAQ,IAAK,OAAO,CAGnC"}

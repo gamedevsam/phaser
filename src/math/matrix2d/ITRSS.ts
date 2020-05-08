@@ -10,14 +10,11 @@ export function ITRSS (target: IMatrix2D, x: number, y: number, angle: number = 
     }
     else
     {
-        const sin = Math.sin(angle);
-        const cos = Math.cos(angle);
-
         return target.set(
-            cos * scaleX,
-            sin * scaleX,
-            -sin * scaleY,
-            cos * scaleY,
+            Math.cos(angle + skewY) * scaleX,
+            Math.sin(angle + skewY) * scaleX,
+            -Math.sin(angle - skewX) * scaleY,
+            Math.cos(angle - skewX) * scaleY,
             x,
             y
         );

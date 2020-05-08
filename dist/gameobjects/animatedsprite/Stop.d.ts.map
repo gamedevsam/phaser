@@ -1,1 +1,1 @@
-{"version":3,"file":"Stop.d.ts","sourceRoot":"","sources":["../../../src/gameobjects/animatedsprite/Stop.ts"],"names":[],"mappings":"AAAA,OAAO,eAAe,MAAM,mBAAmB,CAAC;AAEhD,MAAM,CAAC,OAAO,UAAU,IAAI,CAAE,GAAG,MAAM,EAAE,eAAe,EAAE,QAezD"}
+{"version":3,"file":"Stop.d.ts","sourceRoot":"","sources":["../../src/gameobjects/animatedsprite/Stop.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AAEpD,wBAAgB,IAAI,CAAE,GAAG,MAAM,EAAE,eAAe,EAAE,GAAG,IAAI,CAcxD"}

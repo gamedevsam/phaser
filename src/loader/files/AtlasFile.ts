@@ -1,9 +1,9 @@
-import { File } from '../File';
-import { JSONFile } from './JSONFile';
-import { ImageFile } from './ImageFile';
-import { GameInstance } from '../../GameInstance';
 import { AtlasParser } from '../../textures/parsers/AtlasParser';
+import { File } from '../File';
 import { GetURL } from '../GetURL';
+import { ImageFile } from './ImageFile';
+import { JSONFile } from './JSONFile';
+import { TextureManagerInstance } from '../../textures/TextureManagerInstance';
 
 export function AtlasFile (key: string, textureURL?: string, atlasURL?: string): File
 {
@@ -12,36 +12,34 @@ export function AtlasFile (key: string, textureURL?: string, atlasURL?: string):
 
     const file = new File(key, '');
 
-    file.load = () => {
-
+    file.load = (): Promise<File> =>
+    {
         //  If called via a Loader, it has been set into the file const
         json.url = GetURL(json.key, json.url, '.json', file.loader);
         image.url = GetURL(image.key, image.url, '.png', file.loader);
 
-        return new Promise((resolve, reject) => {
-
+        return new Promise((resolve, reject) =>
+        {
             json.skipCache = true;
 
-            json.load().then(() => {
-
-                image.load().then(() => {
-
+            json.load().then(() =>
+            {
+                image.load().then(() =>
+                {
                     //  By this stage, the JSON and image are loaded and in the texture manager
 
-                    AtlasParser(GameInstance.get().textures.get(key), json.data);
+                    AtlasParser(TextureManagerInstance.get().get(key), json.data);
 
                     resolve(file);
 
-                }).catch(() => {
-
+                }).catch(() =>
+                {
                     reject(file);
-
                 });
 
-            }).catch(() => {
-
+            }).catch(() =>
+            {
                 reject(file);
-
             });
         });
     };

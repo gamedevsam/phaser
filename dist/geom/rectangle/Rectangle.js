@@ -1,10 +1,6 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Contains from './Contains';
-export default class Rectangle {
+import { Contains } from './Contains.js';
+
+class Rectangle {
     constructor(x = 0, y = 0, width = 0, height = 0) {
         this.set(x, y, width, height);
     }
@@ -41,4 +37,5 @@ export default class Rectangle {
         return this.y + this.height;
     }
 }
-//# sourceMappingURL=Rectangle.js.map
+
+export { Rectangle };

@@ -1,3 +1,4 @@
+import { GetFramesInRange } from '../../textures/GetFramesInRange';
 import { IAnimatedSprite } from './IAnimatedSprite';
 
 export type AtlasFrameConfig = {
@@ -9,22 +10,17 @@ export type AtlasFrameConfig = {
     suffix?: string;
 };
 
-export function AddAnimationFromAtlas (config: AtlasFrameConfig, ...sprite: IAnimatedSprite[]): void
+export function AddAnimationFromAtlas <T extends IAnimatedSprite> (config: AtlasFrameConfig, ...sprites: T[]): T[]
 {
-    const {
-        key,
-        prefix = '',
-        start = 0,
-        end,
-        zeroPad = 0,
-        suffix = ''
-    } = config;
+    const key = config.key;
 
-    sprite.forEach(entity =>
+    sprites.forEach(sprite =>
     {
-        if (!entity.anims.has(key))
+        if (!sprite.anims.has(key))
         {
-            entity.anims.set(key, entity.texture.getFramesInRange(prefix, start, end, zeroPad, suffix));
+            sprite.anims.set(key, GetFramesInRange(sprite.texture, config));
         }
     });
+
+    return sprites;
 }

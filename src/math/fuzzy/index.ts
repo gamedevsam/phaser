@@ -4,8 +4,16 @@
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
-export * as FuzzyCeil from './FuzzyCeil';
-export * as FuzzyEqual from './FuzzyEqual';
-export * as FuzzyFloor from './FuzzyFloor';
-export * as FuzzyGreaterThan from './FuzzyGreaterThan';
-export * as FuzzyLessThan from './FuzzyLessThan';
+import { FuzzyCeil } from './FuzzyCeil';
+import { FuzzyEqual } from './FuzzyEqual';
+import { FuzzyFloor } from './FuzzyFloor';
+import { FuzzyGreaterThan } from './FuzzyGreaterThan';
+import { FuzzyLessThan } from './FuzzyLessThan';
+
+export {
+    FuzzyCeil,
+    FuzzyEqual,
+    FuzzyFloor,
+    FuzzyGreaterThan,
+    FuzzyLessThan
+};

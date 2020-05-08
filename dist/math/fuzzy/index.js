@@ -1,15 +1,6 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Ceil from './Ceil';
-import Equal from './Equal';
-import Floor from './Floor';
-import GreaterThan from './GreaterThan';
-import LessThan from './LessThan';
-/**
- * @namespace Phaser.Math.Fuzzy
- */
-export { Ceil, Equal, Floor, GreaterThan, LessThan };
-//# sourceMappingURL=index.js.map
+export { FuzzyCeil } from './FuzzyCeil.js';
+export { FuzzyEqual } from './FuzzyEqual.js';
+export { FuzzyFloor } from './FuzzyFloor.js';
+export { FuzzyGreaterThan } from './FuzzyGreaterThan.js';
+export { FuzzyLessThan } from './FuzzyLessThan.js';
+import '../../index-9a76d0b4.js';

@@ -1,6 +1,6 @@
 import { File } from './File';
 
-export function XHRLoader (file: File<string>): Promise<File<string>>
+export function XHRLoader (file: File): Promise<File>
 {
     const xhr = new XMLHttpRequest();
 
@@ -8,26 +8,24 @@ export function XHRLoader (file: File<string>): Promise<File<string>>
 
     xhr.responseType = file.responseType;
 
-    return new Promise(
-        (resolve, reject) => {
+    return new Promise((resolve, reject) =>
+    {
+        xhr.onload = (): void =>
+        {
+            file.data = xhr.responseText;
+            file.hasLoaded = true;
 
-            xhr.onload = () => {
+            resolve(file);
+        };
 
-                file.data = xhr.responseText;
-                file.hasLoaded = true;
+        xhr.onerror = (): void =>
+        {
+            file.hasLoaded = true;
 
-                resolve(file);
-            };
+            reject(file);
 
-            xhr.onerror = () => {
+        };
 
-                file.hasLoaded = true;
-
-                reject(file);
-
-            };
-
-            xhr.send();
-        }
-    );
+        xhr.send();
+    });
 }

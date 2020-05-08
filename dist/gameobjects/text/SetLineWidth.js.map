@@ -1,1 +1,0 @@
-{"version":3,"file":"SetLineWidth.js","sourceRoot":"","sources":["../../../src/gameobjects/text/SetLineWidth.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,YAAY,CAAE,KAAa,EAAE,GAAG,IAAa;IAEjE,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAElB,MAAM,CAAC,SAAS,GAAG,KAAK,CAAC;QACzB,MAAM,CAAC,UAAU,EAAE,CAAC;IAExB,CAAC,CAAC,CAAC;AACP,CAAC"}

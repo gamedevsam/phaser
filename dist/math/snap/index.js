@@ -1,13 +1,4 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import Ceil from './SnapCeil';
-import Floor from './SnapFloor';
-import To from './SnapTo';
-/**
- * @namespace Phaser.Math.Snap
- */
-export { Ceil, Floor, To };
-//# sourceMappingURL=index.js.map
+export { SnapCeil } from './SnapCeil.js';
+export { SnapFloor } from './SnapFloor.js';
+export { SnapTo } from './SnapTo.js';
+import '../../index-bfc99efb.js';

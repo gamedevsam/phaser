@@ -1,6 +1,22 @@
-export * from './BackgroundColor';
-export * from './Parent';
-export * from './Scenes';
-export * from './Size';
-export * from './WebGLContext';
-//# sourceMappingURL=index.js.map
+import '../dom/GetElement.js';
+export { BackgroundColor, GetBackgroundColor } from './BackgroundColor.js';
+import '../GameInstance.js';
+export { Banner, GetBanner } from './Banner.js';
+export { CanvasContext, GetCanvasContext } from './CanvasContext.js';
+export { GetHeight, GetResolution, GetWidth, Size } from './Size.js';
+import '../gameobjects/sprite/RenderCanvas.js';
+import '../renderer/canvas/CanvasRenderer.js';
+export { GetRenderer, SetRenderer } from './SetRenderer.js';
+export { CanvasRenderer } from './CanvasRenderer.js';
+export { GetParent, Parent } from './Parent.js';
+export { GetScenes, Scenes } from './Scenes.js';
+export { GetWebGLContext, WebGLContext } from './WebGLContext.js';
+import '../renderer/webgl1/shaders/CheckShaderMaxIfStatements.js';
+import '../renderer/webgl1/GL.js';
+import '../math/matrix2d-funcs/ExactEquals.js';
+import '../renderer/webgl1/shaders/MultiTextureQuadShader.js';
+import '../renderer/webgl1/Ortho.js';
+import '../gameobjects/sprite/UploadBuffers.js';
+import '../gameobjects/sprite/RenderWebGL.js';
+import '../renderer/webgl1/WebGLRenderer.js';
+export { WebGLRenderer } from './WebGLRenderer.js';

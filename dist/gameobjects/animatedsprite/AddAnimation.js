@@ -1,8 +1,9 @@
-export default function AddAnimation(key, frames, ...sprite) {
+function AddAnimation(key, frames, ...sprite) {
     sprite.forEach(entity => {
         if (!entity.anims.has(key)) {
             entity.anims.set(key, entity.texture.getFrames(frames));
         }
     });
 }
-//# sourceMappingURL=AddAnimation.js.map
+
+export { AddAnimation };

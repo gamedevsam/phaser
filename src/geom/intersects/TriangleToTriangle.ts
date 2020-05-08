@@ -6,9 +6,9 @@
 
 import { ContainsArray } from '../triangle/ContainsArray';
 import { Decompose } from '../triangle/Decompose';
-import { LineToLine } from './LineToLine';
-import { ITriangle } from '../triangle/ITriangle';
 import { GetEdges } from '../triangle/GetEdges';
+import { ITriangle } from '../triangle/ITriangle';
+import { LineToLine } from './LineToLine';
 
 /**
  * Checks if two Triangles intersect.

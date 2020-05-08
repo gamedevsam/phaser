@@ -1,1 +1,1 @@
-{"version":3,"file":"isMacOS.d.ts","sourceRoot":"","sources":["../../../src/device/os/isMacOS.ts"],"names":[],"mappings":"AAAA,wBAAgB,OAAO,IAAK,OAAO,CAKlC"}
+{"version":3,"file":"IsMacOS.d.ts","sourceRoot":"","sources":["../../src/device/os/IsMacOS.ts"],"names":[],"mappings":"AAAA,wBAAgB,OAAO,IAAK,OAAO,CAKlC"}

@@ -1,20 +1,3 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import IRectangle from './IRectangle';
-/**
- * Rounds a Rectangle's position and size up to the smallest integer greater than or equal to each respective value.
- *
- * @function Phaser.Geom.Rectangle.CeilAll
- * @since 3.0.0
- *
- * @generic {Phaser.Geom.Rectangle} O - [rect,$return]
- *
- * @param {Phaser.Geom.Rectangle} rect - The Rectangle to modify.
- *
- * @return {Phaser.Geom.Rectangle} The modified Rectangle.
- */
-export default function CeilAll(rect: IRectangle): IRectangle;
+import { IRectangle } from './IRectangle';
+export declare function CeilAll(rect: IRectangle): IRectangle;
 //# sourceMappingURL=CeilAll.d.ts.map

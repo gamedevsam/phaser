@@ -1,4 +1,4 @@
-export function DOMContentLoaded (callback: () => void)
+export function DOMContentLoaded (callback: () => void): void
 {
     const readyState = document.readyState;
 
@@ -9,7 +9,7 @@ export function DOMContentLoaded (callback: () => void)
         return;
     }
 
-    const check = () =>
+    const check = (): void =>
     {
         document.removeEventListener('deviceready', check, true);
         document.removeEventListener('DOMContentLoaded', check, true);
@@ -17,6 +17,8 @@ export function DOMContentLoaded (callback: () => void)
 
         callback();
     };
+
+    // TODO - Swap is IsCordova call
 
     if (!document.body)
     {

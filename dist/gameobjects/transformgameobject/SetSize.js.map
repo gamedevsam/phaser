@@ -1,1 +1,0 @@
-{"version":3,"file":"SetSize.js","sourceRoot":"","sources":["../../../src/gameobjects/transformgameobject/SetSize.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,UAAU,OAAO,CAAE,KAAa,EAAE,MAAc,EAAE,GAAG,KAA6B;IAE5F,KAAK,CAAC,OAAO,CAAC,MAAM,CAAC,EAAE;QAEnB,MAAM,CAAC,KAAK,GAAG,KAAK,CAAC;QACrB,MAAM,CAAC,MAAM,GAAG,MAAM,CAAC;IAE3B,CAAC,CAAC,CAAC;AACP,CAAC"}

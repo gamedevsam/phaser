@@ -1,2 +1,2 @@
-export declare function isAndroid(): boolean;
-//# sourceMappingURL=isAndroid.d.ts.map
+export declare function IsAndroid(): boolean;
+//# sourceMappingURL=IsAndroid.d.ts.map

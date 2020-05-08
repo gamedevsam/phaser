@@ -1,27 +1,13 @@
-/**
- * @author       Florian Vazelle
- * @author       Geoffrey Glaive
- * @copyright    2020 Photon Storm Ltd.
- * @license      {@link https://opensource.org/licenses/MIT|MIT License}
- */
-import GetLineToCircle from './GetLineToCircle';
-import TriangleToCircle from './TriangleToCircle';
-import GetEdges from '../triangle/GetEdges';
-/**
- * Checks if a Triangle and a Circle intersect, and returns the intersection points as a Point object array.
- *
- * A Circle intersects a Triangle if its center is located within it or if any of the Triangle's sides intersect the Circle. As such, the Triangle and the Circle are considered "solid" for the intersection.
- *
- * @function Phaser.Geom.Intersects.GetTriangleToCircle
- * @since 3.0.0
- *
- * @param {Phaser.Geom.Triangle} triangle - The Triangle to check for intersection.
- * @param {Phaser.Geom.Circle} circle - The Circle to check for intersection.
- * @param {array} [out] - An optional array in which to store the points of intersection.
- *
- * @return {array} An array with the points of intersection if objects intersect, otherwise an empty array.
- */
-export default function GetTriangleToCircle(triangle, circle, out = []) {
+import '../circle/Contains.js';
+import '../../math/vec2/Vec2.js';
+import '../line/Line.js';
+import './LineToCircle.js';
+import { GetLineToCircle } from './GetLineToCircle.js';
+import { GetEdges } from '../triangle/GetEdges.js';
+import '../triangle/Contains.js';
+import { TriangleToCircle } from './TriangleToCircle.js';
+
+function GetTriangleToCircle(triangle, circle, out = []) {
     if (TriangleToCircle(triangle, circle)) {
         const [lineA, lineB, lineC] = GetEdges(triangle);
         GetLineToCircle(lineA, circle, out);
@@ -30,4 +16,5 @@ export default function GetTriangleToCircle(triangle, circle, out = []) {
     }
     return out;
 }
-//# sourceMappingURL=GetTriangleToCircle.js.map
+
+export { GetTriangleToCircle };

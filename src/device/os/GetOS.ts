@@ -1,47 +1,45 @@
 import { IDeviceOSResult } from './IDeviceOSResult';
-import { isAndroid } from './isAndroid';
-import { isChromeOS } from './isChromeOS';
-import { isCordova } from './isCordova';
-import { isCrosswalk } from './isCrosswalk';
-import { isEjecta } from './isEjecta';
-import { isElectron } from './isElectron';
-import { isiOS } from './isiOS';
-import { isKindle } from './isKindle';
-import { isLinux } from './isLinux';
-import { isMacOS } from './isMacOS';
-import { isNode } from './isNode';
-import { isNodeWebkit } from './isNodeWebkit';
-import { isWebApp } from './isWebApp';
-import { isWindows } from './isWindows';
-import { isWindowsPhone } from './isWindowsPhone';
+import { IsAndroid } from './IsAndroid';
+import { IsChromeOS } from './IsChromeOS';
+import { IsCordova } from './IsCordova';
+import { IsCrosswalk } from './IsCrosswalk';
+import { IsEjecta } from './IsEjecta';
+import { IsKindle } from './IsKindle';
+import { IsLinux } from './IsLinux';
+import { IsMacOS } from './IsMacOS';
+import { IsNode } from './IsNode';
+import { IsNodeWebkit } from './IsNodeWebkit';
+import { IsWebApp } from './IsWebApp';
+import { IsWindows } from './IsWindows';
+import { IsWindowsPhone } from './IsWindowsPhone';
+import { IsiOS } from './IsiOS';
 
 export function GetOS (): IDeviceOSResult
 {
     const ua: string = navigator.userAgent;
 
-    const { iOS, iOSVersion, iPad, iPhone } = isiOS();
+    const { iOS, iOSVersion, iPad, iPhone } = IsiOS();
 
     const result: IDeviceOSResult = {
-        android: isAndroid(),
-        chromeOS: isChromeOS(),
-        cordova: isCordova(),
-        crosswalk: isCrosswalk(),
+        android: IsAndroid(),
+        chromeOS: IsChromeOS(),
+        cordova: IsCordova(),
+        crosswalk: IsCrosswalk(),
         desktop: false,
-        ejecta: isEjecta(),
-        electron: isElectron(),
+        ejecta: IsEjecta(),
         iOS,
         iOSVersion,
         iPad,
         iPhone,
-        kindle: isKindle(),
-        linux: isLinux(),
-        macOS: isMacOS(),
-        node: isNode(),
-        nodeWebkit: isNodeWebkit(),
+        kindle: IsKindle(),
+        linux: IsLinux(),
+        macOS: IsMacOS(),
+        node: IsNode(),
+        nodeWebkit: IsNodeWebkit(),
         pixelRatio: 1,
-        webApp: isWebApp(),
-        windows: isWindows(),
-        windowsPhone: isWindowsPhone()
+        webApp: IsWebApp(),
+        windows: IsWindows(),
+        windowsPhone: IsWindowsPhone()
     };
 
     if (result.windowsPhone)
@@ -52,7 +50,7 @@ export function GetOS (): IDeviceOSResult
         result.windows = true;
     }
 
-    const silk: boolean = (/Silk/).test(ua);
+    const silk: boolean = ua.includes('Silk');
 
     if (result.windows || result.macOS || (result.linux && !silk) || result.chromeOS)
     {
@@ -60,7 +58,7 @@ export function GetOS (): IDeviceOSResult
     }
 
     //  Windows Phone / Table reset
-    if (result.windowsPhone || ((/Windows NT/i.test(ua)) && (/Touch/i.test(ua))))
+    if (result.windowsPhone || (((/Windows NT/i).test(ua)) && ((/Touch/i).test(ua))))
     {
         result.desktop = false;
     }
